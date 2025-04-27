@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta property="og:image" content="img/og.webp" />
+	<link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon"/>
+	<meta charset="UTF-8">
+	<title>Game UI Artist</title>
+	<meta name="keywords" content="game ui artist portfolio, mobile app designer, web ui designer, website designer, landing page designer, alexandru circo, circo, alex circo, ui designer, ui/ux designer in romania, ui/ux designer, game ui designer, game ui artist, hire game ui designer" />
+
+	<!-- MOBILE VIEWPORT -->
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, minimum-scale=1" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="format-detection" content="telephone=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<!--<link rel="stylesheet" type="text/css" href="src/hes-gallery.css">-->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<!--<script src="./PureSnow.js"></script>-->
+	<script src="lightbox/LightboxGallery.js"></script>
+</head>
+
+
+
+<body>
+<!-- XMAS THEME SNOW -->
+<!--<div id="snow"></div>-->
+
+<div class="center-everything">
+
+	<!-- MENU CONTAINER -->
+	<div class="menu-container">
+		<div class="menu">
+
+		  <!-- LOGO -->
+		  <div class="logo-container">
+		  	<button class="tablinks logoButton" id="showActive" onclick="openProject(event, 'Featured')"><div class="logo"></div></button>
+		  </div>
+
+		  <!-- DESCRIPTION HEADER -->
+		  <div class="description-container"><img src="img/runningtext-gif.gif" width="210px" height="auto"></div>
+
+		  <!-- NAVIGATION LINKS -->
+		  <div class="links-container">
+		    <div class="links-group">
+		      <div class="link-group-title">GAME DEV</div>
+			      <div class="tab">
+						  <button class="tablinks balloon-button" id="myButton" balloon="Android / iOS" onclick="openProject(event, 'Jex')">
+						  		<div class="project1-highlight">Jex in Space</div>
+						  </button>
+						  <button class="tablinks balloon-button sweeper" id="myButton" balloon="PC - WIP" onclick="openProject(event, 'Sweeper')">
+						  		<div>Sweeper</div>
+						  </button>
+						  <button class="tablinks balloon-button rebounce" id="myButton" balloon="Android / iOS - WIP" onclick="openProject(event, 'Rebounce')">
+						  		<div>Rebounce</div>
+						  </button>
+					</div>
+		    </div>
+		    <div class="links-group">
+		      <div class="link-group-title">GAME UI</div>
+		      	<div class="tab">
+				      <button class="tablinks balloon-button" id="myButton" balloon="PC - Upcoming">
+				      	<div style="text-decoration: line-through;">Legacy of Pandora</div></button>
+							<button class="tablinks balloon-button" id="myButton" balloon="PC - Upcoming">
+								<div style="text-decoration: line-through;">River's Edge</div></button>
+							<button class="tablinks balloon-button" id="myButton" balloon="Android / iOS" onclick="openProject(event, 'Alchemy')">
+								<div class="project3-highlight">Alchemy AI: Infinite Mix</div>
+							</button>
+							<button class="tablinks balloon-button" id="myButton" balloon="Android / iOS">
+								<div style="text-decoration: line-through;">ArmorCraft</div>
+							</button>
+							<button class="tablinks balloon-button" id="myButton" balloon="PC / Consoles" onclick="openProject(event, 'Besiege')">
+								<div class="project2-highlight">Besiege</div></button>
+						</div>
+		    </div>
+		    <div class="links-group">
+		      <div class="link-group-title"></div>
+		      	<div class="tab">
+		      		<!--<button class="tablinks" onclick="openProject(event, 'CreativeBoard')">Vector Illustration</button>-->
+				      <button class="tablinks balloon-button" id="myButton" balloon="Unused stuff" onclick="openProject(event, 'CreativeBoard')">Creative Board</button>
+							<button class="tablinks" onclick="openProject(event, 'About')">About</button>
+						</div>
+		    </div>
+		  </div>
+
+		  <!-- SOCIAL LINKS -->
+		  <div class="socials-container">
+		  	<div class="social">
+		  		<div class="social-icon"><img src="img/mail-icon.png" width="20px" height="20px"></div>
+		  		<div class="social-text">0330055@gmail.com</div>
+		  	</div>
+		  	<div class="social">
+		  		<div class="social-icon"><img src="img/discord-icon.png" width="20px" height="20px"></div>
+		  		<div class="social-text">usualAlex</div>
+		  	</div>
+		  	<!--<div class="social">
+		  		<div class="social-icon"><img src="img/web-icon.png" width="20px" height="20px"></div>
+		  		<div class="social-text">halfroom.studio</div>
+		  	</div>-->
+		  	<div class="version">
+		  		<!--<div class="version-text">v0.1</div>-->
+		  	</div>
+			</div>
+		</div><!-- closing menu -->
+	</div> <!-- closing menu-container -->
+
+
+
+
+
+	<!-- PROJECTS TABS CONTENT -->
+	<div class="content-container">
+
+		<!-- NON VISIBLE - HOME TAB - FEATURED PROJECTS -->
+		<div id="Featured" class="tabcontent">
+			<div class="tab">
+				<div class="featured-title">FEATURED PROJECTS</div><br>
+				<div class="project1" ><button class="tablinks" >Featured Project 1<br>Jumps to Project Tab</button></div>
+				<div class="project3" ><button class="tablinks" >Featured Project 3<br>Jumps to Project Tab</button></div>
+				<div class="project2" ><button class="tablinks" >Featured Project 2<br>Jumps to Project Tab</button></div>
+			</div>
+		</div>
+
+		<!-- JEX IN SPACE CONTENT -->
+		<div id="Jex" class="tabcontent lightboxGallery">
+			<img src="img/jex/appicon.webp" width="200px" height="auto">
+			<h1>Jex in Space</h1>
+			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity 6</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Casual / Runner / Physics-based</h2></br>
+		  <p>This little game is an extremely important project to me - back in 2024, my year resolution was to finally start learning some coding and develop my own games.
+		  So i decided to learn Unity and C#. Unity being the most used engine by the devs i help with UI design in my work. This is the first game i ever made and has helped me
+			learn so much especially regarding how my UI work gets implemented in engine. Today, I still can't believe i coded this.<br><br> I am truly mesmerized.</p>
+		  <h2>Gameplay</h2>
+			<p>You must help Jex survive hordes of rogue asteroids and space junk while adrift in space. Lose all your 9 lives and get thrown back in time to try again.</p>
+		  <p>You can only use your gun's recoil to move around and to destroy incoming objects.</p>
+		  <img src="img/jex/jex-gameplay.webp" width="100%" height="auto">
+		  <h2>Story</h2>
+		  <p>Centers around a pawlet (bracelet) that has been passed around the universe sold cheap at every space market. Some saying that it's an ancient device holding huge 
+		  quantities of energy. Despite some studies conducted, no such properties were ever found. Kara, a debt-ridden pilot entangled in some space piracy and bounty hunting gets her hand on the pawlet and gives it to Jex, her cat. Recently an industrial planet has
+			exploded creating chaos all around and... lots of valuable materials left to loot. Kara, Jex and a crew decide to take part and head towards the ex-planet. But the whole
+			zone became a death-trap. Kara and the crew get caught in a wave of rogue asteroids proven to be imposible to avoid.<br><br> The ship gets hit!<br><br>The crew manages to run away using an escape pod. However, in all that rush Kara doesn’t realize until it’s too late: Jex is still on board. The ship 
+			explodes. The energy from that explosion activated the pawlet now used by Jex which saves his life while getting thown off the ship and adrift in space.</p>
+		  <img src="img/jex/jex-story.webp" width="100%" height="auto">
+		  <h2>Guns and Upgrades to unlock</h2>
+		  <p>Multiple weapons you can unlock using earned credits. Each weapon having it's own unique projectile and upgrades such as projectile speed and cooling system.</p>
+		  <br>
+		  <p><span style="color: #fff">Explosive Bullets</span> - unlocked by default</p>
+		  <p><span style="color: #fff">Blue Plasma</span> - a cold plasma that overheats slowly</p>
+		  <p><span style="color: #fff">Lasers</span> - very fast with a normal overheat rate</p>
+		  <p><span style="color: #fff">Homing Rockets</span> - easy to overheat but makes each target easy to destroy</p>
+		  <p><span style="color: #fff">Triple Red Plasma</span> - hot, overheats fast but shot 3 projectiles at once.</p>
+		  <img src="img/jex/jex-guns.webp" width="100%" height="auto">
+		  <h2>UI</h2>
+		  <p>The entire UI consists of an augumented HUD and a console, both provided by the pawlet. The Console as a holo projection and the HUD as a neural augumentation. This allows me 
+		  to use the pawlet as an "excuse" for being able to pause the game - the pawlet has the power to stop the entropy around you.</p>
+		  <p>The funny thing is, i've been doing game UI for about 8 years now yet i spent more time on the UI design rather than the entire code.
+		  Although Unity's UI works on a WYSIWYG basis, learning how canvases, scaling and world-space vs camera works as well as UI functionality was my biggest challenge.
+			Frustrating but i loved every second of it!</p>
+		  <p>I aimed for something immersive but extremely simple at its core and in terms of functionality/UX.</p>
+		  <br>
+		  <img src="img/jex/jex-hud.webp" width="100%" height="auto">
+		  <p>I wanted to give it some subtle cat ears shapes that can be observed in the top HUD score background and even the top tabs of the console UI (Settings and Shop) look a little like ears.</p>
+		  <img src="img/jex/jex-console.webp" width="100%" height="auto">
+		  <br><br>
+		  <h2>Type of objects you encounter</h2>
+		  <p>There are different types of objects constantly coming towards you. Each with different properties. They come at different sizes, different speeds, sometimes
+		  can get you overwhelmed by their number. Sometimes you must choose to lose one life in order to survive a wave.</p>
+		  <br><br>
+		  <img src="img/jex/jex-enemies.webp" width="100%" height="auto">
+		  <br><br>
+		  <h2>Still some work left to do...</h2>
+		  <p>Currently fleshing out details, fixing small bugs and finishing the last polishing layer.</p>
+		  <p>The goal and scope is to publish a fun little game you can jump into in seconds and play in quick sessions while waiting in line or on the bus. No penalties for quitting mid-session.</p>
+		  
+		  
+		</div>
+
+		<!-- SWEEPER CONTENT -->
+		<div id="Sweeper" class="tabcontent">
+			<br><br><br><br>
+			<img src="img/sweeper-menu.gif" width="100%" height="auto">
+		  <h3>Sweeper - Destroy On Sight</h3>
+		  <p style="text-align:center">Working on a physics-based, 2D puzzle game set in space that i plan to release on Steam. <br><br>
+
+		  You're a pilot controling a kamikaze drone equipped with RCS thrusters to make your way to the target and destroy it to complete the mission. A newtonian game at core but heavily tweaked for gameplay sake. You get ranked based on your time performance and amount of resources used to reach the target.
+			</p>
+		  
+		</div>
+
+		<!-- REBOUNCE CONTENT -->
+		<div id="Rebounce" class="tabcontent">
+		  <br><br><br><br>
+			<img src="img/rebounce.png" width="100%" height="auto">
+		  <h3>Rebounce</h3>
+		  <p style="text-align:center">
+		  	As a huge nostalgic fan of FLASH and early iPhone and Android games from the golden era of 2008-2012, i'm working on my own little basketball hoop shooting game
+		  	with hand-crafted graphics and realistic physics. A throwback to the likes of iBasket, Slam Dunk Basketball and Tip-Off.
+			</p>
+			<p style="text-align:center">
+		  	For the UI, i'm looking to revive the early iOS dark design but with a modern flavor. Or rather a modern UI with a classic flavor dipped into some skeuomorphism sauce.
+			</p>
+			<img src="img/rebounce/r3.png" width="100%" height="auto">
+			<img src="img/rebounce/r1.png" width="100%" height="auto">
+			<img src="img/rebounce/r2.png" width="100%" height="auto">
+			
+			<img src="img/rebounce/r4.png" width="100%" height="auto">
+		</div>
+
+		<!-- LEGACY OF PANDORA CONTENT -->
+		<div id="Pandora" class="tabcontent">
+		  <h3>Tokyo</h3>
+		  <p>Tokyo is the capital of Japan.</p>
+		</div>
+
+		<!-- RIVER'S EDGE CONTENT -->
+		<div id="River" class="tabcontent">
+		  <h3>Tokyo</h3>
+		  <p>Tokyo is the capital of Japan.</p>
+		</div>
+
+		<!-- ALCHEMY AI CONTENT -->
+		<div id="Alchemy" class="tabcontent">
+		  <img src="img/alchemy/alc-appicon.png" width="200px" height="auto">
+			<h1>Alchemy AI: Infinite Mix</h1>
+			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> AI / Alchemy / Sandbox</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> HostAile Games, Inc.
+			</h2>
+			</br></br>
+			<div class="store-links">
+				<div class="center">
+				<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en"><img src="img/playstore.png" width="150px" height="auto"></a>
+				<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288"><img src="img/appstore.png" width="150px" height="auto"></a>
+				</div>
+			</div>
+			</br></br>
+		  <p>The classic alchemy game but what makes Alchemy AI stand out is the use of AI to generate almost infinite possibilities instead of a set number or combos. Players can create completely unique new items that were never created before.</p>
+		  <h2>What i did</h2>
+		  <p>I was a UI/UX Designer working on the UI, illustrations and some animations. Designed a machine (we named it internally the "Fusinator 3000"), where you place your elements to be combined.
+			</p></br>
+			<p style="font-style: italic; color: gray; text-align: center;">Some early sketches</p>
+			<img src="img/alchemy/sketches.png" width="100%" height="auto"></br></br></br>
+			<img src="img/alchemy/alc-screens1.png" width="100%" height="auto"></br></br>
+			<p style="font-style: italic; color: gray; text-align: center;">Early placeholder bottle illustrations</p>
+			<img src="img/alchemy/alc-bottles.png" width="100%" height="auto"></br></br>
+			<img src="img/alchemy/alc-screens2.png" width="100%" height="auto"></br></br>
+			<p style="font-style: italic; color: gray; text-align: center;">Notification UI</p>
+			<img src="img/alchemy/alc-notification.png" width="100%" height="auto"></br></br>
+			<img src="img/alchemy/alc-screens3.png" width="100%" height="auto"></br></br>
+			<p style="font-style: italic; color: gray; text-align: center;">Early icon exploration</p>
+			<img src="img/alchemy/alc-icons.png" width="100%" height="auto">
+			</br></br>
+			<p style="font-style: italic; color: gray; text-align: center;">Main Menu illustration</p>
+			<img src="img/alchemy/alc-mainmenu.png" width="100%" height="auto">
+		</div>
+
+		<!-- ARMORCRAFT CONTENT -->
+		<div id="Armorcraft" class="tabcontent">
+		  <h3>Tokyo</h3>
+		  <p>Tokyo is the capital of Japan.</p>
+		</div>
+
+		<!-- BESIEGE CONTENT -->
+		<div id="Besiege" class="tabcontent lightboxGallery">
+		  <img src="img/besiege/besiege-logo.png" width="80%" height="auto">
+			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br>Linux / Mac / Windows / Xbox One / Series X/S / PS4 / PS5 / Switch</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
+					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br>  Simulation, Sandbox, Destruction, Physics, PvE</h2></br>
+					<h2>About the game</h2>
+		  <p>Besiege is a vehicle-building sandbox based around medieval siege engines, developed and published by Spiderling Studios. </p>
+		  <h2>My role here</h2>
+		  <p>
+				As a UI Artist, i've been working closely with the team to:</br>
+				- Deliver UI mock-ups to be later implemented</br>
+				- Help in creating assets and fonts</br>
+				- Design user interfaces and solve design problems</br>
+				- Redefine existing UI and layouts</br>
+				- Aid in the creation of promotional material</br>
+				- Aid in testing of the product and offer feedback</br>
+			</p>
+			<img src="img/besiege/key-mapping.png" width="100%" height="auto"></br></br>
+			<img src="img/besiege/key-mapping2.webp" width="100%" height="auto"></br></br>
+			<img src="img/besiege/options-video.png" width="100%" height="auto"></br></br>
+			<img src="img/besiege/modloader.png" width="100%" height="auto"></br></br>
+		</div>
+
+
+
+
+
+		<!-- CREATIVE BOARD CONTENT -->
+		<div id="CreativeBoard" class="tabcontent">
+			<div class="centering lightboxGallery">
+			<h1>Creative Board</h1>
+			<p style="text-align: center;">A collection of random sketches, icons and designs either unused or early stuff.</p>
+			<br><br><br>
+			<div class="gallery">
+	      <img src="img/cb/extendanim.gif">
+		    <img src="img/cb/armor.webp">
+		    <img src="img/cb/sketches1.png">
+		    <img src="img/cb/ui.webp">
+		    <img src="img/cb/alchemy.gif">
+		    <img src="img/cb/sc.webp">
+		    <img src="img/cb/box.webp">
+		    <img src="img/cb/tabs.webp">
+		    <img src="img/cb/sketches2.png">
+		    <img src="img/cb/wireframes.webp">
+		    <img src="img/cb/robots.webp">
+		    <img src="img/cb/sketches3.png">
+		    <img src="img/cb/sketches4.png">
+		    <img src="img/cb/sketches5.png">
+			</div>
+			</div> 
+		</div>
+
+
+		<!-- ABOUT .................. -->
+		<div id="About" class="tabcontent">
+			<div class="about">
+			  <div class="about-intro">
+			  	<h2>About me</h2>
+					</br></br>
+			  	<p>I'm a 29yo, live in Romania, have a love for games, movies, illustration art, shitbox cars and camping. I love working on UI for games and i've been doing this for 8 years now.</p>
+			  	<p>
+			  Used to do lots of product landing page website designs and app designs. Back in 2016 i was approached by Spiderling Studios to work as a UI Artist on their game - Besiege. Had a blast and since then i completely transitioned to game UI. Worked with a bunch of studios like already mentioned Spiderling Studios, XFuture Technology, Yambo Studios, HostAile Games and more.</p>
+			  	</br></br>
+			  	<p></p>
+				</div>
+				</br></br>
+		  	<div class="about-img"><img src="img/me.png" width="100%" height="auto"></div>
+		  </div>
+
+			</br></br></br></br>
+			<div class="more-about">
+			  <p></p>
+			</div>
+		</div>
+
+	</div> <!-- Closing content-container -->
+</div> <!-- Closing center-everything -->
+
+
+
+
+
+
+
+<!-- SCRIPTS -->
+<!-- GALLERY AND LIGHTBOX -->
+
+
+<!-- NAV TABS -->
+<script>
+	//	This is the home tab - show by default
+	//	Get the element with id="showActive" and click on it
+	document.addEventListener("DOMContentLoaded", function() { document.getElementById("showActive").click();});
+</script>
+<script type="text/javascript">
+	//	Switch tabs and highlight active tab link
+	function openProject(evt, projectName) {
+  // 	Declare all variables
+  var i, tabcontent, tablinks;
+
+  // 	Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // 	Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // 	Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(projectName).style.display = "block";
+  evt.currentTarget.className += " active";
+
+  // JUST IN CASE - Load images in the current tab
+  // const images = document.getElementById(projectName).querySelectorAll('img');
+  // images.forEach((image) => {
+  //   if (image.src === '') {
+  //     image.src = image.dataset.src;
+  //   }
+  // });
+  //for html: <img data-src="image1.jpg" src="" alt="Image 1">
+
+  if (evt.currentTarget.classList.contains('logoButton')) {
+    document.querySelector('.content-container').style.backgroundColor = 'black';
+  }
+  else if (evt.currentTarget.classList.contains('sweeper') || evt.currentTarget.classList.contains('rebounce')){
+  	document.querySelector('.content-container').style.backgroundColor = 'black';
+  } 
+  else {
+    document.querySelector('.content-container').style.backgroundColor = '#070707';
+  }
+  
+} 
+</script>
+
+<!-- FEATURED PROJECTS -->
+<script type="text/javascript">
+// Get the elements with classes "project1", "project2", and "project3"
+const project1 = document.querySelector('.project1');
+const project2 = document.querySelector('.project2');
+const project3 = document.querySelector('.project3');
+
+// Get the elements with classes "project1-highlight", "project2-highlight", and "project3-highlight"
+const project1Highlight = document.querySelector('.project1-highlight');
+const project2Highlight = document.querySelector('.project2-highlight');
+const project3Highlight = document.querySelector('.project3-highlight');
+
+// Add event listeners to the project elements
+project1.addEventListener('mouseover', () => {
+  project1Highlight.classList.add('highlight');
+  project1Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+});
+
+project1.addEventListener('mouseout', () => {
+  project1Highlight.classList.remove('highlight');
+  project1Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
+});
+
+project2.addEventListener('mouseover', () => {
+  project2Highlight.classList.add('highlight');
+  project2Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+});
+
+project2.addEventListener('mouseout', () => {
+  project2Highlight.classList.remove('highlight');
+  project2Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
+});
+
+project3.addEventListener('mouseover', () => {
+  project3Highlight.classList.add('highlight');
+  project3Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
+});
+
+project3.addEventListener('mouseout', () => {
+  project3Highlight.classList.remove('highlight');
+  project3Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
+});
+
+// Get the buttons inside the divs with class "project1", "project2", and "project3"
+const project1Button = document.querySelector('.project1 button');
+const project2Button = document.querySelector('.project2 button');
+const project3Button = document.querySelector('.project3 button');
+
+// Get the buttons with class "project1-highlight", "project2-highlight", and "project3-highlight"
+const project1HighlightButton = document.querySelector('.project1-highlight').parentNode;
+const project2HighlightButton = document.querySelector('.project2-highlight').parentNode;
+const project3HighlightButton = document.querySelector('.project3-highlight').parentNode;
+
+// Add event listeners to the buttons
+project1Button.addEventListener('click', () => project1HighlightButton.click());
+project2Button.addEventListener('click', () => project2HighlightButton.click());
+project3Button.addEventListener('click', () => project3HighlightButton.click());
+</script>
+
+
+<!--  LINK HOVER BALOON TEXT FOR PLATFORMS  -->
+<script type="text/javascript">
+// Get all buttons with the class 'balloon-button'
+const buttons = document.querySelectorAll('.balloon-button');
+
+// Loop through each button
+buttons.forEach(button => {
+  // Get the text for the balloon from the data attribute
+  const balloonText = button.getAttribute('balloon');
+
+  // Create a span element for the balloon
+  const balloon = document.createElement('span');
+  balloon.classList.add('balloon');
+  balloon.style.position = 'absolute'; // make the balloon absolute
+  balloon.style.display = 'none'; // hide the balloon by default
+  balloon.textContent = balloonText; // set the text for the balloon
+
+  // Add the balloon to the button's parent element
+  button.parentNode.appendChild(balloon);
+
+  // Add event listeners to show and hide the balloon on hover
+  button.addEventListener('mouseover', () => {
+    balloon.style.display = 'block';
+    const buttonRect = button.getBoundingClientRect();
+    balloon.style.top = `${buttonRect.top - 3}px`; // move the balloon up 5px
+    //balloon.style.left = `${buttonRect.right + 10}px`; // add some padding to the right
+    balloon.style.left = `${buttonRect.left - balloon.offsetWidth - 10}px`; // move the balloon to the left
+  });
+
+  button.addEventListener('mouseout', () => {
+    balloon.style.display = 'none';
+  });
+});
+</script>
+
+
+
+
+
+</body>
+</html>
