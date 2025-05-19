@@ -363,7 +363,7 @@ img{
 	background-size: contain;
 	background-repeat: repeat;
 	padding: 0px 25px;
-	marging: 0;
+	margin: 0;
 	overflow: scroll;
 	overflow-y: auto;
 	scrollbar-width: none;  /* Firefox */
@@ -534,8 +534,8 @@ p {
 	font-family: 'Monospace Krypton', monospace;
 	font-size: 10pt;
 	font-weight: 200;
-  line-height: 22px;
-  vertical-align: middle;
+  	line-height: 22px;
+  	vertical-align: middle;
 	margin-left: 5px;
 }
 .version{
@@ -555,33 +555,15 @@ p {
 	font-weight: 200;
 	text-align: right;
 	color: rgba(100, 100, 100, 0.5);
-  line-height: 22px;
-  vertical-align: middle;
+  	line-height: 22px;
+  	vertical-align: middle;
 	margin-left: 5px;
 }
 
 
 
-/*
- ███       ███     █████      █████     ███ ███        █████████
- ██ ███   ████   ███    ███   ██  ███   ███ ███        ███      
- ███ ███ █ ███ ███        ███ ██   ███  ███ ███        ███      
- ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
- ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
- ███       ███   ███     ███  ██     ██ ███ ███        ███      
- ███       ███     █████      ████ ███  ███ ██████████ █████████
-                                                                                                                                                                                             
-*/
 
 
-/*
-▀██    ██▀ ▀██▀▀▀▀█  ▀█▄   ▀█▀ ▀██▀  ▀█▀ 
- ███  ███   ██  ▄     █▀█   █   ██    █  
- █▀█▄▄▀██   ██▀▀█     █ ▀█▄ █   ██    █  
- █ ▀█▀ ██   ██        █   ███   ██    █  
-▄█▄ █ ▄██▄ ▄██▄▄▄▄▄█ ▄█▄   ▀█    ▀█▄▄▀   
-                                         
-*/
 
 
 
@@ -659,4 +641,74 @@ p {
 
 
 
+/*
+ ███       ███     █████      █████     ███ ███        █████████
+ ██ ███   ████   ███    ███   ██  ███   ███ ███        ███      
+ ███ ███ █ ███ ███        ███ ██   ███  ███ ███        ███      
+ ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
+ ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
+ ███       ███   ███     ███  ██     ██ ███ ███        ███      
+ ███       ███     █████      ████ ███  ███ ██████████ █████████
+                                                                                                                                                                                             
+*/
 
+
+/*
+▀██    ██▀ ▀██▀▀▀▀█  ▀█▄   ▀█▀ ▀██▀  ▀█▀ 
+ ███  ███   ██  ▄     █▀█   █   ██    █  
+ █▀█▄▄▀██   ██▀▀█     █ ▀█▄ █   ██    █  
+ █ ▀█▀ ██   ██        █   ███   ██    █  
+▄█▄ █ ▄██▄ ▄██▄▄▄▄▄█ ▄█▄   ▀█    ▀█▄▄▀   
+                                         
+*/
+
+
+
+.hamburger-button {
+	position: absolute;
+	border: none;
+	background-color: transparent;
+	top: 20px;
+	right: 20px;
+	z-index: 99;
+	cursor: pointer;
+	display: none;
+	width: 30px;
+	height: 30px;
+	background-image: url('img/menu-icon-open.svg');
+	background-size: 30px 30px;
+  }
+  
+  .hamburger-button.is-active {
+	background-image: url('img/menu-icon-close.svg');
+  }
+  
+
+/* media query to toggle between hamburger menu and normal view */
+@media (max-width: 1000px) {
+	.hamburger-button {
+	  display: block; /* show the button on small screens */
+	}
+	.menu-container {
+	  display: block; /* show the menu div on small screens */
+	}
+	.menu-container.hidden-on-small-screens {
+	  display: none; /* hide the menu div on small screens when not toggled */
+	}
+	.content-container {
+	  width: 100%; /* make the content div full-width on small screens */
+	}
+	.menu-container {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100vh;
+	  background-color: #00000036; /* or any other background color you prefer */
+	  z-index: 9;
+	  display: none;
+	}
+	.menu-container.show {
+	  display: block; /* add this new class to show the menu */
+	}
+  }

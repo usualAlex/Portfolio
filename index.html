@@ -26,10 +26,14 @@
 <!-- XMAS THEME SNOW -->
 <!--<div id="snow"></div>-->
 
+<button class="hamburger-button">
+	<div class="hamburger-icon"></div>
+  </button>
+
 <div class="center-everything">
 
 	<!-- MENU CONTAINER -->
-	<div class="menu-container">
+	<div class="menu-container hidden-on-small-screens">
 		<div class="menu">
 
 		  <!-- LOGO -->
@@ -66,8 +70,8 @@
 							<button class="tablinks balloon-button" id="myButton" balloon="Android / iOS" onclick="openProject(event, 'Alchemy')">
 								<div class="project3-highlight">Alchemy AI: Infinite Mix</div>
 							</button>
-							<button class="tablinks balloon-button" id="myButton" balloon="Android / iOS">
-								<div style="text-decoration: line-through;">ArmorCraft</div>
+							<button class="tablinks balloon-button" id="myButton" balloon="Android / iOS" onclick="openProject(event, 'ArmorCraft')">
+								<div> ArmorCraft</div>
 							</button>
 							<button class="tablinks balloon-button" id="myButton" balloon="PC / Consoles" onclick="openProject(event, 'Besiege')">
 								<div class="project2-highlight">Besiege</div></button>
@@ -125,9 +129,13 @@
 		<div id="Jex" class="tabcontent lightboxGallery">
 			<img src="img/jex/appicon.webp" width="200px" height="auto">
 			<h1>Jex in Space</h1>
-			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity 6</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Casual / Runner / Physics-based</h2></br>
+			<div style="text-align: left;">
+				<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity 6</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Casual / Runner / Physics-based</h2></br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> Halfroom Studio</br></br>
+			</div>
+			
 		  <p>This little game is an extremely important project to me. Back in 2024, my year resolution was to finally start learning some coding and develop my own games.
 		  So i decided to learn Unity and C#. Unity being the most used engine by the devs i help with UI design in my work. This is the first game i ever made and has helped me
 			learn so much especially regarding how my UI work gets implemented in engine. Today, I still can't believe i coded this.<br><br> I am truly mesmerized.</p>
@@ -152,7 +160,7 @@
 		  <p><span style="color: #fff">Triple Red Plasma</span> - hot, overheats fast but shoots 3 projectiles at once.</p>
 		  <img src="img/jex/jex-guns.webp" width="100%" height="auto">
 		  <h2>UI</h2>
-		  <p>The entire UI consists of an augmented HUD and a console, both provided by the pawlet. The Console as a holo projection and the HUD as a neural augumentation. This allows me 
+		  <p>The entire UI consists of an augmented HUD and a console, both provided by the pawlet. The Console as a holo projection and the HUD as a neural augmentation. This allows me 
 		  to use the pawlet as an "excuse" for being able to pause the game - the pawlet has the power to stop the entropy around you.</p>
 		  <p>The funny thing is, i've been doing game UI for about 8 years now yet i spent more time on the UI design rather than the entire code.
 		  Although Unity's UI works on a WYSIWYG basis, learning how canvases, scaling and world-space vs camera works as well as UI functionality was my biggest challenge.
@@ -223,11 +231,12 @@
 		<div id="Alchemy" class="tabcontent">
 		  <img src="img/alchemy/alc-appicon.png" width="200px" height="auto">
 			<h1>Alchemy AI: Infinite Mix</h1>
-			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> AI / Alchemy / Sandbox</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> HostAile Games, Inc.
-			</h2>
+			<div style="text-align: left;">
+				<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> AI / Alchemy / Sandbox</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> HostAile Games, Inc.
+			</div>
 			</br></br>
 			<div class="store-links">
 				<div class="center">
@@ -257,18 +266,46 @@
 		</div>
 
 		<!-- ARMORCRAFT CONTENT -->
-		<div id="Armorcraft" class="tabcontent">
-		  <h3>Tokyo</h3>
-		  <p>Tokyo is the capital of Japan.</p>
+		<div id="ArmorCraft" class="tabcontent">
+		  <img src="img/ac/app_icon.png" width="200px" height="auto">
+			<h1>ArmorCraft</h1>
+			<div style="text-align: left;">
+				<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Strategy / Base Building / F2P / MMO</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> xFuture Tehcnology Co.
+			</div>
+			</br></br>
+			<img src="img/ac/Homebase.webp" style="width:100%">
+			<img src="img/ac/bonuses.webp" style="width:100%">
+			<img src="img/ac/Buildupgrade.webp" style="width:100%">
+			<img src="img/ac/Buildupgrade2.webp" style="width:100%">
+			<img src="img/ac/Chat.webp" style="width:100%">
+			<img src="img/ac/log.webp" style="width:100%">
+			<img src="img/ac/Missions.webp" style="width:100%">
+			<img src="img/ac/parts.webp" style="width:100%">
+			<img src="img/ac/Permit.webp" style="width:100%">
+			<img src="img/ac/PVE.webp" style="width:100%">
+			<img src="img/ac/rankings.webp" style="width:100%">
+			<img src="img/ac/Settings.webp" style="width:100%">
+			<img src="img/ac/unitsresearch.webp" style="width:100%">
+			<img src="img/ac/victory.webp" style="width:100%">
+			<img src="img/ac/Warehouse.webp" style="width:100%">
+			<img src="img/ac/Workshop.webp" style="width:100%">
+			<img src="img/ac/Workshopenhance.webp" style="width:100%">
+			<img src="img/ac/Workshopparts.webp" style="width:100%">
 		</div>
 
 		<!-- BESIEGE CONTENT -->
 		<div id="Besiege" class="tabcontent lightboxGallery">
 		  <img src="img/besiege/besiege-logo.png" width="80%" height="auto">
-			<h2><span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br>Linux / Mac / Windows / Xbox One / Series X/S / PS4 / PS5 / Switch</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
-					<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br>  Simulation, Sandbox, Destruction, Physics, PvE</h2></br>
-					<h2>About the game</h2>
+		  <div style="text-align: left;">
+			<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br>Linux / Mac / Windows / Xbox One / Series X/S / PS4 / PS5 / Switch</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br>  Simulation, Sandbox, Destruction, Physics-based, PvE</h2></br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> Spiderling Studios</br></br>
+		  </div>
+		  <h2>About the game</h2>
 		  <p>Besiege is a vehicle-building sandbox based around medieval siege engines, developed and published by Spiderling Studios. </p>
 		  <h2>My role here</h2>
 		  <p>
@@ -297,7 +334,8 @@
 			<p style="text-align: center;">A collection of random sketches, icons and designs either unused or early stuff.</p>
 			<br><br><br>
 			<div class="gallery">
-	      <img src="img/cb/extendanim.gif">
+			<img src="img/ac/oldpunk.png">
+	      	<img src="img/cb/extendanim.gif">
 		    <img src="img/cb/armor.webp">
 		    <img src="img/cb/sketches1.png">
 		    <img src="img/cb/ui.webp">
@@ -322,7 +360,7 @@
 			  <div class="about-intro">
 			  	<h2>About me</h2>
 					</br></br>
-			  	<p>I'm a 29yo, live in Romania, have a love for games, movies, illustration art, shitbox cars and camping. I love working on UI for games and i've been doing this for 8 years now.</p>
+			  	<p>I'm a 29yo, live in Romania, have a love for games, movies, illustration art, shitbox cars, camping, breezy summer nights and rain. I love working on UI for games and i've been doing this for 8 years now. Lately, i started loving game dev a lot.</p>
 			  	<p>
 			  Used to do lots of product landing page website designs and app designs. Back in 2016 i was approached by Spiderling Studios to work as a UI Artist on their game - Besiege. Had a blast and since then i completely transitioned to game UI. Worked with a bunch of studios like already mentioned Spiderling Studios, XFuture Technology, Yambo Studios, HostAile Games and more.</p>
 			  	</br></br>
@@ -495,6 +533,23 @@ buttons.forEach(button => {
   });
 });
 </script>
+
+<script type="text/javascript">
+	const hamburgerButton = document.querySelector('.hamburger-button');
+	const menuContainer = document.querySelector('.menu-container');
+  
+	hamburgerButton.addEventListener('click', () => {
+	if (menuContainer.classList.contains('hidden-on-small-screens')) {
+		menuContainer.classList.remove('hidden-on-small-screens');
+		menuContainer.classList.add('show');
+		hamburgerButton.classList.add('is-active');
+	} else {
+		menuContainer.classList.remove('show');
+		menuContainer.classList.add('hidden-on-small-screens');
+		hamburgerButton.classList.remove('is-active');
+	}
+	});
+  </script>
 
 
 
