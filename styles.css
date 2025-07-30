@@ -1,0 +1,789 @@
+@font-face {
+  font-family: 'Monospace Argon';
+  src: url('fonts/MonaspaceArgon-Light.otf') format('opentype');
+  font-weight: 300; /* light */
+}
+
+@font-face {
+  font-family: 'Monospace Argon';
+  src: url('fonts/MonaspaceArgon-Regular.otf') format('opentype');
+  font-weight: 400; /* regular */
+}
+
+@font-face {
+  font-family: 'Monospace Argon';
+  src: url('fonts/MonaspaceArgon-Medium.otf') format('opentype');
+  font-weight: 500; /* medium */
+}
+
+@font-face {
+  font-family: 'Monospace Argon';
+  src: url('fonts/MonaspaceArgon-Semibold.otf') format('opentype');
+  font-weight: 600; /* semibold */
+}
+
+@font-face {
+  font-family: 'Monospace Argon';
+  src: url('fonts/MonaspaceArgon-Semiwidebold.otf') format('opentype');
+  font-weight: 650; /* semiwide-bold */
+}
+
+@font-face {
+  font-family: 'Monospace Krypton';
+  src: url('fonts/MonaspaceKrypton-Light.otf') format('opentype');
+  font-weight: 300; /* light */
+}
+
+@font-face {
+  font-family: 'Monospace Krypton';
+  src: url('fonts/MonaspaceKrypton-Regular.otf') format('opentype');
+  font-weight: 400; /* regular */
+}
+
+@font-face {
+  font-family: 'Monospace Krypton';
+  src: url('fonts/MonaspaceKrypton-Medium.otf') format('opentype');
+  font-weight: 500; /* medium */
+}
+
+@font-face {
+  font-family: 'Monospace Krypton';
+  src: url('fonts/MonaspaceKrypton-Semibold.otf') format('opentype');
+  font-weight: 600; /* semibold */
+}
+
+@font-face {
+  font-family: 'Monospace Krypton';
+  src: url('fonts/MonaspaceKrypton-Semiwidebold.otf') format('opentype');
+  font-weight: 650; /* semiwide-bold */
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('fonts/Sansation-Regular.ttf') format('truetype');
+  font-weight: 400; /* regular */
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('fonts/Sansation-Bold.ttf') format('truetype');
+  font-weight: 700; /* bold */
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('fonts/Sansation-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Sansation';
+  src: url('fonts/Sansation-Light.ttf') format('truetype');
+  font-weight: 300; /* light */
+}
+
+:root {
+  --primary-color: #ff0000;
+  --bold: 700;
+}
+
+html { 
+	overflow-x:hidden; 
+	height: 100%;
+	width: 100%;
+}
+body {
+height: 100%;
+width: 100%;
+background: black;
+overflow: hidden;
+color: #FFFEEF;
+padding: 0px;
+margin: 0;
+z-index: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+a {
+	color: #B3B3B3; 
+	text-decoration: none; 
+	font-weight: 400;
+	font-family: 'Monospace Argon', monospace;
+	font-size: 10pt;
+	padding: 0;
+	margin: 0;
+
+}
+img{
+	user-select: none;
+}
+.store-links {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em 0;
+}
+
+.store-links .center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* 💡 allows wrapping on smaller screens */
+  gap: 20px; /* consistent spacing between buttons */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.store-links a {
+  display: inline-block;
+}
+
+.store-links img {
+  width: 180px;
+  height: auto;
+  display: block;
+}
+::selection {
+  color: black;
+  background: #FFFEEF;
+  text-shadow: 0px 0px 2px gray;
+}
+.center-everything{
+	display: flex;
+	flex-wrap: nowrap;
+	padding: 0;
+	margin: 0 5px 0 10px;
+	text-align: center; 
+	width: auto;
+	height: 99%; 
+	overflow: hidden;
+}
+
+.menu-container{
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	width: 250px;
+	height: 100%;
+	text-align: left;
+	float: left; 
+}
+
+.menu{
+	display: block; 
+	width: 240px;
+	height: auto;
+	text-align: left;  
+}
+
+
+
+/*
+ ███            █████         █████         █████     
+ ███          ███    ███    ██    ███     ███    ███  
+ ███        ███        ███ ██           ███        ███
+ ███        ███        ███ ███          ███        ███
+ ███        ███        ███ ███   ██████ ███        ███
+ ███          ███     ███   ███    ██     ███     ███ 
+ ██████████     █████        ██████         █████     
+                                                      
+*/
+
+.logo-container{
+	display: block;
+	width: auto;
+	height: auto;
+	text-align: left;
+	padding:  0;
+}
+.logo{
+	display: block;
+	width: 60px;   /*60px-NORMAL - 90px XMAS VERSION*/
+	height: 60px;
+	background-image: url(img/logo.svg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.description-container{
+	display: block;
+	width: 200px;
+	height: 40px;
+	text-align: left;
+	padding: 15px 0; 
+	margin-bottom: 40px; 
+}
+.description-container img{
+	margin-left: -5px;
+	user-select: none;
+
+}
+.description{
+	font-family: 'Monospace Argon', monospace;
+	font-size: 13px;
+	font-weight: 400;
+	color: #FEFBF4;
+}
+.logo-container .logoButton {
+  all: unset;
+  display: block;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+.logo-container .logoButton:hover { opacity: 0.9; }
+.logo-container button:hover{
+	cursor: pointer;
+}
+
+/*
+
+ ████     ███       ██        ███         ███       ███        ███ ████     ███ ███   ███     ██████  
+ ██ ███   ███      ██ ██       ███       ███        ███        ███ ██ ███   ███ ███  ███    ███    ███
+ ███ ███  ███     ██  ███       ███     ███         ███        ███ ███ ███  ███ ███ ███      ███      
+ ███  ███ ███    ███   ███       ███   ███          ███        ███ ███  ███ ███ ██ ██          ███    
+ ███   ██ ███   ███████ ███       ███ ███           ███        ███ ███   ██ ███ ███  ███          ███ 
+ ███    ██ ██  ███       ███       █████            ███        ███ ███    ██ ██ ███   ███   ███    ███
+ ███      ███ ███         ███       ███             ██████████ ███ ███      ███ ███     ███   ██████  
+                                                                                                      
+*/
+
+.links-container{
+	display: block; 
+	width: 200px;
+	height: auto;
+	text-align: left;
+	padding: 0;
+	user-select: none;  
+}
+.links-group{
+	display: block;  
+	width: 200px;
+	height: auto;
+	text-align: left;
+	margin-bottom: 25px;  
+}
+.link-group-title{
+	display: block;  
+	width: 200px;
+	height: auto;
+	text-align: left;
+	margin-bottom: 5px;
+	color: #EBE8E1;
+	font-family: 'Monospace Krypton', monospace;
+	font-size: 10pt;
+	font-weight: 650;
+	opacity: 100%;
+}
+
+/* Style the buttons that are used to open the tab content */
+.menu button {
+	width: auto;
+	height: 16px;
+  color: #989898; opacity: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0px 0px;
+  font-family: 'Monospace Argon', monospace; 
+  font-size: 8.5pt; 
+  font-weight: 500; 
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Change background color of buttons on hover */
+.menu button:hover {
+	border: none;
+  outline: none;
+	color: #EBE8E1; opacity: 100%;
+	text-decoration: underline;
+}
+
+/* Create an active/current tablink class */
+.menu button.active {
+	border: none;
+	padding: 0;
+  outline: none;
+  color: #DA9E3A; /*yellow*/
+  color: #00C3FF; /*blue*/
+  opacity: 100%;
+  
+}
+
+.logo-container button{
+	color: transparent;
+	border: none;
+	background-color: transparent;
+}
+.balloon{
+	width: auto;
+	height: 10px;
+	line-height: 12px;
+	vertical-align: middle;
+  color: whitesmoke;
+  background-color: #202020;
+  padding: 5px 10px;
+  font-family: 'Monospace Argon', monospace;
+  font-size: 8pt;
+  font-weight: 500;
+  border-radius: 10px;
+}
+#myButton {
+  position: relative;
+}
+.highlight{
+	color: whitesmoke; /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+}
+
+/*
+
+ ████████   ████████         █████           ███  █████████     ███    ███████████   ██████  
+ ███    ███ ███    ███     ███    ███        ███  ███        ███   ███     ███     ███    ███
+ ███    ███ ███    ███   ███        ███      ███  ███       ███            ███      ███      
+ ████████   ██ ███       ███        ███      ███  ███████   ███            ███        ███    
+ ███        ███  ███     ███        ███      ███  ███       ███            ███           ███ 
+ ███        ███    ███     ███     ███  ██   ███  ███        ███   ███     ███     ███    ███
+ ███        ███      ███     █████       █████    █████████    █████       ███       ██████  
+                                                                                             
+*/
+
+.content-container{ 
+	position: relative;
+	float: right;
+	display: flex;  
+	width: 666px;
+	max-width: 666px; min-width: 100px;
+	height: 100%;
+	font-family: 'Sansation', sans-serif;
+	text-align: left;
+	background-color: black; /* #070707;*/
+	background-image: url(img/background-gray-noise.svg);
+	background-size: contain;
+	background-repeat: repeat;
+	padding: 0px 25px;
+	margin: 0;
+	overflow: scroll;
+	overflow-y: auto;
+	scrollbar-width: none;  /* Firefox */
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.content-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 40% 0px; 
+  border-top: none;
+  border: none;
+  outline: none; 
+  overflow: scroll;
+  scrollbar-width: none;  /* Firefox */
+	-ms-overflow-style: none;  /* Internet Explorer 10+ */
+	text-align: center;
+} 
+.tabcontent::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+h1 {
+	font-weight: 400;
+	font-size: 20pt;
+	color: whitesmoke;
+	text-align: center;
+}
+h2 {
+	font-weight: 400;
+	font-size: 14pt;
+	color: whitesmoke;
+	text-align: left;
+	margin-top: 50px;
+}
+p {
+	font-size: 10pt;
+	font-weight: 400;
+	color: #D1D1D1;
+	text-align: left;
+}
+/* ------------ THIS IS A FEATURED PROJECT ----------- */
+.featured-title {
+  font-family: 'Sansation', sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-project {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.featured-project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay-text-container {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Sansation', sans-serif;
+
+  opacity: 0;               /* hidden by default */
+  pointer-events: none;     /* don't block hover */
+  transition: opacity 0.3s ease;
+}
+.overlay-text-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 14pt;
+  font-family: 'Sansation', sans-serif;
+  margin: 0;
+  padding: 2px 0;
+}
+.overlay-text-desc {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 10pt;
+  font-family: 'Sansation', sans-serif;
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* Hover effect */
+.featured-project:hover .overlay-text-container {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;               /* show on hover */
+  pointer-events: auto;
+
+}
+
+/* ------------------ GALLERY -------------- */
+.gallery {
+  width: 100%; /* adjust to your desired width */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.gallery img:nth-child(2n+1) {
+  margin-right: 0;
+}
+
+.gallery img:nth-child(2n) {
+  margin-left: 0;
+}
+.lightboxGallery img.is-lightbox:hover {
+	cursor: url(img/zicon.png), pointer;
+	opacity: 1;
+}
+
+
+
+/*
+
+ ███        ███ ████     ███ ███   ███     ██████  
+ ███        ███ ██ ███   ███ ███  ███    ███    ███
+ ███        ███ ███ ███  ███ ███ ███      ███      
+ ███        ███ ███  ███ ███ ██ ██          ███    
+ ███        ███ ███   ██ ███ ███  ███          ███ 
+ ███        ███ ███    ██ ██ ███   ███   ███    ███
+ ██████████ ███ ███      ███ ███     ███   ██████  
+                                                   
+                                             
+*/
+
+.socials-container{
+	display: block;  
+	width: 100%;
+	height: auto; 
+	padding-top: 20px; 
+}
+.social{
+	display: flex;  
+	flex-wrap: nowrap; 
+	width: 100%;
+	height: auto; 
+}
+.social-icon{
+	display: flex; 
+	flex-wrap: nowrap;
+	width: 20px;
+	height: 20px; 
+	float: left;
+	user-select: none;
+}
+.social-text{
+	display: flex;
+	flex-wrap: nowrap;
+	font-family: 'Monospace Krypton', monospace;
+	font-size: 10pt;
+	font-weight: 200;
+  	line-height: 22px;
+  	vertical-align: middle;
+	margin-left: 5px;
+}
+.version{
+	position: absolute;
+	bottom: 10px;
+	display: block;
+	width: auto;
+	height: 20px; 
+	text-align: left;
+	padding-right: 20px;
+}
+.version-text{
+	display: block;
+	float: right;
+	font-family: 'Monospace Krypton', monospace;
+	font-size: 8pt;
+	font-weight: 200;
+	text-align: right;
+	color: rgba(100, 100, 100, 0.5);
+  	line-height: 22px;
+  	vertical-align: middle;
+	margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  z-index: 1;
+}
+
+.lightbox.open {
+  display: block;
+}
+
+.lightbox img {
+  max-width: 60vw;
+  max-height: 80vh;
+  
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  opacity: 1;
+}
+
+.lightbox-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.lightbox-background.open {
+  display: block;
+}
+
+
+
+.about{
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-top: 100px;
+}
+.about-intro{
+	display: block;
+	width: 40%;
+	height: auto;
+	float: left;
+}
+.about-img{
+	width: 50%;
+	height: auto;
+	display: inline-block;
+	float: right;
+}
+.more-about{
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	display: inline-block;
+}
+
+
+
+/*
+ ███       ███     █████      █████     ███ ███        █████████
+ ██ ███   ████   ███    ███   ██  ███   ███ ███        ███      
+ ███ ███ █ ███ ███        ███ ██   ███  ███ ███        ███      
+ ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
+ ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
+ ███       ███   ███     ███  ██     ██ ███ ███        ███      
+ ███       ███     █████      ████ ███  ███ ██████████ █████████
+                                                                                                                                                                                             
+*/
+
+
+/*
+▀██    ██▀ ▀██▀▀▀▀█  ▀█▄   ▀█▀ ▀██▀  ▀█▀ 
+ ███  ███   ██  ▄     █▀█   █   ██    █  
+ █▀█▄▄▀██   ██▀▀█     █ ▀█▄ █   ██    █  
+ █ ▀█▀ ██   ██        █   ███   ██    █  
+▄█▄ █ ▄██▄ ▄██▄▄▄▄▄█ ▄█▄   ▀█    ▀█▄▄▀   
+                                         
+*/
+
+
+
+/* Hamburger icon base */
+.hamburger-button {
+  position: absolute;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: black;
+  cursor: pointer;
+  display: none; /* only shown on small screens */
+  z-index: 1000;
+}
+
+.hamburger-icon {
+  width: 50%;
+  height: 50%;
+  background-image: url('img/menu-icon-open.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px 10px;
+}
+
+/* Change icon when active */
+.hamburger-button.active .hamburger-icon {
+  background-image: url('img/menu-icon-close.svg');
+}
+
+/* Mobile view rules */
+@media (max-width: 1000px) {
+  .hamburger-button {
+    display: block;
+  }
+
+  .menu-container {
+    display: none;
+    position: absolute;
+    top: 0px; /* below button */
+    left: 0;
+    padding-left:50px;
+    
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    font-size: 2em;
+
+  }
+  .menu{
+		display: block; 
+		width: 100%;
+		height: auto;
+		text-align: left; 
+		padding: 60px 0px; 
+	}
+  .menu button {
+		width: 120%;
+		height: auto;
+	  color: #FFFEEF; opacity: 100%;
+	  background-color: transparent;
+	  border: none;
+	  outline: none;
+	  cursor: pointer;
+	  padding: 0px 0px;
+	  font-family: 'Monospace Argon', monospace; 
+	  font-size: 14pt; 
+	  font-weight: 500; 
+	  text-align: left;
+	  margin: 0;
+	  padding: 0;
+	  margin-bottom: 5px;
+	  padding: 5px 0px;
+	  display: flex;
+	  flex-direction: column; 
+	}
+
+  .menu-container.visible {
+    display: block;
+  }
+  .social-text{
+		font-size: 14pt;
+	}
+	.links-group{
+		margin-bottom: 100px;
+	}
+	.link-group-title{
+		display: block;  
+		width: 200px;
+		height: auto;
+		text-align: left;
+		margin-bottom: 15px;
+		color: gray;
+		font-family: 'Monospace Krypton', monospace;
+		font-size: 10pt;
+		font-weight: 650;
+		opacity: 100%;
+	}
+}
