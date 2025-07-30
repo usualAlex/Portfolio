@@ -17,7 +17,8 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 
 	<!--<script src="./PureSnow.js"></script>-->
-	<script src="lightbox/LightboxGallery.js"></script>
+	<script src="js/LightboxGallery.js"></script>
+	<script src="js/dynamic.js"></script>
 </head>
 
 
@@ -28,12 +29,12 @@
 
 <button class="hamburger-button">
 	<div class="hamburger-icon"></div>
-  </button>
+</button>
 
 <div class="center-everything">
 
 	<!-- MENU CONTAINER -->
-	<div class="menu-container hidden-on-small-screens">
+	<div class="menu-container">
 		<div class="menu">
 
 		  <!-- LOGO -->
@@ -48,7 +49,10 @@
 		  <div class="links-container">
 		    <div class="links-group">
 		      <div class="link-group-title">GAME DEV</div>
-			      <div class="tab">
+			      <div class="menu-link">
+			      		  <button class="tablinks balloon-button" id="myButton" balloon="PC / Web" onclick="openProject(event, 'Jarfall')">
+						  		<div>Jarfall</div>
+						  </button>
 						  <button class="tablinks balloon-button" id="myButton" balloon="Android / iOS" onclick="openProject(event, 'Jex')">
 						  		<div class="project1-highlight">Jex in Space</div>
 						  </button>
@@ -62,7 +66,7 @@
 		    </div>
 		    <div class="links-group">
 		      <div class="link-group-title">GAME UI</div>
-		      	<div class="tab">
+		      	<div class="menu-link">
 				      <button class="tablinks balloon-button" id="myButton" balloon="PC - Upcoming">
 				      	<div style="text-decoration: line-through;">Legacy of Pandora</div></button>
 							<button class="tablinks balloon-button" id="myButton" balloon="PC - Upcoming">
@@ -79,7 +83,7 @@
 		    </div>
 		    <div class="links-group">
 		      <div class="link-group-title"></div>
-		      	<div class="tab">
+		      	<div class="menu-link">
 		      		<!--<button class="tablinks" onclick="openProject(event, 'CreativeBoard')">Vector Illustration</button>-->
 				      <button class="tablinks balloon-button" id="myButton" balloon="Unused stuff" onclick="openProject(event, 'CreativeBoard')">Creative Board</button>
 							<button class="tablinks" onclick="openProject(event, 'About')">About</button>
@@ -117,12 +121,74 @@
 
 		<!-- NON VISIBLE - HOME TAB - FEATURED PROJECTS -->
 		<div id="Featured" class="tabcontent">
-			<div class="tab">
-				<div class="featured-title">FEATURED PROJECTS</div><br>
-				<div class="project1" ><button class="tablinks" >Featured Project 1<br>Jumps to Project Tab</button></div>
-				<div class="project3" ><button class="tablinks" >Featured Project 3<br>Jumps to Project Tab</button></div>
-				<div class="project2" ><button class="tablinks" >Featured Project 2<br>Jumps to Project Tab</button></div>
+		  <div class="tab">
+		    <div class="featured-title">FEATURED PROJECTS</div><br>
+
+		    <div class="featured-project project1">
+			  <img src="img/jex/jex-featured-cover.png" alt="Jex">
+			  <div class="overlay-text-container">
+			    <p class="overlay-text-title">Jex in Space</p>
+			    <p class="overlay-text-desc">An endless physics-based arcade runner.</p>
+			  </div>
 			</div>
+
+			<div class="featured-project project3">
+			  <img src="img/alchemy/alchemy-featured-cover.png" alt="Alchemy">
+			  <div class="overlay-text-container">
+			    <p class="overlay-text-title">Alchemy AI: Infinity Mix</p>
+			    <p class="overlay-text-desc">An alchemy game using AI to create any combination of elements.</p>
+			  </div>
+			</div>
+
+			<div class="featured-project project2">
+			  <img src="img/besiege/besiege-featured-cover.png" alt="Besiege">
+			  <div class="overlay-text-container">
+			    <p class="overlay-text-title">Besiege</p>
+			    <p class="overlay-text-desc">Physics-based vehicle-building sandbox based around medieval siege engines.</p>
+			  </div>
+			</div>
+
+		  </div>
+		</div>
+
+		<!-------------------------------------------------------- JARFALL CONTENT -------------------------------------------------------->
+		<div id="Jarfall" class="tabcontent">
+			<br><br><br><br>
+			<img src="img/jar/jarfall-logo.png" width="100%" height="auto">
+		  <h1>Jarfall</h1>
+		  <div style="text-align: left;">
+			<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Web</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity 6</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Puzzle / Physics-based / 2D</h2></br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> Halfroom Studio</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">STATUS:</span></br> DEMO AVAILABLE</br></br>
+		  </div>
+		  </br></br>
+		  <a href="https://halfroomstudio.itch.io/jarfall" target="_blank">
+			  <span style="display:inline-block;margin-top:10px;padding:8px 20px;background:#f45;color:#fff;border-radius:2px;">Play on itch.io</span>
+			</a>
+		    <p style="text-align:center">Physics-based puzzle set in Ancient Persia. Destroy blocks strategically to land the Jar on the platform. <br><br></p>
+			<br>
+			<img src="img/jar/level-complete-op.gif" width="100%" height="auto">
+
+			<img src="img/jar/jar-breaking.gif" width="32.93%" height="auto">
+			<img src="img/jar/levelcycle.gif" width="32.93%" height="auto">
+			<img src="img/jar/jarfal-lever-win.gif" width="32.93%" height="auto">
+
+			<br>
+			<h2 style="text-align:center">About the UI</h2>
+			<p style="text-align:center">A fully simulated diegetic UI.</p><br>
+			<img src="img/jar/jarfall-ss-1.png" width="100%" height="auto">
+			<p >I challenged myself to create a full diegetic UI where the blocks used in levels also have UI functions like resetting level and going back.
+			They are spawned and simulated with physics just like any other block. They are used as part of the level design and even help you. </p>
+			<p >Even the main menu has a reset button because you can interact with the blocks. You practically learn how to play the game from the very first menu you encounter. </p>
+			<p >While the web demo currently doesn't use keyboard inputs, besides quickly using "R" to reset a level you also have the reset button as a block very close to where the action happens. This limits the amount of mouse travel to reset a level or exit. Compared to using a standard UI with buttons in the far corners of the screen. </p>
+			<br>
+			<img src="img/jar/jarfall-ss-2.png" width="100%" height="auto">
+			<p >The settings screen was a little tricky to keep entirely as blocks. </p>
+			<a href="https://halfroomstudio.itch.io/jarfall" target="_blank">
+			  <span style="display:inline-block;margin-top:50px;padding:8px 20px;background:#f45;color:#fff;border-radius:2px;">Play on itch.io</span>
+			</a>
 		</div>
 
 		<!-- JEX IN SPACE CONTENT -->
@@ -134,8 +200,16 @@
 				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity 6</br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Casual / Runner / Physics-based</h2></br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> Halfroom Studio</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">STATUS:</span></br> Published</br></br>
 			</div>
-			
+			</br></br>
+			<div class="store-links">
+				
+				<a href="https://play.google.com/store/apps/details?id=com.HalfroomStudio.Jex"><img class="no-lightbox" src="img/playstore.png" width="180px"  height="auto"></a>
+				
+				
+			</div>
+		  </br></br>
 		  <p>This little game is an extremely important project to me. Back in 2024, my year resolution was to finally start learning some coding and develop my own games.
 		  So i decided to learn Unity and C#. Unity being the most used engine by the devs i help with UI design in my work. This is the first game i ever made and has helped me
 			learn so much especially regarding how my UI work gets implemented in engine. Today, I still can't believe i coded this.<br><br> I am truly mesmerized.</p>
@@ -184,7 +258,7 @@
 		  
 		</div>
 
-		<!-- SWEEPER CONTENT -->
+		<!-------------------------------------------------------- SWEEPER CONTENT -------------------------------------------------------->
 		<div id="Sweeper" class="tabcontent">
 			<br><br><br><br>
 			<img src="img/sweeper-menu.gif" width="100%" height="auto">
@@ -196,7 +270,7 @@
 		  
 		</div>
 
-		<!-- REBOUNCE CONTENT -->
+		<!-------------------------------------------------------- REBOUNCE CONTENT -------------------------------------------------------->
 		<div id="Rebounce" class="tabcontent">
 		  <br><br><br><br>
 			<img src="img/rebounce.png" width="100%" height="auto">
@@ -215,19 +289,19 @@
 			<img src="img/rebounce/r4.png" width="100%" height="auto">
 		</div>
 
-		<!-- LEGACY OF PANDORA CONTENT -->
+		<!------------------------------------------------------- LEGACY OF PANDORA CONTENT -------------------------------------------------------->
 		<div id="Pandora" class="tabcontent">
 		  <h3>Tokyo</h3>
 		  <p>Tokyo is the capital of Japan.</p>
 		</div>
 
-		<!-- RIVER'S EDGE CONTENT -->
+		<!-------------------------------------------------------- RIVER'S EDGE CONTENT -------------------------------------------------------->
 		<div id="River" class="tabcontent">
 		  <h3>Tokyo</h3>
 		  <p>Tokyo is the capital of Japan.</p>
 		</div>
 
-		<!-- ALCHEMY AI CONTENT -->
+		<!-------------------------------------------------------- ALCHEMY AI CONTENT -------------------------------------------------------->
 		<div id="Alchemy" class="tabcontent">
 		  <img src="img/alchemy/alc-appicon.png" width="200px" height="auto">
 			<h1>Alchemy AI: Infinite Mix</h1>
@@ -235,13 +309,14 @@
 				<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> AI / Alchemy / Sandbox</br></br>
-				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> HostAile Games, Inc.
+				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> HostAile Games, Inc.</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">STATUS:</span></br> Published
 			</div>
 			</br></br>
 			<div class="store-links">
 				<div class="center">
-				<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en"><img src="img/playstore.png" width="150px" height="auto"></a>
-				<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288"><img src="img/appstore.png" width="150px" height="auto"></a>
+				<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en"><img src="img/playstore.png" width="180px" height="auto"></a>
+				<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288"><img src="img/appstore.png" width="180px" height="auto"></a>
 				</div>
 			</div>
 			</br></br>
@@ -265,7 +340,7 @@
 			<img src="img/alchemy/alc-mainmenu.png" width="100%" height="auto">
 		</div>
 
-		<!-- ARMORCRAFT CONTENT -->
+		<!-------------------------------------------------------- ARMORCRAFT CONTENT -------------------------------------------------------->
 		<div id="ArmorCraft" class="tabcontent">
 		  <img src="img/ac/app_icon.png" width="200px" height="auto">
 			<h1>ArmorCraft</h1>
@@ -273,7 +348,8 @@
 				<span style="color: #7c7c7c; font-size: 10pt;">PLATFORM:</span></br> Android / iOS</br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
 				<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br> Strategy / Base Building / F2P / MMO</br></br>
-				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> xFuture Tehcnology Co.
+				<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> xFuture Tehcnology Co.</br></br>
+				<span style="color: #7c7c7c; font-size: 10pt;">STATUS:</span></br> Canceled
 			</div>
 			</br></br>
 			<img src="img/ac/Homebase.webp" style="width:100%">
@@ -296,7 +372,7 @@
 			<img src="img/ac/Workshopparts.webp" style="width:100%">
 		</div>
 
-		<!-- BESIEGE CONTENT -->
+		<!-------------------------------------------------------- BESIEGE CONTENT -------------------------------------------------------->
 		<div id="Besiege" class="tabcontent lightboxGallery">
 		  <img src="img/besiege/besiege-logo.png" width="80%" height="auto">
 		  <div style="text-align: left;">
@@ -304,6 +380,7 @@
 			<span style="color: #7c7c7c; font-size: 10pt;">ENGINE:</span></br> Unity</br></br>
 			<span style="color: #7c7c7c; font-size: 10pt;">GENRE:</span></br>  Simulation, Sandbox, Destruction, Physics-based, PvE</h2></br></br>
 			<span style="color: #7c7c7c; font-size: 10pt;">DEVELOPER / PUBLISHER:</span></br> Spiderling Studios</br></br>
+			<span style="color: #7c7c7c; font-size: 10pt;">STATUS:</span></br> Published
 		  </div>
 		  <h2>About the game</h2>
 		  <p>Besiege is a vehicle-building sandbox based around medieval siege engines, developed and published by Spiderling Studios. </p>
@@ -327,7 +404,7 @@
 
 
 
-		<!-- CREATIVE BOARD CONTENT -->
+		<!-------------------------------------------------------- CREATIVE BOARD CONTENT -------------------------------------------------------->
 		<div id="CreativeBoard" class="tabcontent">
 			<div class="centering lightboxGallery">
 			<h1>Creative Board</h1>
@@ -354,7 +431,7 @@
 		</div>
 
 
-		<!-- ABOUT .................. -->
+		<!-------------------------------------------------------- ABOUT -------------------------------------------------------->
 		<div id="About" class="tabcontent">
 			<div class="about">
 			  <div class="about-intro">
@@ -379,181 +456,18 @@
 	</div> <!-- Closing content-container -->
 </div> <!-- Closing center-everything -->
 
-
-
-
-
-
-
-<!-- SCRIPTS -->
-<!-- GALLERY AND LIGHTBOX -->
-
-
-<!-- NAV TABS -->
+<script src="js/dynamic.js"></script>
 <script>
-	//	This is the home tab - show by default
-	//	Get the element with id="showActive" and click on it
-	document.addEventListener("DOMContentLoaded", function() { document.getElementById("showActive").click();});
-</script>
-<script type="text/javascript">
-	//	Switch tabs and highlight active tab link
-	function openProject(evt, projectName) {
-  // 	Declare all variables
-  var i, tabcontent, tablinks;
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.querySelector('.hamburger-button');
+  const menuContainer = document.querySelector('.menu-container');
 
-  // 	Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // 	Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
-
-  // 	Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(projectName).style.display = "block";
-  evt.currentTarget.className += " active";
-
-  // JUST IN CASE - Load images in the current tab
-  // const images = document.getElementById(projectName).querySelectorAll('img');
-  // images.forEach((image) => {
-  //   if (image.src === '') {
-  //     image.src = image.dataset.src;
-  //   }
-  // });
-  //for html: <img data-src="image1.jpg" src="" alt="Image 1">
-
-  if (evt.currentTarget.classList.contains('logoButton')) {
-    document.querySelector('.content-container').style.backgroundColor = 'black';
-  }
-  else if (evt.currentTarget.classList.contains('sweeper') || evt.currentTarget.classList.contains('rebounce')){
-  	document.querySelector('.content-container').style.backgroundColor = 'black';
-  } 
-  else {
-    document.querySelector('.content-container').style.backgroundColor = '#070707';
-  }
-  
-} 
-</script>
-
-<!-- FEATURED PROJECTS -->
-<script type="text/javascript">
-// Get the elements with classes "project1", "project2", and "project3"
-const project1 = document.querySelector('.project1');
-const project2 = document.querySelector('.project2');
-const project3 = document.querySelector('.project3');
-
-// Get the elements with classes "project1-highlight", "project2-highlight", and "project3-highlight"
-const project1Highlight = document.querySelector('.project1-highlight');
-const project2Highlight = document.querySelector('.project2-highlight');
-const project3Highlight = document.querySelector('.project3-highlight');
-
-// Add event listeners to the project elements
-project1.addEventListener('mouseover', () => {
-  project1Highlight.classList.add('highlight');
-  project1Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-});
-
-project1.addEventListener('mouseout', () => {
-  project1Highlight.classList.remove('highlight');
-  project1Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
-});
-
-project2.addEventListener('mouseover', () => {
-  project2Highlight.classList.add('highlight');
-  project2Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-});
-
-project2.addEventListener('mouseout', () => {
-  project2Highlight.classList.remove('highlight');
-  project2Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
-});
-
-project3.addEventListener('mouseover', () => {
-  project3Highlight.classList.add('highlight');
-  project3Highlight.parentNode.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-});
-
-project3.addEventListener('mouseout', () => {
-  project3Highlight.classList.remove('highlight');
-  project3Highlight.parentNode.dispatchEvent(new MouseEvent('mouseout', { bubbles: true }));
-});
-
-// Get the buttons inside the divs with class "project1", "project2", and "project3"
-const project1Button = document.querySelector('.project1 button');
-const project2Button = document.querySelector('.project2 button');
-const project3Button = document.querySelector('.project3 button');
-
-// Get the buttons with class "project1-highlight", "project2-highlight", and "project3-highlight"
-const project1HighlightButton = document.querySelector('.project1-highlight').parentNode;
-const project2HighlightButton = document.querySelector('.project2-highlight').parentNode;
-const project3HighlightButton = document.querySelector('.project3-highlight').parentNode;
-
-// Add event listeners to the buttons
-project1Button.addEventListener('click', () => project1HighlightButton.click());
-project2Button.addEventListener('click', () => project2HighlightButton.click());
-project3Button.addEventListener('click', () => project3HighlightButton.click());
-</script>
-
-
-<!--  LINK HOVER BALOON TEXT FOR PLATFORMS  -->
-<script type="text/javascript">
-// Get all buttons with the class 'balloon-button'
-const buttons = document.querySelectorAll('.balloon-button');
-
-// Loop through each button
-buttons.forEach(button => {
-  // Get the text for the balloon from the data attribute
-  const balloonText = button.getAttribute('balloon');
-
-  // Create a span element for the balloon
-  const balloon = document.createElement('span');
-  balloon.classList.add('balloon');
-  balloon.style.position = 'absolute'; // make the balloon absolute
-  balloon.style.display = 'none'; // hide the balloon by default
-  balloon.textContent = balloonText; // set the text for the balloon
-
-  // Add the balloon to the button's parent element
-  button.parentNode.appendChild(balloon);
-
-  // Add event listeners to show and hide the balloon on hover
-  button.addEventListener('mouseover', () => {
-    balloon.style.display = 'block';
-    const buttonRect = button.getBoundingClientRect();
-    balloon.style.top = `${buttonRect.top - 3}px`; // move the balloon up 5px
-    //balloon.style.left = `${buttonRect.right + 10}px`; // add some padding to the right
-    balloon.style.left = `${buttonRect.left - balloon.offsetWidth - 10}px`; // move the balloon to the left
-  });
-
-  button.addEventListener('mouseout', () => {
-    balloon.style.display = 'none';
+  hamburgerBtn.addEventListener('click', () => {
+    // Toggle visible class
+    menuContainer.classList.toggle('visible');
+    hamburgerBtn.classList.toggle('active');
   });
 });
 </script>
-
-<script type="text/javascript">
-	const hamburgerButton = document.querySelector('.hamburger-button');
-	const menuContainer = document.querySelector('.menu-container');
-  
-	hamburgerButton.addEventListener('click', () => {
-	if (menuContainer.classList.contains('hidden-on-small-screens')) {
-		menuContainer.classList.remove('hidden-on-small-screens');
-		menuContainer.classList.add('show');
-		hamburgerButton.classList.add('is-active');
-	} else {
-		menuContainer.classList.remove('show');
-		menuContainer.classList.add('hidden-on-small-screens');
-		hamburgerButton.classList.remove('is-active');
-	}
-	});
-  </script>
-
-
-
-
-
 </body>
 </html>

@@ -119,25 +119,29 @@ a {
 img{
 	user-select: none;
 }
-.store-links{
-	display: block;
-	width: 100%;
-	text-align: center;
-	margin: 0;
+.store-links {
+  text-align: center;
+  margin: 0 auto;
+  padding: 1em 0;
 }
-.store-links .center{
-	display: flex;
-	width: 380px;
-	height: auto;
-	margin: 0 auto;
 
+.store-links .center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* 💡 allows wrapping on smaller screens */
+  gap: 20px; /* consistent spacing between buttons */
+  max-width: 100%;
+  margin: 0 auto;
 }
-.store-links a { margin: 0px 20px;}
-.store-links img{
-	display: inline-block;
-	position: relative;
-	float: left;
-	margin: 0px 0px;
+
+.store-links a {
+  display: inline-block;
+}
+
+.store-links img {
+  width: 180px;
+  height: auto;
+  display: block;
 }
 ::selection {
   color: black;
@@ -162,14 +166,14 @@ img{
 	width: 250px;
 	height: 100%;
 	text-align: left;
-	float: left;
+	float: left; 
 }
 
 .menu{
 	display: block; 
 	width: 240px;
 	height: auto;
-	text-align: left;
+	text-align: left;  
 }
 
 
@@ -187,7 +191,7 @@ img{
 
 .logo-container{
 	display: block;
-	width: 200px;
+	width: auto;
 	height: auto;
 	text-align: left;
 	padding:  0;
@@ -220,6 +224,14 @@ img{
 	font-weight: 400;
 	color: #FEFBF4;
 }
+.logo-container .logoButton {
+  all: unset;
+  display: block;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+}
+.logo-container .logoButton:hover { opacity: 0.9; }
 .logo-container button:hover{
 	cursor: pointer;
 }
@@ -242,14 +254,14 @@ img{
 	height: auto;
 	text-align: left;
 	padding: 0;
-	user-select: none; 
+	user-select: none;  
 }
 .links-group{
 	display: block;  
 	width: 200px;
 	height: auto;
 	text-align: left;
-	margin-bottom: 25px;
+	margin-bottom: 25px;  
 }
 .link-group-title{
 	display: block;  
@@ -264,25 +276,8 @@ img{
 	opacity: 100%;
 }
 
-.menu-link {
-	width: auto;
-	height: auto;
-	background-color: black;
-	padding: 0;
-	margin: 0;
-	color: #6D6D6D;
-	user-select: none;
-}
-
- /* Style the tab */
-.tab {
-  overflow: hidden;
-  background-color: transparent;
-}
-
 /* Style the buttons that are used to open the tab content */
-.tab button {
-	display: block;
+.menu button {
 	width: auto;
 	height: 16px;
   color: #989898; opacity: 100%;
@@ -291,13 +286,18 @@ img{
   outline: none;
   cursor: pointer;
   padding: 0px 0px;
-  font-family: 'Monospace Argon', monospace;
-  font-size: 8pt;
-  font-weight: 500;
+  font-family: 'Monospace Argon', monospace; 
+  font-size: 8.5pt; 
+  font-weight: 500; 
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Change background color of buttons on hover */
-.tab button:hover {
+.menu button:hover {
 	border: none;
   outline: none;
 	color: #EBE8E1; opacity: 100%;
@@ -305,7 +305,7 @@ img{
 }
 
 /* Create an active/current tablink class */
-.tab button.active {
+.menu button.active {
 	border: none;
 	padding: 0;
   outline: none;
@@ -336,6 +336,9 @@ img{
 #myButton {
   position: relative;
 }
+.highlight{
+	color: whitesmoke; /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+}
 
 /*
 
@@ -349,7 +352,7 @@ img{
                                                                                              
 */
 
-.content-container{
+.content-container{ 
 	position: relative;
 	float: right;
 	display: flex;  
@@ -411,52 +414,75 @@ p {
 	text-align: left;
 }
 /* ------------ THIS IS A FEATURED PROJECT ----------- */
-.featured-title{
-	font-family: 'Sansation', sans-serif;
-	font-size: 12pt;
-	font-weight: 600;
-	color: whitesmoke;
+.featured-title {
+  font-family: 'Sansation', sans-serif;
+  font-size: 12pt;
+  font-weight: 600;
+  color: whitesmoke;
+  text-align: center;
+  margin-bottom: 1rem;
 }
-.project1 button{
-	background-color: black;
-	color: rgba(0, 0, 0, 0);
-	opacity: 100%;
-	width: 100%; height: 300px;
-	margin: 10px 0;
-	background-image: url(img/jex/jex-featured-cover.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: bottom;
-}
-.project2 button{
-	background-color: black;
-	color: rgba(0, 0, 0, 0);
-	opacity: 100%;
-	width: 100%; height: 300px;
-	margin: 10px 0;
-	background-image: url(img/besiege/besiege-featured-cover.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: top;
-}
-.project3 button{
-	background-color: black;
-	color: rgba(0, 0, 0, 0);
-	opacity: 100%;
-	width: 100%; height: 300px;
-	margin: 10px 0;
-	background-image: url(img/alchemy/alchemy-featured-cover.png);
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: top;
-}
-.project1 button:hover{ color: rgba(0, 0, 0, 0); opacity: 91%; }
-.project2 button:hover{ color: rgba(0, 0, 0, 0); opacity: 91%; }
-.project3 button:hover{ color: rgba(0, 0, 0, 0); opacity: 91%; }
 
-.highlight{
-	color: #DA9E3A;
-	color: whitesmoke;
+.tab {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-project {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.featured-project img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.overlay-text-container {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-family: 'Sansation', sans-serif;
+
+  opacity: 0;               /* hidden by default */
+  pointer-events: none;     /* don't block hover */
+  transition: opacity 0.3s ease;
+}
+.overlay-text-title {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 14pt;
+  font-family: 'Sansation', sans-serif;
+  margin: 0;
+  padding: 2px 0;
+}
+.overlay-text-desc {
+  color: white;
+  width: 100%;
+  text-align: center;
+  font-size: 10pt;
+  font-family: 'Sansation', sans-serif;
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* Hover effect */
+.featured-project:hover .overlay-text-container {
+  background: rgba(0, 0, 0, 0.8);
+  opacity: 1;               /* show on hover */
+  pointer-events: auto;
+
 }
 
 /* ------------------ GALLERY -------------- */
@@ -487,9 +513,8 @@ p {
 .gallery img:nth-child(2n) {
   margin-left: 0;
 }
-.lightboxGallery img:hover{
-	/*filter: grayscale(1); */
-	cursor: url(img/zicon.png), pointer; 
+.lightboxGallery img.is-lightbox:hover {
+	cursor: url(img/zicon.png), pointer;
 	opacity: 1;
 }
 
@@ -613,7 +638,6 @@ p {
 
 
 
-
 .about{
 	display: block;
 	width: 100%;
@@ -664,51 +688,102 @@ p {
 
 
 
+/* Hamburger icon base */
 .hamburger-button {
-	position: absolute;
-	border: none;
-	background-color: transparent;
-	top: 20px;
-	right: 20px;
-	z-index: 99;
-	cursor: pointer;
-	display: none;
-	width: 30px;
-	height: 30px;
-	background-image: url('img/menu-icon-open.svg');
-	background-size: 30px 30px;
-  }
-  
-  .hamburger-button.is-active {
-	background-image: url('img/menu-icon-close.svg');
-  }
-  
+  position: absolute;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: black;
+  cursor: pointer;
+  display: none; /* only shown on small screens */
+  z-index: 1000;
+}
 
-/* media query to toggle between hamburger menu and normal view */
+.hamburger-icon {
+  width: 50%;
+  height: 50%;
+  background-image: url('img/menu-icon-open.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 10px 10px;
+}
+
+/* Change icon when active */
+.hamburger-button.active .hamburger-icon {
+  background-image: url('img/menu-icon-close.svg');
+}
+
+/* Mobile view rules */
 @media (max-width: 1000px) {
-	.hamburger-button {
-	  display: block; /* show the button on small screens */
-	}
-	.menu-container {
-	  display: block; /* show the menu div on small screens */
-	}
-	.menu-container.hidden-on-small-screens {
-	  display: none; /* hide the menu div on small screens when not toggled */
-	}
-	.content-container {
-	  width: 100%; /* make the content div full-width on small screens */
-	}
-	.menu-container {
-	  position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100vh;
-	  background-color: #00000036; /* or any other background color you prefer */
-	  z-index: 9;
-	  display: none;
-	}
-	.menu-container.show {
-	  display: block; /* add this new class to show the menu */
-	}
+  .hamburger-button {
+    display: block;
   }
+
+  .menu-container {
+    display: none;
+    position: absolute;
+    top: 0px; /* below button */
+    left: 0;
+    padding-left:50px;
+    
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 999;
+    font-size: 2em;
+
+  }
+  .menu{
+		display: block; 
+		width: 100%;
+		height: auto;
+		text-align: left; 
+		padding: 60px 0px; 
+	}
+  .menu button {
+		width: 120%;
+		height: auto;
+	  color: #FFFEEF; opacity: 100%;
+	  background-color: transparent;
+	  border: none;
+	  outline: none;
+	  cursor: pointer;
+	  padding: 0px 0px;
+	  font-family: 'Monospace Argon', monospace; 
+	  font-size: 14pt; 
+	  font-weight: 500; 
+	  text-align: left;
+	  margin: 0;
+	  padding: 0;
+	  margin-bottom: 5px;
+	  padding: 5px 0px;
+	  display: flex;
+	  flex-direction: column; 
+	}
+
+  .menu-container.visible {
+    display: block;
+  }
+  .social-text{
+		font-size: 14pt;
+	}
+	.links-group{
+		margin-bottom: 100px;
+	}
+	.link-group-title{
+		display: block;  
+		width: 200px;
+		height: auto;
+		text-align: left;
+		margin-bottom: 15px;
+		color: gray;
+		font-family: 'Monospace Krypton', monospace;
+		font-size: 10pt;
+		font-weight: 650;
+		opacity: 100%;
+	}
+}
