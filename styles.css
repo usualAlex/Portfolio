@@ -104,6 +104,7 @@ z-index: 0;
 display: flex;
 justify-content: center;
 align-items: center;
+font-family: 'Monospace Krypton', monospace;
 }
 
 a {
@@ -719,6 +720,10 @@ p {
 
 /* Mobile view rules */
 @media (max-width: 1000px) {
+	body{
+		margin: 0;
+		padding: 0;
+	}
   .hamburger-button {
     display: block;
   }
@@ -785,5 +790,30 @@ p {
 		font-size: 10pt;
 		font-weight: 650;
 		opacity: 100%;
+	}
+	.about{
+		width: 100%;
+		overflow-x: hidden;
+	}
+	.about-intro{
+		display: block;
+		width: 100%;
+		height: auto;
+		float: none;
+		font-family: 'Monospace Krypton', monospace;
+		font-size: 14pt;
+	}
+	.about-img{
+		width: 100%;
+		height: auto;
+		display: inline-block;
+		float: none;
+	}
+	.more-about{
+		margin-top: 10px;
+		width: 100%;
+		height: auto;
+		display: inline-block; 
+		font-size: 14pt;
 	}
 }
