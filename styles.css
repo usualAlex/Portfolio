@@ -1,121 +1,95 @@
 @font-face {
-  font-family: 'Monospace Argon';
-  src: url('fonts/MonaspaceArgon-Light.otf') format('opentype');
-  font-weight: 300; /* light */
+  font-family: 'RobotoMono';
+  src: url('fonts/RobotoMono-VariableFont.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
 }
-
+@font-face {
+  font-family: 'NunitoSans';
+  src: url('fonts/NunitoSans-VariableFont.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-stretch: 50% 200%;
+}
 @font-face {
   font-family: 'Monospace Argon';
   src: url('fonts/MonaspaceArgon-Regular.otf') format('opentype');
-  font-weight: 400; /* regular */
-}
-
-@font-face {
-  font-family: 'Monospace Argon';
-  src: url('fonts/MonaspaceArgon-Medium.otf') format('opentype');
-  font-weight: 500; /* medium */
-}
-
-@font-face {
-  font-family: 'Monospace Argon';
-  src: url('fonts/MonaspaceArgon-Semibold.otf') format('opentype');
-  font-weight: 600; /* semibold */
-}
-
-@font-face {
-  font-family: 'Monospace Argon';
-  src: url('fonts/MonaspaceArgon-Semiwidebold.otf') format('opentype');
-  font-weight: 650; /* semiwide-bold */
-}
-
-@font-face {
-  font-family: 'Monospace Krypton';
-  src: url('fonts/MonaspaceKrypton-Light.otf') format('opentype');
-  font-weight: 300; /* light */
+  font-weight: 400; /* semiwide-bold */
 }
 
 @font-face {
   font-family: 'Monospace Krypton';
   src: url('fonts/MonaspaceKrypton-Regular.otf') format('opentype');
-  font-weight: 400; /* regular */
+  font-weight: 400; /* light */
 }
-
-@font-face {
-  font-family: 'Monospace Krypton';
-  src: url('fonts/MonaspaceKrypton-Medium.otf') format('opentype');
-  font-weight: 500; /* medium */
-}
-
-@font-face {
-  font-family: 'Monospace Krypton';
-  src: url('fonts/MonaspaceKrypton-Semibold.otf') format('opentype');
-  font-weight: 600; /* semibold */
-}
-
-@font-face {
-  font-family: 'Monospace Krypton';
-  src: url('fonts/MonaspaceKrypton-Semiwidebold.otf') format('opentype');
-  font-weight: 650; /* semiwide-bold */
-}
-
-@font-face {
-  font-family: 'Sansation';
-  src: url('fonts/Sansation-Regular.ttf') format('truetype');
-  font-weight: 400; /* regular */
-}
-
-@font-face {
-  font-family: 'Sansation';
-  src: url('fonts/Sansation-Bold.ttf') format('truetype');
-  font-weight: 700; /* bold */
-}
-
-@font-face {
-  font-family: 'Sansation';
-  src: url('fonts/Sansation-Italic.ttf') format('truetype');
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Sansation';
-  src: url('fonts/Sansation-Light.ttf') format('truetype');
-  font-weight: 300; /* light */
-}
-
 :root {
-  --primary-color: #ff0000;
-  --bold: 700;
+	--color-text: #FFFEEF; /*yellowish white*/
+	--color-navlink-active: #00C3FF; /*blue*/
+	--color-link: #00C3FF; /*blue*/
+	--color-link-hover: #00C3FF; /*blue*/
+	--color-link-visited: #007396; /*blue*/
+	--color-main-bg: #000;
+	--color-content-bg: #0a0a0a;
+	--font-main: 'NunitoSans', sans-serif;
+	--bold: 700;
 }
-
+::selection {
+	color: black;
+	background: #FFFEEF;
+	text-shadow: 0px 0px 2px gray;
+}
 html { 
 	overflow-x:hidden; 
 	height: 100%;
 	width: 100%;
+	font-family: var(--font-main);
 }
 body {
-height: 100%;
-width: 100%;
-background: black;
-overflow: hidden;
-color: #FFFEEF;
-padding: 0px;
-margin: 0;
-z-index: 0;
-display: flex;
-justify-content: center;
-align-items: center;
-font-family: 'Monospace Krypton', monospace;
+	height: 100%;
+	width: 100%;
+	background: black;
+	overflow: hidden;
+	color: var(--color-text);
+	padding: 0px;
+	margin: 0;
+	z-index: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: var(--font-main);
 }
-
+h1 {
+	font-weight: 400;
+	font-size: 20pt;
+	text-align: center;
+	font-family: var(--font-main);
+}
+h2 {
+	font-weight: 400;
+	font-size: 14pt;
+	text-align: left;
+	margin-top: 50px;
+	font-family: var(--font-main);
+}
+p {
+	font-size: 11pt;
+	font-weight: 400;
+	text-align: left;
+	font-family: var(--font-main);
+}
 a {
-	color: #B3B3B3; 
 	text-decoration: none; 
 	font-weight: 400;
-	font-family: 'Monospace Argon', monospace;
+	font-family: var(--font-main);
 	font-size: 10pt;
 	padding: 0;
 	margin: 0;
-
+	color: var(--color-link);
+}
+a:hover {
+	color: var(--color-link-hover);
+}
+a:visited {
+	color: var(--color-link-visited);
 }
 img{
 	user-select: none;
@@ -144,11 +118,9 @@ img{
   height: auto;
   display: block;
 }
-::selection {
-  color: black;
-  background: #FFFEEF;
-  text-shadow: 0px 0px 2px gray;
-}
+
+
+/* THIS CENTERS BOTH THE SIDE MENU AND THE CONTENT */
 .center-everything{
 	display: flex;
 	flex-wrap: nowrap;
@@ -159,7 +131,6 @@ img{
 	height: 99%; 
 	overflow: hidden;
 }
-
 .menu-container{
 	display: flex; 
 	justify-content: center; 
@@ -169,7 +140,7 @@ img{
 	text-align: left;
 	float: left; 
 }
-
+/* THIS IS CENTERED VERTICALLY IN THE CONTAINER */
 .menu{
 	display: block; 
 	width: 240px;
@@ -206,25 +177,6 @@ img{
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.description-container{
-	display: block;
-	width: 200px;
-	height: 40px;
-	text-align: left;
-	padding: 15px 0; 
-	margin-bottom: 40px; 
-}
-.description-container img{
-	margin-left: -5px;
-	user-select: none;
-
-}
-.description{
-	font-family: 'Monospace Argon', monospace;
-	font-size: 13px;
-	font-weight: 400;
-	color: #FEFBF4;
-}
 .logo-container .logoButton {
   all: unset;
   display: block;
@@ -236,6 +188,25 @@ img{
 .logo-container button:hover{
 	cursor: pointer;
 }
+.description-container{
+	display: block;
+	width: 200px;
+	height: 40px;
+	text-align: left;
+	padding: 15px 0; 
+	margin-bottom: 40px; 
+}
+/*RUNNING TEXT GIF*/
+.description-container img{
+	margin-left: -5px;
+	user-select: none;
+}
+/*UNUSED*/
+.description{
+	font-size: 13px;
+	font-weight: 400;
+}
+
 
 /*
 
@@ -270,75 +241,81 @@ img{
 	height: auto;
 	text-align: left;
 	margin-bottom: 5px;
-	color: #EBE8E1;
-	font-family: 'Monospace Krypton', monospace;
-	font-size: 10pt;
+	color: var(--color-text);
+	font-family: var(--font-main);
+	font-size: 12pt;
 	font-weight: 650;
 	opacity: 100%;
+	font-family: 'Monospace Krypton';
+	font-size: 12pt;
 }
 
 /* Style the buttons that are used to open the tab content */
 .menu button {
 	width: auto;
 	height: 16px;
-  color: #989898; opacity: 100%;
+  color: #ADACAB;
+  
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
   padding: 0px 0px;
-  font-family: 'Monospace Argon', monospace; 
-  font-size: 8.5pt; 
+  font-family: var(--font-main);
   font-weight: 500; 
   text-align: left;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Monospace Krypton';
+  font-size: 9pt;
 }
 
 /* Change background color of buttons on hover */
 .menu button:hover {
-	border: none;
+  color: var(--color-text);
+  border: none;
   outline: none;
-	color: #EBE8E1; opacity: 100%;
-	text-decoration: underline;
+  opacity: 100%;
+  text-decoration: underline;
 }
 
 /* Create an active/current tablink class */
 .menu button.active {
-	border: none;
-	padding: 0;
+  border: none;
+  padding: 0;
   outline: none;
-  color: #DA9E3A; /*yellow*/
-  color: #00C3FF; /*blue*/
+  color: var(--color-navlink-active);
   opacity: 100%;
   
 }
 
 .logo-container button{
-	color: transparent;
-	border: none;
-	background-color: transparent;
+  color: transparent;
+  border: none;
+  background-color: transparent;
 }
 .balloon{
-	width: auto;
-	height: 10px;
-	line-height: 12px;
-	vertical-align: middle;
-  color: whitesmoke;
+  width: auto;
+  height: 10px;
+  line-height: 12px;
+  vertical-align: middle;
   background-color: #202020;
   padding: 5px 10px;
-  font-family: 'Monospace Argon', monospace;
-  font-size: 8pt;
+  font-size: 9pt;
   font-weight: 500;
   border-radius: 10px;
+  font-family: 'Monospace Krypton';
 }
 #myButton {
   position: relative;
 }
 .highlight{
-	color: whitesmoke; /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+	color: var(--color-text); /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+	color: #FFFEEF;
+	opacity: 100%;
+	text-decoration: underline;
 }
 
 /*
@@ -360,9 +337,8 @@ img{
 	width: 666px;
 	max-width: 666px; min-width: 100px;
 	height: 100%;
-	font-family: 'Sansation', sans-serif;
 	text-align: left;
-	background-color: black; /* #070707;*/
+	background-color: var(--color-content-bg);
 	background-image: url(img/background-gray-noise.svg);
 	background-size: contain;
 	background-repeat: repeat;
@@ -376,14 +352,13 @@ img{
 .content-container::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
-
 /* Style the tab content */
 .tabcontent {
   display: none;
   position: relative;
   width: 100%;
   height: auto;
-  padding: 40% 0px; 
+  padding: 40% 0px;
   border-top: none;
   border: none;
   outline: none; 
@@ -395,96 +370,75 @@ img{
 .tabcontent::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
 }
-h1 {
+.summary-title {
+	text-decoration: none; 
 	font-weight: 400;
-	font-size: 20pt;
-	color: whitesmoke;
-	text-align: center;
+	font-size: 11pt;
+	opacity: 0.5;
 }
-h2 {
+.summary-info {
+	text-decoration: none; 
 	font-weight: 400;
-	font-size: 14pt;
-	color: whitesmoke;
-	text-align: left;
-	margin-top: 50px;
+	font-size: 11pt;
 }
-p {
-	font-size: 10pt;
-	font-weight: 400;
-	color: #D1D1D1;
-	text-align: left;
-}
+
 /* ------------ THIS IS A FEATURED PROJECT ----------- */
 .featured-title {
-  font-family: 'Sansation', sans-serif;
   font-size: 12pt;
   font-weight: 600;
-  color: whitesmoke;
   text-align: center;
   margin-bottom: 1rem;
 }
-
 .tab {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
 .featured-project {
   position: relative;
   cursor: pointer;
   overflow: hidden;
   border-radius: 4px;
 }
-
 .featured-project img {
   width: 100%;
   height: auto;
   display: block;
   object-fit: cover;
 }
-
 .overlay-text-container {
   position: absolute;
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
-  color: white;
   width: 100%;
   padding: 10px;
   text-align: center;
   font-size: 0.9rem;
-  font-family: 'Sansation', sans-serif;
-
   opacity: 0;               /* hidden by default */
   pointer-events: none;     /* don't block hover */
   transition: opacity 0.3s ease;
 }
 .overlay-text-title {
-  color: white;
   width: 100%;
   text-align: center;
   font-size: 14pt;
-  font-family: 'Sansation', sans-serif;
   margin: 0;
   padding: 2px 0;
 }
 .overlay-text-desc {
-  color: white;
   width: 100%;
   text-align: center;
   font-size: 10pt;
-  font-family: 'Sansation', sans-serif;
   margin: 0;
   padding: 2px 0;
 }
-
 /* Hover effect */
 .featured-project:hover .overlay-text-container {
   background: rgba(0, 0, 0, 0.8);
   opacity: 1;               /* show on hover */
   pointer-events: auto;
-
 }
+
 
 /* ------------------ GALLERY -------------- */
 .gallery {
@@ -494,23 +448,19 @@ p {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
 }
-
 .gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-
 .gallery:after {
   content: "";
   display: block;
   clear: both;
 }
-
 .gallery img:nth-child(2n+1) {
   margin-right: 0;
 }
-
 .gallery img:nth-child(2n) {
   margin-left: 0;
 }
@@ -523,13 +473,13 @@ p {
 
 /*
 
- ███        ███ ████     ███ ███   ███     ██████  
- ███        ███ ██ ███   ███ ███  ███    ███    ███
- ███        ███ ███ ███  ███ ███ ███      ███      
- ███        ███ ███  ███ ███ ██ ██          ███    
- ███        ███ ███   ██ ███ ███  ███          ███ 
- ███        ███ ███    ██ ██ ███   ███   ███    ███
- ██████████ ███ ███      ███ ███     ███   ██████  
+  ░██████    ░██████   ░███    ░██ ░██████████   ░███      ░██████  ░██████████
+ ░██   ░██  ░██   ░██  ░████   ░██     ░██      ░██░██    ░██   ░██     ░██    
+░██        ░██     ░██ ░██░██  ░██     ░██     ░██  ░██  ░██            ░██    
+░██        ░██     ░██ ░██ ░██ ░██     ░██    ░█████████ ░██            ░██    
+░██        ░██     ░██ ░██  ░██░██     ░██    ░██    ░██ ░██            ░██    
+ ░██   ░██  ░██   ░██  ░██   ░████     ░██    ░██    ░██  ░██   ░██     ░██    
+  ░██████    ░██████   ░██    ░███     ░██    ░██    ░██   ░██████      ░██   
                                                    
                                              
 */
@@ -557,12 +507,13 @@ p {
 .social-text{
 	display: flex;
 	flex-wrap: nowrap;
-	font-family: 'Monospace Krypton', monospace;
 	font-size: 10pt;
 	font-weight: 200;
   	line-height: 22px;
   	vertical-align: middle;
 	margin-left: 5px;
+	font-family: 'Monospace Krypton';
+	font-size: 10pt;
 }
 .version{
 	position: absolute;
@@ -574,9 +525,8 @@ p {
 	padding-right: 20px;
 }
 .version-text{
-	display: block;
+	/*display: block;*/
 	float: right;
-	font-family: 'Monospace Krypton', monospace;
 	font-size: 8pt;
 	font-weight: 200;
 	text-align: right;
@@ -589,9 +539,17 @@ p {
 
 
 
+/*
 
-
-
+░██         ░██████  ░██████  ░██     ░██ ░██████████░████████     ░██████   ░██    ░██ 
+░██           ░██   ░██   ░██ ░██     ░██     ░██    ░██    ░██   ░██   ░██   ░██  ░██  
+░██           ░██  ░██        ░██     ░██     ░██    ░██    ░██  ░██     ░██   ░██░██   
+░██           ░██  ░██  █████ ░██████████     ░██    ░████████   ░██     ░██    ░███    
+░██           ░██  ░██     ██ ░██     ░██     ░██    ░██     ░██ ░██     ░██   ░██░██   
+░██           ░██   ░██  ░███ ░██     ░██     ░██    ░██     ░██  ░██   ░██   ░██  ░██  
+░██████████ ░██████  ░█████░█ ░██     ░██     ░██    ░█████████    ░██████   ░██    ░██
+                                     
+ */
 
 .lightbox {
   position: fixed;
@@ -603,11 +561,9 @@ p {
   display: none;
   z-index: 1;
 }
-
 .lightbox.open {
   display: block;
 }
-
 .lightbox img {
   max-width: 60vw;
   max-height: 80vh;
@@ -620,7 +576,6 @@ p {
   z-index: 2;
   opacity: 1;
 }
-
 .lightbox-background {
   position: fixed;
   top: 0;
@@ -632,13 +587,21 @@ p {
   z-index: 0;
   opacity: 0.5;
 }
-
 .lightbox-background.open {
   display: block;
 }
 
 
-
+/*
+   ░███    ░████████     ░██████   ░██     ░██ ░██████████
+  ░██░██   ░██    ░██   ░██   ░██  ░██     ░██     ░██    
+ ░██  ░██  ░██    ░██  ░██     ░██ ░██     ░██     ░██    
+░█████████ ░████████   ░██     ░██ ░██     ░██     ░██    
+░██    ░██ ░██     ░██ ░██     ░██ ░██     ░██     ░██    
+░██    ░██ ░██     ░██  ░██   ░██   ░██   ░██      ░██    
+░██    ░██ ░█████████    ░██████     ░██████       ░██  
+                                     
+ */
 .about{
 	display: block;
 	width: 100%;
@@ -654,7 +617,7 @@ p {
 .about-img{
 	width: 50%;
 	height: auto;
-	display: inline-block;
+	/*display: inline-block;*/
 	float: right;
 }
 .more-about{
@@ -724,6 +687,9 @@ p {
 		margin: 0;
 		padding: 0;
 	}
+	h1{font-size: 27pt;}
+	h2{font-size: 18pt;}
+	p{font-size: 12.5pt;}
   .hamburger-button {
     display: block;
   }
@@ -758,7 +724,7 @@ p {
 	  outline: none;
 	  cursor: pointer;
 	  padding: 0px 0px;
-	  font-family: 'Monospace Argon', monospace; 
+	  font-family: var(--font-main);
 	  font-size: 14pt; 
 	  font-weight: 500; 
 	  text-align: left;
@@ -786,7 +752,7 @@ p {
 		text-align: left;
 		margin-bottom: 15px;
 		color: gray;
-		font-family: 'Monospace Krypton', monospace;
+		font-family: var(--font-main);
 		font-size: 10pt;
 		font-weight: 650;
 		opacity: 100%;
@@ -800,7 +766,7 @@ p {
 		width: 100%;
 		height: auto;
 		float: none;
-		font-family: 'Monospace Krypton', monospace;
+		font-family: var(--font-main);
 		font-size: 14pt;
 	}
 	.about-img{
