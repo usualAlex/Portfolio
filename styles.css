@@ -13,48 +13,111 @@
 @font-face {
   font-family: 'Monospace Argon';
   src: url('fonts/MonaspaceArgon-Regular.otf') format('opentype');
-  font-weight: 400; /* semiwide-bold */
+  font-weight: 400; 
 }
 
 @font-face {
   font-family: 'Monospace Krypton';
   src: url('fonts/MonaspaceKrypton-Regular.otf') format('opentype');
-  font-weight: 400; /* light */
+  font-weight: 400;
 }
-:root {
-	--color-text: #FFFEEF; /*yellowish white*/
-	--color-navlink-active: #00C3FF; /*blue*/
-	--color-link: #00C3FF; /*blue*/
-	--color-link-hover: #00C3FF; /*blue*/
-	--color-link-visited: #007396; /*blue*/
-	--color-main-bg: #000;
-	--color-content-bg: #0a0a0a;
-	--font-main: 'NunitoSans', sans-serif;
-	--bold: 700;
+@font-face {
+  font-family: 'Alice';
+  src: url('fonts/Alice-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+/*NEW FONTS*/
+@font-face {
+  font-family: 'Kode Mono';
+  src: url('fonts/KodeMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: 'SourceCode Mono';
+  src: url('fonts/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+}
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
 }
 ::selection {
 	color: black;
 	background: #FFFEEF;
 	text-shadow: 0px 0px 2px gray;
 }
-html { 
-	overflow-x:hidden; 
-	height: 100%;
-	width: 100%;
-	font-family: var(--font-main);
+:root {
+	--color-logo: #FFFEEF;
+	--color-text: #eeede4; /*yellowish white*/
+	--color-navlink-active: #00C3FF; /*blue*/
+	--color-link: #00C3FF; /*blue*/
+	--color-link-hover: #00C3FF; /*blue*/
+	--color-link-visited: #007396; /*blue*/
+	--color-main-bg: #000;
+	--color-content-bg: #0a0a0a;
+
+	--font-main: 'NunitoSans';
+	--font-tab-category: 'Kode Mono';
+	--font-tab-category-weight: 600;
+	--font-tab-category-size: 12pt;
+	--font-tab-category-color:  rgba(255, 255, 255, 0.4);
+
+	--font-tab-link: 'Kode Mono';
+	--font-tab-link-weight: 800;
+	--font-tab-link-size: 9pt;
+	--font-tab-link-color: rgba(255, 255, 255, 0.7);
+
+	--font-tab-balloon: 'Kode Mono';
+	--font-tab-balloon-weight: 600;
+	--font-tab-balloon-size: 9pt;
+	
+	--menu-link-color: rgba(255, 255, 255, 0.7);
+	--menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
+	--menu-link-active-color: rgba(17, 17, 17, 0.9);
+  	--menu-category-color: rgba(255, 255, 255, 0.4);
+	--menu-balloon-color: #7575752d;
+	--menu-balloon-border-color: #7a7a7a52;
+
+	--social-text-color: rgba(255, 255, 255, 0.7);
+	--social-icons-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Default menu colors */
+/* Override for Jarfall (example: darker text) */
+body.menu-jarfall {
+  --menu-link-color: rgba(80, 53, 23, 0.8);
+  --menu-link-active-bg-color: rgba(80, 53, 23, 0.8);
+  --menu-link-active-color: rgb(255, 245, 231);
+  --menu-category-color: rgba(80, 53, 23, 0.6);
+  --menu-balloon-color: rgba(80, 53, 23, 0.6);
+  --menu-balloon-border-color: rgba(94, 64, 30, 0.6);
+
+  --social-text-color: rgba(80, 53, 23, 0.8);
+  --social-icons-color: rgba(80, 53, 23, 0.8);
+}
+/* Override for Jex (example: light blue) */
+body.menu-jex {
+  --menu-link-active-bg-color: #00C3FF;
+  --menu-link-active-color: #02151b;
+}
+body.menu-jarfall .logo {
+  --color-logo: rgba(80, 53, 23, 0.8);
 }
 body {
-	height: 100%;
+	height: auto;
 	width: 100%;
 	background: black;
-	overflow: hidden;
+	background-image: none;
+	overflow-x: hidden;
+	overflow-y: auto;
 	color: var(--color-text);
-	padding: 0px;
+	padding: 0;
 	margin: 0;
 	z-index: 0;
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	font-family: var(--font-main);
 }
 h1 {
@@ -65,9 +128,23 @@ h1 {
 }
 h2 {
 	font-weight: 400;
+	font-size: 20pt;
+	text-align: center;
+	margin-top: 50px;
+	font-family: var(--font-main);
+}
+h3 {
+	font-weight: 800;
 	font-size: 14pt;
 	text-align: left;
-	margin-top: 50px;
+	margin: 0px;
+	font-family: var(--font-main);
+}
+h4 {
+	font-weight: 400;
+	font-size: 12pt;
+	text-align: center;
+	margin: -10px 0px 50px 0px;
 	font-family: var(--font-main);
 }
 p {
@@ -86,52 +163,209 @@ a {
 	color: var(--color-link);
 }
 a:hover {
-	color: var(--color-link-hover);
+	color: var(--color-link);
 }
 a:visited {
-	color: var(--color-link-visited);
+	color: var(--color-link);
 }
 img{
 	user-select: none;
 }
-.store-links {
-  text-align: center;
-  margin: 0 auto;
-  padding: 1em 0;
+h2 a {
+	font-size: 20pt;
+	color: var(--color-link);
+}
+h2 a:hover {
+	text-decoration: underline;
+}
+h2 a:visited {
+	color: var(--color-link);
 }
 
-.store-links .center {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* 💡 allows wrapping on smaller screens */
-  gap: 20px; /* consistent spacing between buttons */
-  max-width: 100%;
-  margin: 0 auto;
+/* ----------------------- Define fonts per project ----------------- */
+.tabcontent.jarfall-font    { --project-font: 'Alice'; }
+.tabcontent.jex-font        { --project-font: 'NunitoSans'; }
+.tabcontent.sweeper-font    { --project-font: 'NunitoSans'; }
+.tabcontent.rebounce-font   { --project-font: 'NunitoSans'; }
+.tabcontent.besiege-font    { --project-font: 'NunitoSans'; }
+.tabcontent.armorcraft-font { --project-font: 'NunitoSans'; }
+.tabcontent.alchemy-font    { --project-font: 'NunitoSans'; }
+.tabcontent.pandora-font    { --project-font: 'NunitoSans'; }
+.tabcontent.river-font      { --project-font: 'NunitoSans'; }
+.tabcontent.store-font      { --project-font: 'NunitoSans'; }
+.tabcontent.board-font      { --project-font: 'NunitoSans'; }
+.tabcontent.about-font      { --project-font: 'NunitoSans'; }
+
+/* Apply the project font to common elements using :is() */
+.tabcontent:is(
+  .jarfall-font,
+  .jex-font,
+  .sweeper-font,
+  .rebounce-font,
+  .besiege-font,
+  .armorcraft-font,
+  .alchemy-font,
+  .pandora-font,
+  .river-font,
+  .store-font,
+  .board-font,
+  .about-font
+) :is(h1, h2, h3, h4, p, a, span, button) {
+  font-family: var(--project-font);
 }
 
-.store-links a {
-  display: inline-block;
-}
-
-.store-links img {
-  width: 180px;
-  height: auto;
-  display: block;
-}
 
 
-/* THIS CENTERS BOTH THE SIDE MENU AND THE CONTENT */
-.center-everything{
-	display: flex;
-	flex-wrap: nowrap;
-	padding: 0;
-	margin: 0 5px 0 10px;
-	text-align: center; 
-	width: auto;
-	height: 99%; 
-	overflow: hidden;
+
+
+/*
+ █████           ██            ███    ███   ███      █████     ████████     ██████    
+ ██  ███        ██ ██       ███   ███ ███  ███     ██    ███   ███    ███   ███   ███ 
+ ██   ███      ██  ███     ███        ███ ███     ██           ███    ███   ███    ███
+ ██████       ███   ███    ███        ██ ██       ███          ██ ███       ███    ███
+ ██    ███   ███████ ███   ███        ███  ███    ███   ██████ ███  ███     ███    ███
+ ██     ██  ███       ███   ███   ███ ███   ███    ███    ██   ███    ███   ███   ███ 
+ ████ ███  ███         ███    █████   ███     ███   ██████     ███      ███ ██████    
+*/
+
+/* DEFAULT BACKGROUND */
+.background-image {
+  background: #000 url(img/noise-bg-3.png) repeat bottom / contain;
+  background-size: 500px 500px; /* each square tile will be 100×100 */
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
+
+/* BACKGROUNDS FOR EACH PROJECT */
+.background-image.bg-jarfall {
+	/*background: #342F2A url(img/jar/background-v2.png) no-repeat bottom;*/
+	background-image: none;
+	background-color: #5E493F; /* ensures fallback */
+	background: #342F2A url(img/jar/background-v3.png) no-repeat bottom / cover;
+}
+.background-image.bg-jex {
+	background: url(img/jex/background-v2.png) no-repeat center fixed;
+	background-size: cover;
+}
+.background-image.bg-alchemy {
+	background: url(img/alchemy/background.png) no-repeat bottom / cover;
+}
+.background-image.bg-armorcraft {
+	background: url(img/ac/background.png) no-repeat bottom / cover;
+}
+.background-image.bg-besiege {
+	background: url(img/besiege/4k2.png) no-repeat bottom / cover;
+}
+.background-image.bg-rebounce, .background-image.bg-sweeper {
+	background: #000;
+}
+.background-image.bg-jex::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* bright scanlines */
+  background: repeating-linear-gradient(
+	to bottom,
+		rgba(255, 255, 255, 0.08) 0px,   /* start of bright line */
+		rgba(255, 255, 255, 0.03) 2px,   /* thickness of line = 4px */
+		transparent 2px,                 	/* start of gap */
+		transparent 5px                 	/* gap size = 8px */
+	);
+
+  /* fade sides (vignette-like) */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+
+  
+  animation: scanlines-scroll 1s linear infinite; /* new animation */
+  z-index: 2;
+}
+
+@keyframes scanlines-scroll {
+  from { background-position: 0 0; }
+  to { background-position: 0 -54px; }
+}
+
+.background-image.bg-armorcraft::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  /* bright static scanlines */
+	background: repeating-linear-gradient(
+		to bottom,
+		rgba(255, 255, 255, 0.03) 0px,   /* line starts */
+		rgba(255, 255, 255, 0.03) 2px,  /* line thickness */
+		transparent 2px,               /* line ends */
+		transparent 4px                /* distance before next line */
+	);
+
+  /* vignette fade on the left/right */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+
+  background-size: auto;
+
+  z-index: 2;
+}
+
+
+
+
+
+
+
+
+/*
+ ███       ███ █████████ ████     ███ ███     ███
+ ██ ███   ████ ███       ██ ███   ███ ███     ███
+ ███ ███ █ ███ ███       ███ ███  ███ ███     ███
+ ███  ███  ███ ███████   ███  ███ ███ ███     ███
+ ███   ██  ███ ███       ███   ██ ███ ███     ███
+ ███       ███ ███       ███    ██ ██ ███     ███
+ ███       ███ █████████ ███      ███   ██████   
+*/
 .menu-container{
+	position: fixed;
+	top: 0;
+	left: calc(50% - 800px/2 - 240px); /* 800 = tabcontent width, 250 = menu width */
 	display: flex; 
 	justify-content: center; 
 	align-items: center;
@@ -139,28 +373,164 @@ img{
 	height: 100%;
 	text-align: left;
 	float: left; 
+	background-color: transparent;
+	background-image: none;
+	padding-left: 25px;
+	z-index: 2;
+	pointer-events: none;
 }
-/* THIS IS CENTERED VERTICALLY IN THE CONTAINER */
-.menu{
+.menu{ /* THIS IS CENTERED VERTICALLY IN THE CONTAINER */
 	display: block; 
 	width: 240px;
 	height: auto;
 	text-align: left;  
+	pointer-events: all;
+}
+.tablinks-container{
+	display: block; 
+	width: 200px;
+	height: auto;
+	text-align: left;
+	padding: 0;
+	user-select: none;  
+}
+.tablinks-group{
+	display: block;  
+	width: 200px;
+	height: auto;
+	text-align: left;
+	margin-bottom: 25px;  
+}
+.tablink-category{
+	display: block;  
+	width: 200px;
+	height: auto;
+	text-align: left;
+	margin-bottom: 5px;
+	color: rgba(255, 255, 255, 0.4);
+	color: var(--menu-category-color);
+	font-size: 12pt;
+	font-weight: 650;
+	opacity: 100%;
+
+	font-family: var(--font-tab-category);
+	font-size: var(--font-tab-category-size);
+	font-weight: var(--font-tab-category-weight);
 }
 
+/* Style the buttons that are used to open the tab content */
+.menu .tablink {
+	width: fit-content;
+	height: 16px;
+	color: rgba(255, 255, 255, 0.7);
+	color: var(--menu-link-color);
+	background-color: transparent;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0px 0px;
+	font-weight: 500; 
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 0px 5px;
+	margin-left: -5px;
 
+	font-family: var(--font-tab-link);
+	font-size: var(--font-tab-link-size);
+	font-weight: var(--font-tab-link-weight);
+}
+.menu .tablink a, 
+.menu .social a {
+	color: var(--color-text);
+	text-decoration: none;
+	user-select: none;
+
+	font-family: var(--font-tab-link);
+	font-size: 10pt;
+	font-weight: 500; 
+
+	font-family: var(--font-tab-category);
+
+
+	background-color: transparent;
+	border: none;
+	outline: none;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+}
+.menu .social a:hover{
+	text-decoration: underline;
+}
+/* Change background color of buttons on hover */
+.menu .tablink:hover {
+  
+  border: none;
+  outline: none;
+  opacity: 100%;
+  text-decoration: underline;
+  text-decoration:none;
+  background-color: var(--menu-link-active-bg-color);
+  color: var(--menu-link-active-color);
+  padding: 0px 5px;
+}
+/* Create an active/current tablink class */
+.menu .tablink.active {
+  border: none;
+  padding: 0;
+  outline: none;
+  color: var(--color-navlink-active);
+  opacity: 100%;
+  background-color: var(--menu-link-active-bg-color);
+  color: var(--menu-link-active-color);
+  padding: 0px 5px;
+}
+.logo-container .tablink{
+  color: transparent;
+  border: none;
+  background-color: transparent;
+}
+.balloon {
+  display: inline-flex;               /* make the balloon shrink to text width */
+  align-items: center;                /* vertical centering */
+  justify-content: center;            /* horizontal centering */
+  background-color: var(--menu-balloon-color);
+  padding: 2px 10px;                  /* space around the text */
+  border-radius: 999px;               /* always fully rounded */
+  border: 1px solid var(--menu-balloon-border-color);
+  width: auto;                         /* shrink to fit text */
+  height: auto;                        /* let padding control height */
+  text-align: center;                  /* fallback */
+
+  font-family: var(--font-tab-balloon);
+	font-size: var(--font-tab-balloon-size);
+	font-weight: var(--font-tab-balloon-weight);
+}
+.tablink.highlight{
+	color: var(--color-text); /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+	color: #FFFEEF;
+	opacity: 100%;
+	text-decoration: underline;
+}
 
 /*
- ███            █████         █████         █████     
- ███          ███    ███    ██    ███     ███    ███  
- ███        ███        ███ ██           ███        ███
- ███        ███        ███ ███          ███        ███
- ███        ███        ███ ███   ██████ ███        ███
- ███          ███     ███   ███    ██     ███     ███ 
- ██████████     █████        ██████         █████     
-                                                      
+ ███    ███ █████████       ██        ██████     █████████ ████████    
+ ███    ███ ███            ██ ██      ███   ███  ███       ███    ███  
+ ███    ███ ███           ██  ███     ███    ███ ███       ███    ███  
+ ██████████ ███████      ███   ███    ███    ███ ███████   ██ ███      
+ ███    ███ ███         ███████ ███   ███    ███ ███       ███  ███    
+ ███    ███ ███        ███       ███  ███   ███  ███       ███    ███  
+ ███    ███ █████████ ███         ███ ██████     █████████ ███      ███                                                 
 */
-
+.logo-container-mobile{
+	display: none;
+}
+.description-container-mobile{
+	display: none;
+}
 .logo-container{
 	display: block;
 	width: auto;
@@ -169,25 +539,25 @@ img{
 	padding:  0;
 }
 .logo{
+	/*
 	display: block;
-	width: 60px;   /*60px-NORMAL - 90px XMAS VERSION*/
+	width: 60px; 
 	height: 60px;
 	background-image: url(img/logo.svg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+	*/
+	fill: var(--color-logo);
 }
-.logo-container .logoButton {
+.logoButton {
   all: unset;
   display: block;
   width: auto;
   height: auto;
   cursor: pointer;
 }
-.logo-container .logoButton:hover { opacity: 0.9; }
-.logo-container button:hover{
-	cursor: pointer;
-}
+.logoButton:hover { opacity: 0.9; }
 .description-container{
 	display: block;
 	width: 200px;
@@ -201,185 +571,125 @@ img{
 	margin-left: -5px;
 	user-select: none;
 }
-/*UNUSED*/
-.description{
-	font-size: 13px;
-	font-weight: 400;
-}
+
 
 
 /*
-
- ████     ███       ██        ███         ███       ███        ███ ████     ███ ███   ███     ██████  
- ██ ███   ███      ██ ██       ███       ███        ███        ███ ██ ███   ███ ███  ███    ███    ███
- ███ ███  ███     ██  ███       ███     ███         ███        ███ ███ ███  ███ ███ ███      ███      
- ███  ███ ███    ███   ███       ███   ███          ███        ███ ███  ███ ███ ██ ██          ███    
- ███   ██ ███   ███████ ███       ███ ███           ███        ███ ███   ██ ███ ███  ███          ███ 
- ███    ██ ██  ███       ███       █████            ███        ███ ███    ██ ██ ███   ███   ███    ███
- ███      ███ ███         ███       ███             ██████████ ███ ███      ███ ███     ███   ██████  
-                                                                                                      
-*/
-
-.links-container{
-	display: block; 
-	width: 200px;
-	height: auto;
-	text-align: left;
-	padding: 0;
-	user-select: none;  
-}
-.links-group{
-	display: block;  
-	width: 200px;
-	height: auto;
-	text-align: left;
-	margin-bottom: 25px;  
-}
-.link-group-title{
-	display: block;  
-	width: 200px;
-	height: auto;
-	text-align: left;
-	margin-bottom: 5px;
-	color: var(--color-text);
-	font-family: var(--font-main);
-	font-size: 12pt;
-	font-weight: 650;
-	opacity: 100%;
-	font-family: 'Monospace Krypton';
-	font-size: 12pt;
-}
-
-/* Style the buttons that are used to open the tab content */
-.menu button {
-	width: auto;
-	height: 16px;
-  color: #ADACAB;
-  
-  background-color: transparent;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0px 0px;
-  font-family: var(--font-main);
-  font-weight: 500; 
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  font-family: 'Monospace Krypton';
-  font-size: 9pt;
-}
-
-/* Change background color of buttons on hover */
-.menu button:hover {
-  color: var(--color-text);
-  border: none;
-  outline: none;
-  opacity: 100%;
-  text-decoration: underline;
-}
-
-/* Create an active/current tablink class */
-.menu button.active {
-  border: none;
-  padding: 0;
-  outline: none;
-  color: var(--color-navlink-active);
-  opacity: 100%;
-  
-}
-
-.logo-container button{
-  color: transparent;
-  border: none;
-  background-color: transparent;
-}
-.balloon{
-  width: auto;
-  height: 10px;
-  line-height: 12px;
-  vertical-align: middle;
-  background-color: #202020;
-  padding: 5px 10px;
-  font-size: 9pt;
-  font-weight: 500;
-  border-radius: 10px;
-  font-family: 'Monospace Krypton';
-}
-#myButton {
-  position: relative;
-}
-.highlight{
-	color: var(--color-text); /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
-	color: #FFFEEF;
-	opacity: 100%;
-	text-decoration: underline;
-}
-
-/*
-
  ████████   ████████         █████           ███  █████████     ███    ███████████   ██████  
  ███    ███ ███    ███     ███    ███        ███  ███        ███   ███     ███     ███    ███
  ███    ███ ███    ███   ███        ███      ███  ███       ███            ███      ███      
  ████████   ██ ███       ███        ███      ███  ███████   ███            ███        ███    
  ███        ███  ███     ███        ███      ███  ███       ███            ███           ███ 
  ███        ███    ███     ███     ███  ██   ███  ███        ███   ███     ███     ███    ███
- ███        ███      ███     █████       █████    █████████    █████       ███       ██████  
-                                                                                             
+ ███        ███      ███     █████       █████    █████████    █████       ███       ██████                                                                                            
 */
-
-.content-container{ 
-	position: relative;
-	float: right;
-	display: flex;  
-	width: 666px;
-	max-width: 666px; min-width: 100px;
-	height: 100%;
-	text-align: left;
-	background-color: var(--color-content-bg);
-	background-image: url(img/background-gray-noise.svg);
-	background-size: contain;
-	background-repeat: repeat;
-	padding: 0px 25px;
-	margin: 0;
-	overflow: scroll;
-	overflow-y: auto;
-	scrollbar-width: none;  /* Firefox */
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
-}
-.content-container::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
+.adaptive-content-wrapper {
+  display: flex;
+  justify-content: center; /* centers tabcontent in viewport */
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
 }
 /* Style the tab content */
 .tabcontent {
   display: none;
-  position: relative;
-  width: 100%;
+  
+  background: none;
+  background-image: none;
+  background-color: transparent;
+  width: 750px;
   height: auto;
-  padding: 40% 0px;
-  border-top: none;
+  padding: 0px 20px 0px 20px;
   border: none;
   outline: none; 
-  overflow: scroll;
-  scrollbar-width: none;  /* Firefox */
-	-ms-overflow-style: none;  /* Internet Explorer 10+ */
-	text-align: center;
-} 
-.tabcontent::-webkit-scrollbar { 
-  display: none;  /* Safari and Chrome */
+  z-index: 2;
+  margin:  0 auto; 
+}
+
+#Featured.tabcontent {
+	background: none;
+	background-color: rgb(10, 10, 10, 0.0);
+}
+#Jarfall.tabcontent {
+	background: none;
+	background-color: rgba(73, 65, 58, 0.85);
+	background-color: #976f57;
+}
+#Jex.tabcontent {
+	background: none;
+	background-color: rgba(20, 23, 32, 0.9);
+}
+#Alchemy.tabcontent {
+	background: none;
+	background-color: #15293f;
+}
+#ArmorCraft.tabcontent {
+	background: none;
+	background-color: rgba(17, 17, 17, 0.6);
+}
+#Besiege.tabcontent {
+	background: none;
+	background-color: rgba(17, 17, 17, 0.8);
+}
+
+.content-summary-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two equal-width columns */
+  gap: 10px 30px;                /* row gap / column gap */
+  justify-content: center;
+  text-align: left;
+  max-width: 550px;              /* optional, keeps it centered and not too wide */
+  margin: 0 auto;
+}
+.content-summary-item {
+  min-width: 0;                  /* important: allows text to wrap instead of forcing column wider */
+  word-wrap: break-word;         /* break long words if needed */
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.295);
 }
 .summary-title {
-	text-decoration: none; 
-	font-weight: 400;
-	font-size: 11pt;
-	opacity: 0.5;
+  text-decoration: none; 
+  font-weight: 600;
+  font-size: 9pt;
+  opacity: 0.5;
+  display: block;
 }
 .summary-info {
-	text-decoration: none; 
-	font-weight: 400;
-	font-size: 11pt;
+  text-decoration: none; 
+  font-weight: 400;
+  font-size: 11pt;
+  display: block;
+}
+@media (max-width: 600px) {
+  .content-summary-container {
+    grid-template-columns: 1fr; /* collapse to single column */
+  }
+}
+
+.get-on-buttons {
+  display: block;
+  margin-top: 20px;
+  text-align: center; 
+  margin: 0 auto;
+  padding: 1em 0;
+}
+.get-on-buttons .center {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* 💡 allows wrapping on smaller screens */
+  gap: 20px; /* consistent spacing between buttons */
+  max-width: 100%;
+  margin: 0 auto;
+}
+.get-on-buttons a {
+  display: inline-block;
+}
+.get-on-buttons img {
+  width: 180px;
+  height: auto;
+  display: block;
 }
 
 /* ------------ THIS IS A FEATURED PROJECT ----------- */
@@ -392,83 +702,354 @@ img{
 .tab {
   display: flex;
   flex-direction: column;
+  justify-content: center;   /* center vertically in viewport */
+  align-items: center;
   gap: 20px;
+  min-height: 100vh;         /* take full screen height */
+  padding: 0px;             /* breathing room on small screens */
+  box-sizing: border-box;
 }
 .featured-project {
   position: relative;
   cursor: pointer;
   overflow: hidden;
-  border-radius: 4px;
+  border-radius: 8px;
+  flex: 0 0 auto;            /* don’t stretch weirdly */
+  width: 100%;
+  max-width: 800px;          /* optional: keep from being too wide */
 }
 .featured-project img {
-  width: 100%;
-  height: auto;
   display: block;
+  width: 100%;
+  height: auto; /* fallback */
+  max-height: 30vh;          /* each project takes up at most ~30% of viewport */
+  min-height: 150px;         /* never shrink too small */
   object-fit: cover;
+  border-radius: inherit;
+  transition: all 0.1s ease-in-out;
 }
 .overlay-text-container {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.295);
   width: 100%;
   padding: 10px;
-  text-align: center;
+  text-align: left;
   font-size: 0.9rem;
   opacity: 0;               /* hidden by default */
   pointer-events: none;     /* don't block hover */
   transition: opacity 0.3s ease;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 50px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.featured-project:hover img {
+  transform: scale(1.02);
+  transition: all 0.1s ease-in-out;
 }
 .overlay-text-title {
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 14pt;
   margin: 0;
   padding: 2px 0;
 }
-.overlay-text-desc {
+.overlay-text-desc,
+.overlay-text-platform {
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-size: 10pt;
   margin: 0;
   padding: 2px 0;
 }
+.overlay-text-role {
+  display: none;
+  position: absolute;
+  top: 1px;
+  right: 5px;
+  width: auto;
+  height: auto;
+  text-align: right;
+  font-size: 10pt;
+  padding: 1px 10px;
+  padding-top: 4px;
+  border-radius: 6px;
+  background-color: whitesmoke;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  font-family: var(--font-tab-balloon);
+  font-weight: var(--font-tab-balloon-weight);
+  font-size: var(--font-tab-balloon-size);
+
+  border: 1px solid rgba(0, 0, 0, 1);
+}
 /* Hover effect */
 .featured-project:hover .overlay-text-container {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.5);
   opacity: 1;               /* show on hover */
   pointer-events: auto;
+}
+.featured-project:hover .overlay-text-role {
+  display: block;
+}
+/* Default: hide spacers on desktop */
+.mobile-spacer-top,
+.mobile-spacer-bottom {
+    display: none;
+}
+
+
+
+.playOnItch {
+	display: flex;
+	align-items: center;     /* vertical align icon + text */
+	justify-content: center; /* keep everything centered inside the button */
+	gap: 10px;               /* space between icon and text */
+	width: 200px;            /* slightly wider for balance */
+	height: 40px;
+	margin: 10px auto 30px;  /* center the button itself */
+	padding: 10px 20px;
+	background: url('img/jar/button-hover.png') no-repeat center center;
+	background-size: contain;
+	color: #3a3a3a;
+	border: none;
+	font-size: 14pt;
+	font-weight: 800;
+	text-decoration: none;
+	transition: background-color 0.2s ease;
+	transition: ease-in 0.1s;
+}
+.playOnItch:hover {
+	background: url('img/jar/button-hover.png') no-repeat center center;
+	background-size: contain;
+	transform: rotate(-2deg) translateY(-8px);
+	transition: ease-in 0.1s;
+}
+.playOnItch .itch-icon {
+	width: 30px;
+	height: 30px;
+	filter: invert(80%);
+}
+
+/* Tooltip balloon */
+.playOnItch .tooltip {
+	position: absolute;
+	top: -35px; /* above the button */
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: #4242427a;
+	color: #FFFEEF;
+	font-size: 10pt;
+	font-weight: 500;
+	padding: 5px 10px;
+	border-radius: 8px;
+	border: 1px solid #5555557a;
+	white-space: nowrap;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease, transform 0.2s ease;
+	transform: rotate(2deg);
+}
+
+/* Show tooltip on hover */
+.playOnItch:hover .tooltip {
+	opacity: 1;
+	transform: rotate(2deg) translateX(-50%) translateY(-5px);
+}
+
+#Jarfall a:visited { color: #3a3a3a; }
+#Jarfall a:hover { color: #3a3a3a; }
+
+.jar-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px;                             /* spacing between images */
+  margin-top: 10px;
+}
+
+.jar-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* ensures images fit nicely */
+}
+
+@media (max-width: 600px) {
+  .jar-row {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+
+
+.jex-trailer-container {
+  position: absolute;
+  position: fixed;
+  display: block;
+  top: 150px;
+  right: calc(50% - 800px/2 - 320px); /* 800 = tabcontent width, 250 = menu width */
+  width: 300px; /* adjust the width as needed */ 
+  height: 250px; /* adjust the height as needed */
+  text-align: center;
+  cursor: pointer; /* add a pointer cursor to indicate it's a link */
+  animation: float 3.5s ease-in-out infinite;
+  z-index: 2;
+  padding-top: 0px;
+  margin: 0 auto;
+}
+
+.jex-trailer-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.jex-trailer-container .normal-state, .jex-trailer-container:hover .hover-state { display: block; }
+.jex-trailer-container .hover-state, .jex-trailer-container:hover .normal-state { display: none; }
+
+.jex-trailer-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.content-icon-container{
+	width: 200px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	
 }
 
 
 /* ------------------ GALLERY -------------- */
 .gallery {
-  width: 100%; /* adjust to your desired width */
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
+  column-count: 2;      /* 2 columns */
+  column-gap: 10px;     /* space between columns */
 }
 .gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.gallery:after {
-  content: "";
+  width: 100%;          /* fit column width */
+  height: auto;         /* keep aspect ratio */
+  margin-bottom: 10px;  /* gap between stacked images */
   display: block;
-  clear: both;
-}
-.gallery img:nth-child(2n+1) {
-  margin-right: 0;
-}
-.gallery img:nth-child(2n) {
-  margin-left: 0;
-}
-.lightboxGallery img.is-lightbox:hover {
-	cursor: url(img/zicon.png), pointer;
-	opacity: 1;
 }
 
+/* responsive: switch to 1 column on narrow screens */
+@media (max-width: 600px) {
+  .gallery {
+	column-count: 1;
+	column-gap: 5px;
+  }
+  .gallery img {
+	margin-bottom: 5px;
+  }
+}
+
+.lightboxGallery img.is-lightbox:hover {
+  cursor: url(img/zicon.png), pointer;
+  opacity: 1;
+}
+#CreativeBoard img.is-lightbox:hover {
+  cursor: url(img/zicon.png), pointer;
+  opacity: 1;
+  filter: grayscale(1);
+}
+
+
+
+
+/* -------------------------------------------------------------------- Store Section ---------------------------------------------------- */
+#Store {
+  text-align: center;
+}
+/* Spacers above & below */
+.store-spacer {
+  height: 100px;
+  width: auto;
+}
+/* Headings */
+.store-heading {
+  text-align: center;
+}
+.store-subheading {
+  text-align: center;
+}
+/* Gallery Layout */
+.store-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+/* Product Wrapper */
+.product {
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+/* Product Image */
+.product-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(41, 41, 41);
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+.product-image:hover {
+	transform: translateY(-5px);
+	transition: all 0.2s ease-in-out;
+}
+/* Product Info */
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 18px;
+}
+/* Title & Price */
+.product-title {
+  font-weight: 600;
+  font-size: 12pt;
+}
+.product-price {
+  color: white;
+  font-weight: 700;
+  background-color: #ffffff34;
+  padding: 2px 15px;
+  border-radius: 15px;
+  font-size: 12pt;
+}
+.game-wrapper,
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+}
+
+.game-wrapper iframe,
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 
 /*
@@ -479,41 +1060,65 @@ img{
 ░██        ░██     ░██ ░██ ░██ ░██     ░██    ░█████████ ░██            ░██    
 ░██        ░██     ░██ ░██  ░██░██     ░██    ░██    ░██ ░██            ░██    
  ░██   ░██  ░██   ░██  ░██   ░████     ░██    ░██    ░██  ░██   ░██     ░██    
-  ░██████    ░██████   ░██    ░███     ░██    ░██    ░██   ░██████      ░██   
-                                                   
-                                             
+  ░██████    ░██████   ░██    ░███     ░██    ░██    ░██   ░██████      ░██                                          
 */
 
 .socials-container{
-	display: block;  
+	display: flex;  
+	flex-direction: column;
 	width: 100%;
 	height: auto; 
 	padding-top: 20px; 
 }
+.socials-desktop{
+	display: block;
+	width: 100%;
+	height: auto; 
+}
+.socials-mobile{
+	display: none;  
+}
 .social{
 	display: flex;  
 	flex-wrap: nowrap; 
+	flex-direction: row;
+	justify-content: left;
 	width: 100%;
 	height: auto; 
 }
 .social-icon{
 	display: flex; 
 	flex-wrap: nowrap;
-	width: 20px;
-	height: 20px; 
+	width: 28px;
+	height: 28px; 
 	float: left;
 	user-select: none;
+	margin-left: -5px;
 }
 .social-text{
 	display: flex;
 	flex-wrap: nowrap;
 	font-size: 10pt;
-	font-weight: 200;
-  	line-height: 22px;
+	font-weight: var(--font-tab-link-weight);
+  	line-height: 28px;
   	vertical-align: middle;
 	margin-left: 5px;
-	font-family: 'Monospace Krypton';
-	font-size: 10pt;
+	font-family: var(--font-tab-link);
+	color: var(--social-text-color);
+	
+}
+.social-text:hover{
+	text-decoration: none;
+}
+.social a:hover{
+	text-decoration: none;
+}
+.mail-icon,
+.discord-icon,
+.itch-icon{
+	width: 28px;
+	height: 28px;
+	fill: var(--social-icons-color);
 }
 .version{
 	position: absolute;
@@ -559,21 +1164,20 @@ img{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   display: none;
-  z-index: 1;
+  z-index: 12;
 }
 .lightbox.open {
   display: block;
 }
 .lightbox img {
-  max-width: 60vw;
+  max-width: 98vw;
   max-height: 80vh;
-  
   margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
+  z-index: 13;
   opacity: 1;
 }
 .lightbox-background {
@@ -584,14 +1188,49 @@ img{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 0;
+  z-index: 11;
   opacity: 0.5;
 }
 .lightbox-background.open {
   display: block;
 }
+.lightbox-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: white;
+  font-size: 40px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  z-index: 11;
+}
 
-
+.lightbox-close:hover {
+  background: rgba(0,0,0,0.0);
+  opacity: 0.8;
+}
+.lightbox-desc {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(20, 20, 20);
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 3;
+}
+/* Class injected when lightbox is open */
+body.no-scroll {
+	overflow-y: hidden;
+	overflow-x: hidden;
+  	overflow: hidden;
+}
 /*
    ░███    ░████████     ░██████   ░██     ░██ ░██████████
   ░██░██   ░██    ░██   ░██   ░██  ░██     ░██     ░██    
@@ -602,29 +1241,69 @@ img{
 ░██    ░██ ░█████████    ░██████     ░██████       ░██  
                                      
  */
-.about{
-	display: block;
+.about-container {
+  max-width: 700px;
+  margin: 10px 0;
+  text-align: center;
+  padding: 0 15px;
+  text-align: left;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.about-img img {
+  width: 70%;
+  height: auto;
+  border-radius: 3px; /* optional */
+  display: block;
+  margin-bottom: 0px;
+  margin: 0 auto;
+}
+.about-text{
+	color: var(--color-text);
 	width: 100%;
+	padding: 0;
+	margin: 0;
 	height: auto;
-	margin-top: 100px;
+	display: block; 
+	font-size: 14pt;
 }
-.about-intro{
-	display: block;
-	width: 40%;
-	height: auto;
-	float: left;
+.tool-note {
+    color: gray;
+    font-style: italic;
 }
-.about-img{
-	width: 50%;
-	height: auto;
-	/*display: inline-block;*/
-	float: right;
+
+.collapsible {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 1.2em;
+  user-select: none;
 }
-.more-about{
-	margin-top: 10px;
-	width: 100%;
-	height: auto;
-	display: inline-block;
+
+/* Only underline the label text */
+.collapsible .label {
+  flex: 1;
+}
+.collapsible .label:hover {
+  text-decoration: underline;
+}
+
+.collapsible .arrow {
+  margin-left: 8px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  transform-origin: center center;
+}
+
+.content {
+  display: none;
+  margin-left: 12px;
+  margin-top: 6px;
+}
+.content.show {
+  display: block;
 }
 
 
@@ -636,44 +1315,31 @@ img{
  ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
  ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
  ███       ███   ███     ███  ██     ██ ███ ███        ███      
- ███       ███     █████      ████ ███  ███ ██████████ █████████
-                                                                                                                                                                                             
+ ███       ███     █████      ████ ███  ███ ██████████ █████████                                                                                                                                                                                 
 */
-
-
-/*
-▀██    ██▀ ▀██▀▀▀▀█  ▀█▄   ▀█▀ ▀██▀  ▀█▀ 
- ███  ███   ██  ▄     █▀█   █   ██    █  
- █▀█▄▄▀██   ██▀▀█     █ ▀█▄ █   ██    █  
- █ ▀█▀ ██   ██        █   ███   ██    █  
-▄█▄ █ ▄██▄ ▄██▄▄▄▄▄█ ▄█▄   ▀█    ▀█▄▄▀   
-                                         
-*/
-
-
-
 /* Hamburger icon base */
 .hamburger-button {
   position: absolute;
   position: fixed;
   top: 0px;
-  right: 0px;
-  width: 80px;
-  height: 80px;
+  left: 0px;
+  width: 66px;
+  height: 66px;
   border: none;
   background: black;
   cursor: pointer;
   display: none; /* only shown on small screens */
-  z-index: 1000;
+  z-index: 10;
 }
 
 .hamburger-icon {
   width: 50%;
   height: 50%;
   background-image: url('img/menu-icon-open.svg');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
-  margin: 10px 10px;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Change icon when active */
@@ -681,105 +1347,343 @@ img{
   background-image: url('img/menu-icon-close.svg');
 }
 
-/* Mobile view rules */
-@media (max-width: 1000px) {
-	body{
-		margin: 0;
-		padding: 0;
+/* ------------------------------------------------------ FOR TABLETS ------------------------------------------------------*/
+@media screen and (max-width: 1400px) and (min-width: 700px) {
+  
+  .adaptive-content-wrapper {
+    display: flex;
+    justify-content: right; /* centers tabcontent in viewport */
+    align-items: center;
+    position: relative;
+    width: 100%;
+    flex-direction: row; /* stack menu + content */
+    align-items: center;
+  }
+  /* Style the tab content */
+  .tabcontent {
+    width: auto;
+    max-width: calc(100% - 300px);
+    height: auto;
+    margin: 0; 
+  }
+  .jex-trailer-container {
+    position: relative;
+    display: block;
+    top: 0;
+    right: 0;
+    padding-top: 0px;
+    margin: 0 auto;
+  }
+  #Featured.tabcontent {
+	margin-top: 0px;
+	margin-bottom: 0px;
+  }
+  .featured-project {
+    flex-direction: column; /* stack content vertically */
+	margin-bottom: 0px;
+  }
+
+  .featured-project img {
+  display: block;
+  width: 100%;
+  height: auto; /* fallback */
+  max-height: 30vh;          /* each project takes up at most ~30% of viewport */
+  min-height: 50px;         /* never shrink too small */
+  object-fit: contain;
+  border-radius: inherit;
+  transition: all 0.1s ease-in-out;
+  }
+  .menu-container {
+    position: fixed;
+    top: 0;
+    left: 0px;
+    padding-left: 25px;
+  }
+  .menu .tablink {
+	font-size: 11pt;
+	margin: 4px 0px 4px -5px;
+	line-height: 15px;
+	vertical-align: middle;
+	
+  }
+  .menu .social-text, 
+  .menu .tablink a, 
+	.menu .social a {
+	font-size: 11pt;
+	
+  }
+  .overlay-text-role {
+	display: block;
+  }
+}
+
+
+/* ------------------------------------------------------ FOR MOBILE ------------------------------------------------------*/
+@media (max-width: 700px) {
+	.overlay-text-role {
+		display: block;
+  	}
+	.mobile-spacer-top {
+		display: block;
+		height: 20px; /* adjust as needed */
 	}
+	.mobile-spacer-bottom {
+		display: block;
+		height: 80px; /* gives extra padding after last project */
+	}
+
 	h1{font-size: 27pt;}
 	h2{font-size: 18pt;}
-	p{font-size: 12.5pt;}
-  .hamburger-button {
-    display: block;
-  }
+	p {font-size: 12.5pt;}
 
-  .menu-container {
-    display: none;
-    position: absolute;
-    top: 0px; /* below button */
-    left: 0;
-    padding-left:50px;
-    
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.95);
-    z-index: 999;
-    font-size: 2em;
-
-  }
-  .menu{
-		display: block; 
+	.hamburger-button {display: block;}
+	.menu-container {
+		display: none;
+		position: absolute;
+		position: fixed;
+		top: 0px; /* below button */
+		left: 0;
+		padding: 0px;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.95);
+		z-index: 9;
+		font-size: 2em;
+		overflow: hidden;
+		background: #000 url(img/noise-bg-3.png) repeat bottom / contain;
+		background-size: 500px 500px; /* each square tile will be 100×100 */
+		position: fixed;
+		width: 100%;
+		height: 100%;
+	}
+	.menu{
+		display: flex; 
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		width: 100%;
+		height: 100%;
 		text-align: left; 
-		padding: 60px 0px; 
+		padding: 0px;
+		margin: 0px;
+		
+		border: 1px solid rgba(255, 63, 63, 0);
+		overflow: hidden;
 	}
-  .menu button {
-		width: 120%;
-		height: auto;
-	  color: #FFFEEF; opacity: 100%;
-	  background-color: transparent;
-	  border: none;
-	  outline: none;
-	  cursor: pointer;
-	  padding: 0px 0px;
-	  font-family: var(--font-main);
-	  font-size: 14pt; 
-	  font-weight: 500; 
-	  text-align: left;
-	  margin: 0;
-	  padding: 0;
-	  margin-bottom: 5px;
-	  padding: 5px 0px;
-	  display: flex;
-	  flex-direction: column; 
+	.tablinks-group{
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1vh;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+		margin-bottom: 4vh;
+		border: 1px solid rgba(27, 80, 34, 0);
 	}
-
-  .menu-container.visible {
-    display: block;
-  }
-  .social-text{
-		font-size: 14pt;
-	}
-	.links-group{
-		margin-bottom: 100px;
-	}
-	.link-group-title{
-		display: block;  
-		width: 200px;
+	.extras{ margin-bottom: 4vh;}
+	.tablink-category{
+		position: absolute;
+		left: -30px; /* push it outside group */
+		top: 0px;
+		writing-mode: vertical-rl; /* makes text vertical */
+		width: auto;
 		height: auto;
 		text-align: left;
-		margin-bottom: 15px;
+		margin-bottom: 0px;
 		color: gray;
-		font-family: var(--font-main);
-		font-size: 10pt;
+		
+		font-size: 13pt;
 		font-weight: 650;
 		opacity: 100%;
+
+		border: 1px solid rgba(255, 255, 255, 0);
 	}
+	.socials-desktop{
+		display: none;
+	}
+	.socials-mobile{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		width: 100%;
+		padding: 0px 25px;
+	}
+	.social{
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		display: block;
+	}
+	.menu .tablink{
+		font-size: 14pt;
+		font-weight: 400;
+		height: auto;
+		width: 100%;
+		margin: 0px;
+		padding: 0px;
+		color: #fff;
+		border: 1px solid rgba(63, 63, 63, 0);
+	}
+	.menu .tablink.active{
+		background-color: white;
+		color: black;
+	}
+	.logo-container{
+		display: none;
+	}
+	.logo-container-mobile{
+		display: block;
+		margin-top: 50px;
+		background-color: transparent;
+		background: none;
+		text-align: center;
+		margin-bottom: 0px;
+	}
+	.description-container-mobile{
+		display: block;
+		margin-top: 10px;
+		margin-bottom: 20px;
+		background-color: transparent;
+		background: none;
+		text-align: center;
+	}
+	
+	.description-container 	{ display: none;}
+  	.menu-container.visible { display: block;}
+  	.tabcontent {
+		width: 100%;
+		padding: 0px 25px;
+  	}
+	
 	.about{
 		width: 100%;
 		overflow-x: hidden;
-	}
-	.about-intro{
 		display: block;
 		width: 100%;
 		height: auto;
 		float: none;
 		font-family: var(--font-main);
 		font-size: 14pt;
+		margin: 0;
+		padding: 0;
 	}
-	.about-img{
+	.about-img img{
 		width: 100%;
 		height: auto;
 		display: inline-block;
 		float: none;
+		margin-bottom: 0;
 	}
-	.more-about{
-		margin-top: 10px;
-		width: 100%;
-		height: auto;
-		display: inline-block; 
-		font-size: 14pt;
+	.product {
+		text-align: center;
+		max-width: 600px;
+		width: 90%;
+	}
+	.jex-trailer-container {
+		position: relative;
+		display: block;
+		top: 0;
+		right: 0;
+		width: 300px; /* adjust the width as needed */ 
+		height: 250px; /* adjust the height as needed */
+		text-align: center;
+		cursor: pointer; /* add a pointer cursor to indicate it's a link */
+		animation: float 3.5s ease-in-out infinite;
+		z-index: 2;
+		padding-top: 0px;
+		margin: 0 auto;
 	}
 }
+
+
+
+
+
+/* Mobile: always show overlay details under image */
+@media (max-width: 700px) {
+  .featured-project {
+    flex-direction: column; /* stack content vertically */
+	margin-bottom: 0px;
+  }
+
+  .featured-project img {
+    max-height: none;       /* remove desktop max-height */
+    min-height: auto;
+    border-radius: 8px 8px 0px 0px; /* top corners only */
+  }
+
+  .overlay-text-container {
+    position: relative;      /* no absolute positioning */
+    bottom: auto;
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 0 0 8px 8px; /* bottom corners rounded */
+    background: rgba(0, 0, 0, 0.9); /* semi-transparent background */
+    opacity: 1 !important;   /* always visible */
+    pointer-events: auto;
+    backdrop-filter: none;    /* optional: remove blur on mobile */
+    padding-left: 15px;       /* remove extra offset */
+  }
+
+  .overlay-text-title {
+    font-size: 14pt;    /* slightly bigger than desc */
+    font-weight: 600;
+    margin: 4px 0 2px 0;
+    text-align: left;
+  }
+  .overlay-text-role {
+    font-size: 10pt;    /* a bit smaller than desc */
+    font-weight: 500;
+    padding: 4px 8px 2px 8px;
+    margin: 4px 0 6px 0;
+    text-align: right;  /* role badge stays on the right */
+  }
+  .overlay-text-desc {
+    font-size: 10pt;    /* standard readable size */
+    font-weight: 400;
+    margin: 2px 0;
+    text-align: left;
+	padding: 0px;
+	opacity: 0.6;
+	
+	display: block;
+	width: 90%;
+  }
+  .overlay-text-platform {
+    text-align: left;
+    font-size: 10pt;
+    padding: 2px 0px;
+    margin-top: 2px;
+    margin-bottom: 5px;
+	opacity: 0.6;
+	padding: 0px;
+
+	display: block;
+	width: 90%;
+  }
+
+  /* remove hover effect */
+  .featured-project:hover img {
+    transform: none;
+  }
+	.mobile-spacer-top {
+		display: block;
+		height: 20px; /* adjust as needed */
+	}
+
+	.mobile-spacer-bottom {
+		display: block;
+		height: 80px; /* gives extra padding after last project */
+	}
+}
+
+
+
+
+
+
