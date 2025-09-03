@@ -24,37 +24,31 @@
 	<script src="js/LightboxGallery.js"></script>
 	<script src="js/dynamic.js"></script>
 
-	<script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('loading-overlay');
     const loadingBar = document.getElementById('loading-bar');
 
     let progress = 0;
 
-    // Increment progress slowly to 80%
+    // Increment progress slowly
     const fakeProgress = setInterval(() => {
-        if (progress < 80) {
-            progress += Math.random() * 2; // random small increment
-            if (progress > 60) progress = 100;
+        if (progress < 75) { // increase until 75%
+            progress += Math.random() * 2; // small random increments
+            if (progress > 75) progress = 75;
             loadingBar.style.width = progress + '%';
-        }
-    }, 100);
-
-    // When page fully loads
-    window.addEventListener('load', () => {
-        clearInterval(fakeProgress);
-        // jump to 100%
-        loadingBar.style.width = '100%';
-
-        // Fade out overlay
-        setTimeout(() => {
+        } else {
+            // Once 75% is reached, immediately go to 100%
+            loadingBar.style.width = '100%';
+            clearInterval(fakeProgress);
+            // Fade out overlay and show website
             overlay.style.transition = 'opacity 0.5s ease';
             overlay.style.opacity = '0';
             setTimeout(() => overlay.style.display = 'none', 500);
-        }, 200);
-    });
+        }
+    }, 100);
 });
-	</script>
+</script>
 </head>
 
 
