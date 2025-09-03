@@ -25,54 +25,35 @@
 	<script src="js/dynamic.js"></script>
 
 	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-			const overlay = document.getElementById('loading-overlay');
-			const loadingBar = document.getElementById('loading-bar');
+document.addEventListener('DOMContentLoaded', () => {
+    const overlay = document.getElementById('loading-overlay');
+    const loadingBar = document.getElementById('loading-bar');
 
-			// Collect all images and videos
-			const assets = [
-				...Array.from(document.images),
-				...Array.from(document.querySelectorAll('video'))
-			];
+    let progress = 0;
 
-			let loaded = 0;
-			const total = assets.length;
+    // Increment progress slowly to 80%
+    const fakeProgress = setInterval(() => {
+        if (progress < 80) {
+            progress += Math.random() * 2; // random small increment
+            if (progress > 80) progress = 80;
+            loadingBar.style.width = progress + '%';
+        }
+    }, 100);
 
-			if (total === 0) {
-				hideOverlay();
-				return;
-			}
+    // When page fully loads
+    window.addEventListener('load', () => {
+        clearInterval(fakeProgress);
+        // jump to 100%
+        loadingBar.style.width = '100%';
 
-			// Function to update progress
-			function assetLoaded() {
-				loaded++;
-				const progress = (loaded / total) * 100;
-				loadingBar.style.width = `${progress}%`;
-
-				if (loaded === total) {
-					hideOverlay();
-				}
-			}
-
-			// Hide overlay with fade
-			function hideOverlay() {
-				overlay.style.transition = 'opacity 0.5s ease';
-				overlay.style.opacity = '0';
-				setTimeout(() => overlay.style.display = 'none', 500);
-			}
-
-			// Attach load events
-			assets.forEach(asset => {
-				if (asset.tagName === 'IMG') {
-					if (asset.complete) assetLoaded();
-					else asset.addEventListener('load', assetLoaded);
-				} else if (asset.tagName === 'VIDEO') {
-					// wait for metadata so we know video loaded
-					if (asset.readyState >= 2) assetLoaded();
-					else asset.addEventListener('loadeddata', assetLoaded);
-				}
-			});
-		});
+        // Fade out overlay
+        setTimeout(() => {
+            overlay.style.transition = 'opacity 0.5s ease';
+            overlay.style.opacity = '0';
+            setTimeout(() => overlay.style.display = 'none', 500);
+        }, 200);
+    });
+});
 	</script>
 </head>
 
