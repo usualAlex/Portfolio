@@ -280,7 +280,7 @@ h2 a:visited {
 	background: url(img/jex/background-v2.webp) no-repeat center / cover;
 }
 .background-image.bg-alchemy {
-	background: url(img/alchemy/background.webp) no-repeat bottom / cover;
+	background: url(img/alchemy/background.png) no-repeat bottom / cover;
 }
 .background-image.bg-armorcraft {
 	background: url(img/ac/background.webp) no-repeat bottom / cover;
@@ -1758,7 +1758,7 @@ body.no-scroll {
     background: url(img/jex/background-v2.webp) no-repeat left / cover;
   }
   .background-image.bg-alchemy {
-    background: url(img/alchemy/background.webp) no-repeat bottom / cover;
+    background: url(img/alchemy/background.png) no-repeat bottom / cover;
   }
   .background-image.bg-armorcraft {
     background: url(img/ac/background.webp) no-repeat bottom / cover;
