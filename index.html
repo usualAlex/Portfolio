@@ -25,15 +25,53 @@
 	<script src="js/dynamic.js"></script>
 
 	<script>
-		window.addEventListener('load', () => {
+		document.addEventListener('DOMContentLoaded', () => {
 			const overlay = document.getElementById('loading-overlay');
+			const loadingBar = document.getElementById('loading-bar');
 
-			// Optional: small delay to make it look smooth
-			setTimeout(() => {
+			// Collect all images and videos
+			const assets = [
+				...Array.from(document.images),
+				...Array.from(document.querySelectorAll('video'))
+			];
+
+			let loaded = 0;
+			const total = assets.length;
+
+			if (total === 0) {
+				hideOverlay();
+				return;
+			}
+
+			// Function to update progress
+			function assetLoaded() {
+				loaded++;
+				const progress = (loaded / total) * 100;
+				loadingBar.style.width = `${progress}%`;
+
+				if (loaded === total) {
+					hideOverlay();
+				}
+			}
+
+			// Hide overlay with fade
+			function hideOverlay() {
 				overlay.style.transition = 'opacity 0.5s ease';
 				overlay.style.opacity = '0';
 				setTimeout(() => overlay.style.display = 'none', 500);
-			}, 200);
+			}
+
+			// Attach load events
+			assets.forEach(asset => {
+				if (asset.tagName === 'IMG') {
+					if (asset.complete) assetLoaded();
+					else asset.addEventListener('load', assetLoaded);
+				} else if (asset.tagName === 'VIDEO') {
+					// wait for metadata so we know video loaded
+					if (asset.readyState >= 2) assetLoaded();
+					else asset.addEventListener('loadeddata', assetLoaded);
+				}
+			});
 		});
 	</script>
 </head>
