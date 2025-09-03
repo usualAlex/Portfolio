@@ -66,14 +66,14 @@
 
 	--font-tab-link: 'Kode Mono';
 	--font-tab-link-weight: 800;
-	--font-tab-link-size: 9pt;
+	--font-tab-link-size: 9.5pt;
 	--font-tab-link-color: rgba(255, 255, 255, 0.7);
 
 	--font-tab-balloon: 'Kode Mono';
 	--font-tab-balloon-weight: 600;
 	--font-tab-balloon-size: 9pt;
 	
-	--menu-link-color: #FFFEEF;
+	--menu-link-color: #fffeefce;
 	--menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
 	--menu-link-active-color: rgba(17, 17, 17, 0.9);
   	--menu-category-color: rgba(255, 255, 255, 0.4);

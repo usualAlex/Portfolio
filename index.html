@@ -418,11 +418,17 @@
 	<!--<img src="img/jex/iphone.webp" style="display:block; margin:0 auto; width: 90%; max-width: 300px;">-->
 
 
-	<video autoplay loop muted playsinline style="display:block; margin:0 auto; width: 90%; max-width: 300px; height: auto;">
-		<source src="img/jex/phone-gameplay.webm" type="video/webm" >
-		<!-- Fallback (optional) -->
-		<img src="img/jex/iphone.webp" style="display:block; margin:0 auto; width: 90%; max-width: 300px;">
+	<video autoplay loop muted playsinline 
+		style="display:block; margin:0 auto; width:90%; max-width:300px; height:auto;" 
+		id="phone-video">
+		<source src="img/jex/phone-gameplay.webm" type="video/webm">
+		
 	</video>
+	<!-- fallback for browsers that don't support <video> or Safari and webp - runs script at bottom -->
+	<img src="img/jex/iphone.webp" 
+		style="display:block; margin:0 auto; width:90%; max-width:300px; height:auto;" 
+		id="phone-fallback">
+
 
 	</br></br>
 
@@ -1144,6 +1150,23 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburgerBtn.classList.toggle('active');
   });
 });
+</script>
+
+<!-- Phone video fallback - used for jex in space -->
+<script>
+    const video = document.getElementById('phone-video');
+    const fallback = document.getElementById('phone-fallback');
+
+    // If the video can play, hide the fallback image
+    video.oncanplay = () => {
+        fallback.style.display = 'none';
+    };
+
+    // If the video cannot play (e.g., Safari iOS), hide video and show fallback
+    video.onerror = () => {
+        video.style.display = 'none';
+        fallback.style.display = 'block';
+    };
 </script>
 
 </body>
