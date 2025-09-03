@@ -748,7 +748,7 @@ h2 a:visited {
   border-radius: 8px;
   flex: 0 0 auto;            /* don’t stretch weirdly */
   width: 100%;
-  max-width: 800px;          /* optional: keep from being too wide */
+  max-width: 800px;           /*optional: keep from being too wide */
 }
 .featured-project img {
   display: block;
@@ -1424,7 +1424,7 @@ body.no-scroll {
   height: auto; /* fallback */
   max-height: 30vh;          /* each project takes up at most ~30% of viewport */
   min-height: 50px;         /* never shrink too small */
-  object-fit: contain;
+  object-fit: cover;
   border-radius: inherit;
   transition: all 0.1s ease-in-out;
   }
@@ -1469,6 +1469,17 @@ body.no-scroll {
 
     margin: 0px;
     margin-right: 0px;
+  }
+}
+@media screen and (max-width: 1150px) and (min-width: 900px) {
+  .tabcontent {
+    width: 500px;
+    height: auto;
+    padding: 0px 10vw 0px 10vw;
+    padding: 0px 20px 0px 20px;
+
+    margin: 0px;
+    margin-right: 100px;
   }
 }
 
