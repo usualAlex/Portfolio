@@ -23,6 +23,19 @@
 	<!--<script src="./PureSnow.js"></script>-->
 	<script src="js/LightboxGallery.js"></script>
 	<script src="js/dynamic.js"></script>
+
+	<script>
+		window.addEventListener('load', () => {
+			const overlay = document.getElementById('loading-overlay');
+
+			// Optional: small delay to make it look smooth
+			setTimeout(() => {
+				overlay.style.transition = 'opacity 0.5s ease';
+				overlay.style.opacity = '0';
+				setTimeout(() => overlay.style.display = 'none', 500);
+			}, 200);
+		});
+	</script>
 </head>
 
 
@@ -31,6 +44,12 @@
 <!-- XMAS THEME SNOW -->
 <!--<div id="snow"></div>-->
 
+<!-- Loading Overlay -->
+<div id="loading-overlay">
+    <div id="loading-bar-container">
+        <div id="loading-bar"></div>
+    </div>
+</div>
 
 <button class="hamburger-button"> <div class="hamburger-icon"></div> </button>
 <div class="background-image"></div>

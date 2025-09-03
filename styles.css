@@ -43,6 +43,46 @@
   src: url('fonts/JetBrainsMono-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
 }
+
+/* Fullscreen overlay */
+#loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* black background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* above everything */
+}
+
+/* Loading bar container */
+#loading-bar-container {
+    width: 300px;
+    height: 20px;
+    background-color: rgba(255,255,255,0.2); /* light background for contrast */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Animated loading bar */
+#loading-bar {
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    animation: loadProgress 2s linear infinite;
+    border-radius: 10px 0 0 10px;
+}
+
+@keyframes loadProgress {
+    0% { width: 0%; }
+    50% { width: 80%; }
+    100% { width: 100%; }
+}
+
+
 ::selection {
 	color: black;
 	background: #FFFEEF;
@@ -243,7 +283,7 @@ h2 a:visited {
 	/*background: #342F2A url(img/jar/background-v2.png) no-repeat bottom;*/
 	background-image: none;
 	background-color: #5E493F; /* ensures fallback */
-	background: #342F2A url(img/jar/background-v3.webp) no-repeat bottom / cover;
+	background: #342F2A url(img/jar/background-v4.webp) no-repeat bottom / cover;
 }
 .background-image.bg-jex {
 	background: url(img/jex/background-v2.webp) no-repeat center / cover;
@@ -614,11 +654,11 @@ h2 a:visited {
 #Jarfall.tabcontent {
 	background: none;
 	background-color: rgba(73, 65, 58, 0.85);
-	background-color: #976f57;
+	background-color: #976f57e5;
 }
 #Jex.tabcontent {
 	background: none;
-	background-color: rgba(20, 23, 32, 0.9);
+	background-color: rgba(20, 23, 32, 0.8);
 }
 #Alchemy.tabcontent {
 	background: none;
@@ -1703,6 +1743,30 @@ body.no-scroll {
 		display: block;
 		height: 80px; /* gives extra padding after last project */
 	}
+
+  /* BACKGROUNDS FOR EACH PROJECT */
+  /* on mobile force pos to right so some stuff from the bg shows up under the tabcontent transparent bg */
+  .background-image.bg-jarfall {
+    /*background: #342F2A url(img/jar/background-v2.png) no-repeat bottom;*/
+    background-image: none;
+    background-color: #5E493F; /* ensures fallback */
+    background: #342F2A url(img/jar/background-v4.webp) no-repeat right / cover;
+  }
+  .background-image.bg-jex {
+    background: url(img/jex/background-v2.webp) no-repeat left / cover;
+  }
+  .background-image.bg-alchemy {
+    background: url(img/alchemy/background.webp) no-repeat bottom / cover;
+  }
+  .background-image.bg-armorcraft {
+    background: url(img/ac/background.webp) no-repeat bottom / cover;
+  }
+  .background-image.bg-besiege {
+    background: url(img/besiege/4k2.webp) no-repeat bottom / cover;
+  }
+  .background-image.bg-rebounce, .background-image.bg-sweeper {
+    background: #000;
+  }
 }
 
 
