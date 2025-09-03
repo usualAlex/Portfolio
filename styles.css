@@ -274,6 +274,7 @@ h2 a:visited {
 		transparent 2px,                 	/* start of gap */
 		transparent 5px                 	/* gap size = 8px */
 	);
+  background-size: 100% 5px; /* explicitly match the repeat interval */
 
   /* fade sides (vignette-like) */
   -webkit-mask-image: linear-gradient(
@@ -1427,7 +1428,7 @@ body.no-scroll {
     margin-right: 50px;
   }
 }
-@media screen and (max-width: 1000px) and (min-width: 700px) {
+@media screen and (max-width: 1400px) and (min-width: 700px) {
   .tabcontent {
     width: 500px;
     height: auto;
