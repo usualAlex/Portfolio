@@ -275,7 +275,7 @@ h2 a:visited {
 		transparent 5px                 	/* gap size = 8px */
 	);
   background-size: 100% 5px; /* explicitly match the repeat interval */
-
+  
   /* fade sides (vignette-like) */
   -webkit-mask-image: linear-gradient(
     to right,
@@ -1351,7 +1351,7 @@ body.no-scroll {
 }
 
 /* ------------------------------------------------------ FOR TABLETS ------------------------------------------------------*/
-@media screen and (max-width: 1400px) and (min-width: 700px) {
+@media screen and (max-width: 1400px) and (min-width: 600px) {
   
   .adaptive-content-wrapper {
     display: flex;
@@ -1422,13 +1422,13 @@ body.no-scroll {
     width: 650px;
     height: auto;
     padding: 0px 10vw 0px 10vw;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 50px 0px 50px;
 
     margin: 0px;
-    margin-right: 50px;
+    margin-right: 100px;
   }
 }
-@media screen and (max-width: 1400px) and (min-width: 700px) {
+@media screen and (max-width: 1100px) and (min-width: 400px) {
   .tabcontent {
     width: 500px;
     height: auto;
@@ -1441,7 +1441,7 @@ body.no-scroll {
 }
 
 /* ------------------------------------------------------ FOR MOBILE ------------------------------------------------------*/
-@media (max-width: 700px) {
+@media (max-width: 400px) {
 	.overlay-text-role {
 		display: block;
   	}
