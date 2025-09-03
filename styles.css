@@ -50,7 +50,7 @@
 }
 :root {
 	--color-logo: #FFFEEF;
-	--color-text: #eeede4; /*yellowish white*/
+	--color-text: #FFFEEF; /*yellowish white*/
 	--color-navlink-active: #00C3FF; /*blue*/
 	--color-link: #00C3FF; /*blue*/
 	--color-link-hover: #00C3FF; /*blue*/
@@ -73,29 +73,29 @@
 	--font-tab-balloon-weight: 600;
 	--font-tab-balloon-size: 9pt;
 	
-	--menu-link-color: rgba(255, 255, 255, 0.7);
+	--menu-link-color: #FFFEEF;
 	--menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
 	--menu-link-active-color: rgba(17, 17, 17, 0.9);
   	--menu-category-color: rgba(255, 255, 255, 0.4);
 	--menu-balloon-color: #7575752d;
 	--menu-balloon-border-color: #7a7a7a52;
 
-	--social-text-color: rgba(255, 255, 255, 0.7);
-	--social-icons-color: rgba(255, 255, 255, 0.7);
+	--social-text-color: #FFFEEF;
+	--social-icons-color: #FFFEEF;
 }
 
 /* Default menu colors */
 /* Override for Jarfall (example: darker text) */
 body.menu-jarfall {
-  --menu-link-color: rgba(80, 53, 23, 0.8);
-  --menu-link-active-bg-color: rgba(80, 53, 23, 0.8);
+  --menu-link-color: rgba(80, 53, 23, 0.95);
+  --menu-link-active-bg-color: rgba(80, 53, 23, 0.95);
   --menu-link-active-color: rgb(255, 245, 231);
   --menu-category-color: rgba(80, 53, 23, 0.6);
-  --menu-balloon-color: rgba(80, 53, 23, 0.6);
+  --menu-balloon-color: rgba(80, 53, 23, 0.4);
   --menu-balloon-border-color: rgba(94, 64, 30, 0.6);
 
-  --social-text-color: rgba(80, 53, 23, 0.8);
-  --social-icons-color: rgba(80, 53, 23, 0.8);
+  --social-text-color: rgba(80, 53, 23, 0.95);
+  --social-icons-color: rgba(80, 53, 23, 0.95);
 }
 /* Override for Jex (example: light blue) */
 body.menu-jex {
@@ -103,7 +103,7 @@ body.menu-jex {
   --menu-link-active-color: #02151b;
 }
 body.menu-jarfall .logo {
-  --color-logo: rgba(80, 53, 23, 0.8);
+  --color-logo: rgba(80, 53, 23, 0.95);
 }
 body {
 	height: auto;
@@ -230,7 +230,7 @@ h2 a:visited {
 
 /* DEFAULT BACKGROUND */
 .background-image {
-  background: #000 url(img/noise-bg-3.png) repeat bottom / contain;
+  background: #000 url(img/noise-bg-3.webp) repeat bottom / contain;
   background-size: 500px 500px; /* each square tile will be 100×100 */
   position: fixed;
   width: 100%;
@@ -243,20 +243,19 @@ h2 a:visited {
 	/*background: #342F2A url(img/jar/background-v2.png) no-repeat bottom;*/
 	background-image: none;
 	background-color: #5E493F; /* ensures fallback */
-	background: #342F2A url(img/jar/background-v3.png) no-repeat bottom / cover;
+	background: #342F2A url(img/jar/background-v3.webp) no-repeat bottom / cover;
 }
 .background-image.bg-jex {
-	background: url(img/jex/background-v2.png) no-repeat center fixed;
-	background-size: cover;
+	background: url(img/jex/background-v2.webp) no-repeat center / cover;
 }
 .background-image.bg-alchemy {
-	background: url(img/alchemy/background.png) no-repeat bottom / cover;
+	background: url(img/alchemy/background.webp) no-repeat bottom / cover;
 }
 .background-image.bg-armorcraft {
-	background: url(img/ac/background.png) no-repeat bottom / cover;
+	background: url(img/ac/background.webp) no-repeat bottom / cover;
 }
 .background-image.bg-besiege {
-	background: url(img/besiege/4k2.png) no-repeat bottom / cover;
+	background: url(img/besiege/4k2.webp) no-repeat bottom / cover;
 }
 .background-image.bg-rebounce, .background-image.bg-sweeper {
 	background: #000;
@@ -392,7 +391,7 @@ h2 a:visited {
 	height: auto;
 	text-align: left;
 	padding: 0;
-	user-select: none;  
+	
 }
 .tablinks-group{
 	display: block;  
@@ -446,7 +445,7 @@ h2 a:visited {
 .menu .social a {
 	color: var(--color-text);
 	text-decoration: none;
-	user-select: none;
+	
 
 	font-family: var(--font-tab-link);
 	font-size: 10pt;
@@ -1073,7 +1072,7 @@ h2 a:visited {
 .socials-desktop{
 	display: block;
 	width: 100%;
-	height: auto; 
+	height: auto;  
 }
 .socials-mobile{
 	display: none;  
@@ -1092,8 +1091,10 @@ h2 a:visited {
 	width: 28px;
 	height: 28px; 
 	float: left;
-	user-select: none;
 	margin-left: -5px;
+
+  
+
 }
 .social-text{
 	display: flex;
@@ -1105,7 +1106,7 @@ h2 a:visited {
 	margin-left: 5px;
 	font-family: var(--font-tab-link);
 	color: var(--social-text-color);
-	
+
 }
 .social-text:hover{
 	text-decoration: none;
@@ -1113,6 +1114,7 @@ h2 a:visited {
 .social a:hover{
 	text-decoration: none;
 }
+
 .mail-icon,
 .discord-icon,
 .itch-icon{
@@ -1450,7 +1452,7 @@ body.no-scroll {
 		z-index: 9;
 		font-size: 2em;
 		overflow: hidden;
-		background: #000 url(img/noise-bg-3.png) repeat bottom / contain;
+		background: #000 url(img/noise-bg-3.webp) repeat bottom / contain;
 		background-size: 500px 500px; /* each square tile will be 100×100 */
 		position: fixed;
 		width: 100%;
