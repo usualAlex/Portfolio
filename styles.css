@@ -437,6 +437,7 @@ h2 a:visited {
 	flex-direction: column;
 	padding: 0px 5px;
 	margin-left: -5px;
+  text-decoration: none;
 
 	font-family: var(--font-tab-link);
 	font-size: var(--font-tab-link-size);
@@ -463,7 +464,7 @@ h2 a:visited {
 	padding: 0;
 }
 .menu .social a:hover{
-	text-decoration: underline;
+  text-decoration: none;
 }
 /* Change background color of buttons on hover */
 .menu .tablink:hover {
@@ -471,8 +472,7 @@ h2 a:visited {
   border: none;
   outline: none;
   opacity: 100%;
-  text-decoration: underline;
-  text-decoration:none;
+  text-decoration: none;
   background-color: var(--menu-link-active-bg-color);
   color: var(--menu-link-active-color);
   padding: 0px 5px;
@@ -487,6 +487,7 @@ h2 a:visited {
   background-color: var(--menu-link-active-bg-color);
   color: var(--menu-link-active-color);
   padding: 0px 5px;
+  text-decoration: none;
 }
 .logo-container .tablink{
   color: transparent;
