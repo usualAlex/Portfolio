@@ -1417,8 +1417,27 @@ body.no-scroll {
   .overlay-text-role {
 	display: block;
   }
-}
+  .tabcontent {
+    width: 650px;
+    height: auto;
+    padding: 0px 10vw 0px 10vw;
+    padding: 0px 20px 0px 20px;
 
+    margin: 0px;
+    margin-right: 50px;
+  }
+}
+@media screen and (max-width: 1000px) and (min-width: 700px) {
+  .tabcontent {
+    width: 500px;
+    height: auto;
+    padding: 0px 10vw 0px 10vw;
+    padding: 0px 20px 0px 20px;
+
+    margin: 0px;
+    margin-right: 0px;
+  }
+}
 
 /* ------------------------------------------------------ FOR MOBILE ------------------------------------------------------*/
 @media (max-width: 700px) {
