@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fakeProgress = setInterval(() => {
         if (progress < 80) {
             progress += Math.random() * 2; // random small increment
-            if (progress > 80) progress = 80;
+            if (progress > 60) progress = 100;
             loadingBar.style.width = progress + '%';
         }
     }, 100);
