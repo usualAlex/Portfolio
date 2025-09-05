@@ -469,6 +469,9 @@ h2 a:visited {
  ███       ███ ███       ███    ██ ██ ███     ███
  ███       ███ █████████ ███      ███   ██████   
 */
+.mobile-menu-container{
+  display: none;
+}
 .menu-container{
 	position: fixed;
 	top: 0;
@@ -1609,6 +1612,20 @@ body.no-scroll {
 		padding-top: 0px;
 		margin: 0 auto;
 	}
+  .menu-link-category {
+    margin: 0px;
+  }
+  .menu-link-group {
+    margin: 20px 0px;
+    margin-bottom: 40px;
+  }
+  .menu-link a,
+  .menu-link-active a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
 }
 @media screen and (max-width: 1400px) and (min-width: 701px) {
   .adaptive-content-wrapper {
@@ -1621,6 +1638,20 @@ body.no-scroll {
     width: 250px;      /* fixed sidebar width */
     height: 100vh;
     pointer-events: auto; /* allow interactions again */
+  }
+  .menu-link-category {
+    margin: 0px;
+  }
+  .menu-link-group {
+    margin: 20px 0px;
+    margin-bottom: 40px;
+  }
+  .menu-link a,
+  .menu-link-active a {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
   }
   .tabcontent {
     margin: 0; /* remove auto-center */
@@ -1689,98 +1720,9 @@ body.no-scroll {
 
 	.hamburger-button {display: block;}
 	.menu-container {
-		display: none;
-		position: absolute;
-		position: fixed;
-		top: 0px; /* below button */
-		left: 0;
-		padding: 0px;
-		width: 100%;
-		height: 100%;
-		background: rgba(0, 0, 0, 0.95);
-		z-index: 9;
-		font-size: 2em;
-		overflow: hidden;
-		background: #000 url(img/noise-bg-3.webp) repeat bottom / contain;
-		background-size: 500px 500px; /* each square tile will be 100×100 */
-		position: fixed;
-		width: 100%;
-		height: 100%;
-	}
-	.menu{
-		display: flex; 
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		position: relative;
-		width: 100%;
-		height: 100%;
-		text-align: left; 
-		padding: 0px;
-		margin: 0px;
-		border: 1px solid rgba(255, 63, 63, 0);
-		overflow: hidden;
-	}
-	.menu-link-group{
-		display: flex;
-		position: relative;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		gap: 1vh;
-		margin: 0px;
-		padding: 0px;
-		width: 100%;
-		margin-bottom: 4vh;
-		border: 1px solid rgba(27, 80, 34, 0);
-	}
-	.extras{ margin-bottom: 4vh;}
-	.menu-link-category{
-		position: absolute;
-		left: -30px; /* push it outside group */
-		top: 0px;
-		writing-mode: vertical-rl; /* makes text vertical */
-		width: auto;
-		height: auto;
-		text-align: left;
-		margin-bottom: 0px;
-		color: gray;
-		font-size: 13pt;
-		font-weight: 650;
-		opacity: 100%;
-		border: 1px solid rgba(255, 255, 255, 0);
-	}
-	.socials-desktop{
-		display: none;
-	}
-	.socials-mobile{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: row;
-		width: 100%;
-		padding: 0px 25px;
-	}
-	.social{
-		width: 100%;
-		margin: 0px;
-		padding: 0px;
-		display: block;
-	}
-	.menu .menu-link{
-		font-size: 14pt;
-		font-weight: 400;
-		height: auto;
-		width: 100%;
-		margin: 0px;
-		padding: 0px;
-		color: #fff;
-		border: 1px solid rgba(63, 63, 63, 0);
-	}
-	.menu .menu-link.active{
-		background-color: white;
-		color: black;
-	}
+    display: none;
+  }
+
 	.logo-container{
 		display: none;
 	}
@@ -1801,7 +1743,6 @@ body.no-scroll {
 		text-align: center;
 	}
 	.description-container 	{ display: none;}
-  .menu-container.visible { display: block;}
 
   .tabcontent-child{
     width: 100%;
@@ -1935,3 +1876,128 @@ body.no-scroll {
   }
 }
 
+
+
+
+
+
+@media (max-width: 701px) {
+    /* HAMBURGER BUTTON */
+  .hamburger-button {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    width: 45px;
+    height: 45px;
+    background-color: #000;         /* black background */
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;                  /* stays above menu */
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .hamburger-button:hover {
+    background-color: #111;         /* subtle hover */
+  }
+
+  .hamburger-button img {
+    width: 24px;
+    height: 24px;
+    display: none;                  /* hide by default */
+  }
+
+  /* show open icon by default */
+  .hamburger-button .icon-open {
+    display: block;
+  }
+
+  /* when active, switch to close icon */
+  .hamburger-button.active .icon-open {
+    display: none;
+  }
+  .hamburger-button.active .icon-close {
+    display: block;
+  }
+
+
+  /* MOBILE MENU BASE */
+  .mobile-menu-container {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;             /* full screen height */
+    background-color: var(--color-content-bg, #111);
+    z-index: 999;
+    overflow-y: auto;          /* scroll if needed */
+    padding: 0;
+    margin: 0;
+
+    padding: 50px;
+  }
+
+  /* INNER MENU */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 50px;
+  }
+
+  /* Group headers */
+  .mobile-menu-link-category {
+    font-family: var(--font-tab-category, sans-serif);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--menu-category-color, rgba(255,255,255,0.6));
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Menu links */
+  .mobile-menu-link a {
+    font-family: var(--font-main, sans-serif);
+    font-size: 16px;
+    color: var(--menu-link-color, #fff);
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    transition: color 0.2s ease, background 0.2s ease;
+
+    font-family: var(--font-tab-link);
+    font-weight: var(--font-tab-link-weight);
+    font-size: var(--font-tab-link-size);
+  }
+
+  .mobile-menu-link a:hover {
+    color: var(--menu-link-active-color, #111);
+    background: var(--menu-link-active-bg-color, rgba(255,255,255,0.8));
+    border-radius: 4px;
+    padding-left: 10px;
+  }
+
+  /* SOCIAL ICONS */
+  .socials-mobile {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+  }
+
+  .social-icon img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    filter: brightness(1);
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+
+  .social-icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.3);
+  }
+}

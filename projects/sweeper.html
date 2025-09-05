@@ -33,10 +33,12 @@
 <!-- XMAS THEME SNOW -->
 <!--<div id="snow"></div>-->
 
-<!-- Loading Overlay -->
+<!-- HAMBURGER BUTTON -->
+<div class="hamburger-button">
+  <img src="../img/menu-icon-open.svg" alt="Menu" class="icon-open">
+  <img src="../img/menu-icon-close.svg" alt="Close" class="icon-close">
+</div>
 
-
-<button class="hamburger-button"> <div class="hamburger-icon"></div> </button>
 <div class="background-image-sweeper"></div>
 
 <!-------------------------------------------------------------------------------- MENU CONTAINER ---------------------------------------------------------------->
@@ -231,15 +233,61 @@
 
 
 
-<script src="../js/dynamic.js"></script>
+<!-------------------------------------------------------- MOBILE MENU -------------------------------------------------------->
+<div class="mobile-menu-container">
+	<div class="mobile-menu">
+		
+		<div class="menu-link-group">
+			<div class="mobile-menu-link-category">GAME DEV</div>
+			<div class="mobile-menu-link"><a href="../index.html">Home</a></div>
+			<div class="mobile-menu-link"><a href="jarfall.html">Jarfall</a></div>
+			<div class="mobile-menu-link"><a href="jex.html">Jex in Space</a></div>
+			<div class="mobile-menu-link"><a href="sweeper.html">Sweeper</a></div>
+			<div class="mobile-menu-link"><a href="rebounce.html">Rebounce</a></div>
+
+			<div class="mobile-menu-link-category">GAME UI</div>
+			<div class="mobile-menu-link"><a href="besiege.html">Besiege</a></div>
+			<div class="mobile-menu-link"><a href="armorcraft.html">ArmorCraft</a></div>
+			<div class="mobile-menu-link"><a href="alchemy.html">Alchemy AI</a></div>
+			<div class="mobile-menu-link"><a href="#">Legacy of Pandora</a></div>
+			<div class="mobile-menu-link"><a href="#">River's Edge</a></div>
+
+			<div class="mobile-menu-link-category">EXTRAS</div>
+			<div class="mobile-menu-link"><a href="store.html">Goods for sale</a></div>
+			<div class="mobile-menu-link"><a href="creativeboard.html">Creative Board</a></div>
+			<div class="mobile-menu-link"><a href="about.html">About</a></div>
+		</div>
+		<div class="mobile-menu-link-group socials-mobile">
+			<div class="social">
+				<div class="social-icon">
+					<img src="../img/email-icon.svg" width="38px" height="38px">
+				</div>
+			</div>
+			<div class="social">
+				<div class="social-icon">
+					<img src="../img/discord-icon.svg" width="38px" height="38px">
+				</div>
+			</div>
+			<div class="social">
+				<a href="https://alexcirco.itch.io/" target="_blank">
+					<div class="social-icon">
+						<img src="../img/itch-icon.svg" width="35px" height="35px">
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/dynamic.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerBtn = document.querySelector('.hamburger-button');
-  const menuContainer = document.querySelector('.menu-container');
+  const menuContainer = document.querySelector('.mobile-menu-container');
 
   hamburgerBtn.addEventListener('click', () => {
-    // Toggle visible class
-    menuContainer.classList.toggle('visible');
+    // Toggle .mobile-menu-container display between none and block
+    menuContainer.style.display = menuContainer.style.display === 'block' ? 'none' : 'block';
     hamburgerBtn.classList.toggle('active');
   });
 });
