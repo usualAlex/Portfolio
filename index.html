@@ -41,10 +41,11 @@
 
 <!-------------------------------------------------------------------------------- MENU CONTAINER ---------------------------------------------------------------->
 <div class="menu-container">
-	<div class="menu">
+	<div class="menu menu-featured">
 		<!-- LOGO -->
 		<div class="logo-container">
-			<button class="tablinks logoButton" id="showActive" onclick="openProject(event, 'Featured')">
+			<a href="index.html">
+			
 				<svg class="logo" width="60px" height="60px" viewBox="0 0 914 932" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
 				<g transform="matrix(1,0,0,1,-9580.83,-3827.42)">
 					<g transform="matrix(1.15708,0,0,1.03868,-1713.23,-20045.9)">
@@ -85,66 +86,67 @@
 					</g>
 				</g>
 			</svg>
-			</button>
+			
+			</a>
 		</div>
 
 		<!-- DESCRIPTION HEADER -->
 		<div class="description-container"><img src="img/runningtext.gif" width="210px" height="auto"></div>
 
 		<!-- NAVIGATION LINKS -->
-		<div class="tablinks-container">
-			<div class="tablinks-group">
-				<div class="tablink-category">GAME DEV</div>
+		<div class="menu-link-container">
+			<div class="menu-link-group">
+				<div class="menu-link-category">GAME DEV</div>
 				
-					<div class="tablink balloon-button" balloon="PC / Web" onclick="openProject(event, 'Jarfall')">
-						Jarfall
+					<div class="menu-link balloon-button" balloon="PC / Web" onclick="openProject(event, 'Jarfall')">
+						<a href="projects/jarfall.html">Jarfall</a>
 					</div>
-					<div class="tablink balloon-button project1-highlight" balloon="Android / iOS" onclick="openProject(event, 'Jex')">
-						Jex in Space
+					<div class="menu-link balloon-button project1-highlight" balloon="Android / iOS" onclick="openProject(event, 'Jex')">
+						<a href="projects/jex.html">Jex in Space</a>
 					</div>
-					<div class="tablink balloon-button sweeper" balloon="PC - WIP" onclick="openProject(event, 'Sweeper')">
-						Sweeper
+					<div class="menu-link balloon-button sweeper" balloon="PC - WIP" onclick="openProject(event, 'Sweeper')">
+						<a href="projects/sweeper.html">Sweeper</a>
 					</div>
-					<div class="tablink balloon-button rebounce" balloon="Android / iOS - WIP" onclick="openProject(event, 'Rebounce')">
-						Rebounce
+					<div class="menu-link balloon-button rebounce" balloon="Android / iOS - WIP" onclick="openProject(event, 'Rebounce')">
+						<a href="projects/rebounce.html">Rebounce</a>
 					</div>
 				
 			</div>
-			<div class="tablinks-group">
-				<div class="tablink-category">GAME UI</div>
+			<div class="menu-link-group">
+				<div class="menu-link-category">GAME UI</div>
 
-					<div class="tablink balloon-button project2-highlight" balloon="PC / Consoles" onclick="openProject(event, 'Besiege')">
-						Besiege
+					<div class="menu-link balloon-button project2-highlight" balloon="PC / Consoles" onclick="openProject(event, 'Besiege')">
+						<a href="projects/besiege.html">Besiege</a>
 					</div>
-					<div class="tablink balloon-button project3-highlight" balloon="Android / iOS" onclick="openProject(event, 'ArmorCraft')">
-						ArmorCraft
+					<div class="menu-link balloon-button project3-highlight" balloon="Android / iOS" onclick="openProject(event, 'ArmorCraft')">
+						<a href="projects/armorcraft.html">ArmorCraft</a>
 					</div>
-					<div class="tablink balloon-button" balloon="Android / iOS" onclick="openProject(event, 'Alchemy')">
-						Alchemy AI
+					<div class="menu-link balloon-button" balloon="Android / iOS" onclick="openProject(event, 'Alchemy')">
+						<a href="projects/alchemy.html">Alchemy AI</a>
 					</div>
-					<div class="tablink balloon-button" balloon="PC - Upcoming" style="text-decoration: line-through;">
-						Legacy of Pandora
+					<div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
+						<a href="#">Legacy of Pandora</a>
 					</div>
-					<div class="tablink balloon-button" balloon="PC - Upcoming" style="text-decoration: line-through;">
-						River's Edge
+					<div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
+						<a href="#">River's Edge</a>
 					</div>
 
 			</div>
-			<div class="tablinks-group extras">
-				<div class="tablink-category"></div>
+			<div class="menu-link-group extras">
+				<div class="menu-link-category"></div>
 				
-					<div class="tablink balloon-button"  balloon="Creative Market" onclick="openProject(event, 'Store')">
-						Goods for sale
+					<div class="menu-link balloon-button"  balloon="Creative Market" onclick="openProject(event, 'Store')">
+						<a href="projects/store.html">Goods for sale</a>
 					</div>
-					<div class="tablink balloon-button"  balloon="Unused stuff" onclick="openProject(event, 'CreativeBoard')">
-						Creative Board
+					<div class="menu-link balloon-button"  balloon="Unused stuff" onclick="openProject(event, 'CreativeBoard')">
+						<a href="projects/creativeboard.html">Creative Board</a>
 					</div>
-					<div class="tablink" onclick="openProject(event, 'About')">
-						About
+					<div class="menu-link" onclick="openProject(event, 'About')">
+						<a href="projects/about.html">About</a>
 					</div>
 				
 			</div>
-			<div class="tablinks-group socials-desktop">
+			<div class="menu-link-group socials-desktop">
 				<div class="social">
 					<div class="social-icon">
 						<svg class="mail-icon" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
@@ -178,20 +180,14 @@
 				<div class="social">
 					<div class="social-icon">
 						<svg class="itch-icon" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-							<g transform="matrix(1,0,0,1,-7380.01,-4674.38)">
-								<g transform="matrix(0.669216,0,0,0.669216,2540.47,1556.61)">
-									<rect x="7231.66" y="4658.84" width="93.971" height="93.971" style="fill:none;"/>
-								</g>
-								<g transform="matrix(0.175122,0,0,0.175122,7389.97,4686.5)">
-									<path d="M31.99,1.365C21.287,7.72 0.2,31.945 0,38.298L0,48.814C0,62.144 12.46,73.86 23.773,73.86C37.357,73.86 48.675,62.602 48.676,49.24C48.676,62.602 59.606,73.86 73.191,73.86C86.777,73.86 97.356,62.602 97.356,49.24C97.356,62.602 108.978,73.86 122.563,73.86L122.809,73.86C136.395,73.86 148.017,62.602 148.017,49.24C148.017,62.602 158.597,73.86 172.181,73.86C185.766,73.86 196.696,62.602 196.696,49.24C196.696,62.602 208.016,73.86 221.599,73.86C232.912,73.86 245.372,62.146 245.372,48.814L245.372,38.298C245.172,31.944 224.085,7.718 213.384,1.365C180.118,0.197 157.056,-0.005 122.685,0C88.315,0.003 41.457,0.54 31.988,1.365L31.99,1.365ZM97.184,67.582C95.885,69.846 94.276,71.918 92.404,73.737C87.276,78.751 80.247,81.859 72.498,81.859C65.044,81.866 57.877,78.947 52.55,73.733C50.692,71.913 49.28,69.967 47.987,67.701L47.981,67.705C46.689,69.975 44.889,71.92 43.027,73.742C37.698,78.952 30.532,81.869 23.079,81.862C22.145,81.862 21.173,81.604 20.387,81.334C19.295,92.706 18.834,103.574 18.671,111.498L18.669,111.543C18.649,115.567 18.629,118.876 18.609,123.473C18.819,147.333 16.246,200.807 29.129,213.946C49.093,218.601 85.829,220.721 122.684,220.734L122.69,220.734C159.544,220.721 196.28,218.601 216.244,213.946C229.127,200.806 226.554,147.332 226.764,123.472C226.742,118.876 226.724,115.567 226.704,111.542L226.701,111.497C226.539,103.571 226.078,92.704 224.986,81.332C224.2,81.602 223.229,81.86 222.294,81.86C214.841,81.867 207.675,78.95 202.346,73.74C200.484,71.918 198.684,69.974 197.391,67.703L197.385,67.699C196.091,69.965 194.68,71.912 192.822,73.731C187.495,78.944 180.329,81.863 172.875,81.856C165.127,81.856 158.097,78.746 152.969,73.733C151.097,71.914 149.488,69.842 148.189,67.578C146.904,69.84 145.31,71.911 143.453,73.733C138.124,78.946 130.957,81.864 123.503,81.857C123.233,81.857 122.963,81.845 122.693,81.837L122.686,81.837C122.416,81.845 122.146,81.857 121.873,81.857C114.419,81.864 107.252,78.946 101.923,73.734C100.066,71.912 98.472,69.841 97.187,67.579L97.184,67.582ZM76.698,94.072L76.696,94.082L76.711,94.082C84.824,94.099 92.031,94.082 100.961,103.828C107.989,103.091 115.333,102.723 122.683,102.734L122.689,102.734C130.039,102.724 137.383,103.091 144.412,103.828C153.342,94.081 160.549,94.098 168.662,94.082L168.676,94.082L168.674,94.072C172.507,94.072 187.84,94.072 198.524,124.079L210,165.244C218.504,195.868 207.277,196.617 193.273,196.644C172.505,195.871 161.006,180.789 161.006,165.709C149.51,167.593 136.099,168.535 122.688,168.536L122.682,168.536C109.27,168.536 95.859,167.593 84.364,165.709C84.364,180.789 72.864,195.871 52.097,196.644C38.093,196.617 26.867,195.869 35.371,165.244L46.85,124.08C57.534,94.073 72.867,94.073 76.7,94.073L76.698,94.072ZM122.683,117.654L122.683,117.66C122.663,117.68 100.82,137.74 96.893,144.875L111.197,144.302L111.197,156.776C111.197,157.36 116.937,157.122 122.683,156.856L122.689,156.856C128.433,157.122 134.174,157.36 134.174,156.776L134.174,144.302L148.478,144.875C144.55,137.74 122.688,117.66 122.688,117.66L122.688,117.654L122.685,117.656L122.683,117.654Z" />
-								</g>
-							</g>
+							<rect x="0" y="0" width="62.887" height="62.887" style="fill:none;"/>
+							<path d="M14.257,10.789c-2.028,1.204 -6.024,5.794 -6.061,6.998l-0,1.993c-0,2.526 2.361,4.746 4.504,4.746c2.574,-0 4.719,-2.134 4.719,-4.666c0,2.532 2.071,4.666 4.646,4.666c2.574,-0 4.579,-2.134 4.579,-4.666c-0,2.532 2.202,4.666 4.776,4.666l0.047,-0c2.574,-0 4.776,-2.134 4.776,-4.666c0,2.532 2.005,4.666 4.579,4.666c2.574,-0 4.646,-2.134 4.646,-4.666c-0,2.532 2.145,4.666 4.718,4.666c2.144,-0 4.505,-2.22 4.505,-4.746l0,-1.993c-0.038,-1.204 -4.033,-5.795 -6.061,-6.998c-6.304,-0.222 -10.674,-0.26 -17.187,-0.259c-6.513,0 -15.392,0.102 -17.186,0.259l0,-0Zm12.354,12.547c-0.246,0.429 -0.551,0.822 -0.906,1.166c-0.971,0.95 -2.303,1.539 -3.772,1.539c-1.412,0.002 -2.77,-0.551 -3.78,-1.539c-0.352,-0.345 -0.619,-0.714 -0.864,-1.143l-0.001,0c-0.245,0.431 -0.586,0.799 -0.939,1.144c-1.01,0.988 -2.368,1.54 -3.78,1.539c-0.177,-0 -0.361,-0.049 -0.51,-0.1c-0.207,2.155 -0.295,4.214 -0.325,5.716l-0.001,0.008c-0.004,0.763 -0.007,1.39 -0.011,2.261c0.04,4.521 -0.448,14.654 1.993,17.144c3.783,0.882 10.744,1.283 17.728,1.286l0.001,-0c6.984,-0.003 13.945,-0.404 17.728,-1.286c2.441,-2.49 1.953,-12.623 1.993,-17.144c-0.004,-0.871 -0.007,-1.498 -0.011,-2.261l-0.001,-0.008c-0.03,-1.502 -0.118,-3.562 -0.325,-5.716c-0.149,0.051 -0.333,0.1 -0.51,0.1c-1.412,0.001 -2.77,-0.552 -3.78,-1.539c-0.353,-0.345 -0.694,-0.714 -0.939,-1.144l-0.001,-0.001c-0.245,0.43 -0.512,0.799 -0.864,1.143c-1.01,0.988 -2.368,1.541 -3.78,1.54c-1.468,-0 -2.801,-0.589 -3.772,-1.539c-0.355,-0.345 -0.66,-0.738 -0.906,-1.167c-0.244,0.429 -0.546,0.821 -0.897,1.167c-1.01,0.987 -2.368,1.54 -3.781,1.539c-0.051,0 -0.102,-0.002 -0.153,-0.004l-0.002,0c-0.051,0.002 -0.102,0.004 -0.154,0.004c-1.412,0.001 -2.77,-0.552 -3.78,-1.539c-0.352,-0.345 -0.654,-0.738 -0.897,-1.166l-0.001,0Zm-3.882,5.02l-0,0.002l0.003,-0c1.537,0.003 2.903,-0 4.595,1.846c1.331,-0.139 2.723,-0.209 4.116,-0.207l0.001,0c1.393,-0.002 2.784,0.068 4.116,0.207c1.692,-1.847 3.058,-1.843 4.595,-1.846l0.003,-0l-0,-0.002c0.726,-0 3.631,-0 5.656,5.686l2.175,7.8c1.611,5.803 -0.516,5.945 -3.17,5.95c-3.935,-0.146 -6.114,-3.004 -6.114,-5.862c-2.179,0.357 -4.72,0.536 -7.261,0.536l-0.001,-0c-2.542,-0 -5.083,-0.179 -7.261,-0.536c-0,2.858 -2.179,5.716 -6.115,5.862c-2.653,-0.005 -4.78,-0.147 -3.169,-5.95l2.175,-7.8c2.025,-5.686 4.93,-5.686 5.657,-5.686l-0.001,-0Zm8.714,4.468l-0,0.001c-0.004,0.004 -4.143,3.805 -4.887,5.157l2.71,-0.108l0,2.363c0,0.111 1.088,0.066 2.177,0.016l0.001,-0c1.088,0.05 2.176,0.095 2.176,-0.016l0,-2.363l2.711,0.108c-0.745,-1.352 -4.887,-5.157 -4.887,-5.157l-0,-0.001l-0.001,0.001l-0,-0.001Z" />
 						</svg>
 					</div>
-					<a href="https://halfroomstudio.itch.io" target="_blank"><div class="social-text">itch.io</div></a>
+					<a href="https://alexcirco.itch.io/" target="_blank"><div class="social-text">itch.io</div></a>
 				</div>
 			</div>
-			<div class="tablinks-group socials-mobile">
+			<div class="menu-link-group socials-mobile">
 				<div class="social">
 					<div class="social-icon"><img src="img/mail-icon.webp" width="38px" height="38px"></div>
 				</div>
@@ -199,7 +195,7 @@
 					<div class="social-icon"><img src="img/discord-icon.webp" width="38px" height="38px"></div>
 				</div>
 				<div class="social">
-					<a href="https://halfroomstudio.itch.io" target="_blank">
+					<a href="https://alexcirco.itch.io/" target="_blank">
 						<div class="social-icon"><img src="img/itch-icon.webp" width="35px" height="35px"></div>
 					</a>
 				</div>
@@ -221,925 +217,67 @@
 <!-- ADAPTIVE CONTENT WRAPPER is used for tablet view-->
 <div class="adaptive-content-wrapper"> 
 
-<!-- NON VISIBLE - HOME TAB - FEATURED PROJECTS -->
-<div id="Featured" class="tabcontent">
-	
-	
-	<div class="tab">
-		<!-- LOGO -->
-		 <div class="mobile-spacer-top"></div>
-		
-		<div class="logo-container-mobile">
-			<div class="logo" style="margin: 0 auto;"></div>
-		</div>
-
-		<!-- DESCRIPTION HEADER -->
-		<div class="description-container-mobile"><img src="img/runningtext.gif" width="210px" height="auto"></div>
-
-		<div class="featured-project project1">
-			<img src="img/jex/jex-featured-cover.webp" alt="Jex">
-			<span class="overlay-text-role">SOLO DEVELOPER</span>
-			<div class="overlay-text-container">
-				<p class="overlay-text-title">Jex in Space </p>
-				
-				<p class="overlay-text-platform">Out on Android!</p>
-				<p class="overlay-text-desc">An endless physics-based arcade runner.</p>
-			</div>
-		</div>
-
-		<div class="featured-project project2">
-			<img src="img/besiege/besiege-featured-cover.webp" alt="Besiege">
-			<span class="overlay-text-role">UI ARTIST</span>
-			<div class="overlay-text-container">
-				<p class="overlay-text-title">Besiege </p>
-				
-				<p class="overlay-text-platform">Linux / Mac / Windows / Xbox One / Series X/S / PS4 / PS5 / Switch</p>
-				<p class="overlay-text-desc">Physics-based vehicle-building sandbox based around medieval siege engines.</p>
-			</div>
-		</div>
-
-		<!--
-		<div class="featured-project project3">
-			<img src="img/alchemy/alchemy-featured-cover.webp" alt="Alchemy">
-			<div class="overlay-text-container">
-				<p class="overlay-text-title">Alchemy AI: Infinite Mix</p>
-				<span class="overlay-text-role">UI/UX Designer</span><br><br>
-				<p class="overlay-text-desc">Android / iOS</p>
-				<p class="overlay-text-desc">An alchemy game using AI to create any combination of elements.</p>
-			</div>
-		</div>
-		-->
-
-		<div class="featured-project project3">
-			<img src="img/ac/featured-cover-2.webp" alt="Armorcraft">
-			<span class="overlay-text-role">UI/UX DESIGNER</span>
-			<div class="overlay-text-container">
-				<p class="overlay-text-title">Armorcraft </p>
-				
-				<p class="overlay-text-platform">Android / iOS</p>
-				<p class="overlay-text-desc">Strategy, base building, alliance warfare, PvP and PvE.</p>
-			</div>
-		</div>
-
-		<div class="mobile-spacer-bottom"></div>
-
-	</div>
-</div>
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------- JARFALL CONTENT -------------------------------------------------------->
-<div id="Jarfall" class="tabcontent lightboxGallery jarfall-font">
-	<img class="no-lightbox" src="img/jar/banner-tall.webp" style="display: block; width: calc(100% + 40px); height: auto; margin-left: -20px">
-	<!--
-	<div style="display: block; text-align: center; margin: 0 auto; width: 100%; max-width: 500px">
-		<img class="no-lightbox" src="img/jar/jarfall-logo.webp" width="90%" height="auto" ">
-	</div>
-	-->
-	
-	<br><br><br>
-
-	<a href="https://halfroomstudio.itch.io/jarfall" target="_blank" class="playOnItch">
-		
-		<span>Play on itch.io</span>
-		<span class="tooltip">16 levels available to play</span>
-	</a>
-	<p style="text-align:center">Physics-based puzzle set in Ancient Persia.<br> Destroy blocks strategically to land the Jar on the platform. </p>
-
-	<br><br>
-	
-	<div class="content-summary-container">
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">PLATFORM:</span>
-			<span class="summary-info">Steam / Web (DEMO)</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">ENGINE:</span>
-			<span class="summary-info">Unity 6</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">GENRE:</span>
-			<span class="summary-info">Puzzle / Physics-based / 2D</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">DEVELOPER / PUBLISHER:</span>
-			<span class="summary-info">Halfroom Studio (myself)</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">STATUS:</span>
-			<span class="summary-info">WEB DEMO</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title" style="font-weight: 400;">MY ROLE:</span>
-			<span class="summary-info">Solo Developer</span>
-		</div>
-	</div>
-
-	</br></br><br><br>
-	
-	<img src="img/jar/level-complete-op.gif" width="100%" height="auto" class="no-lightbox">
-	<div class="jar-row">
-		<img src="img/jar/jar-breaking.gif" alt="">
-		<img src="img/jar/levelcycle.gif" alt="">
-		<img src="img/jar/jarfal-lever-win.gif" alt="">
-	</div>
-	
-	
-	<br><br><br>
-	<h1 style="text-align:center">Gameplay</h1>
-	<br><br>
-	<div class="video-wrapper">
-	<iframe src="https://www.youtube-nocookie.com/embed/V1lj5utNrJQ?si=5egjNsTOHPHTjaFv"
-		title="YouTube video player"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		referrerpolicy="strict-origin-when-cross-origin"
-		allowfullscreen>
-	</iframe>
-	</div>
-
-
-	<br><br><br>
-	<h1 style="text-align:center">About the UI</h1>
-	<p style="text-align:center">A fully simulated diegetic UI.</p><br>
-	<img src="img/jar/jarfall-ss-1.webp" width="100%" height="auto">
-	<span class="tool-note" style="display: block; text-align: center; color: rgba(255, 255, 255, 0.5);">Main menu screen (WebGL)</span><br>
-	<p >I challenged myself to create a full diegetic UI where the blocks used in levels also have UI functions like resetting level and going back.
-	They are spawned and simulated with physics just like any other block. They are used as part of the level design and even help you. </p>
-	<p >Even the main menu has a reset button because you can interact with the blocks. You practically learn how to play the game from the very first menu you encounter. </p>
-	<p >While the web demo currently doesn't use keyboard inputs, besides quickly using "R" to reset a level you also have the reset button as a block very close to where 
-		the action happens. This limits the amount of mouse travel to reset a level or exit. Compared to using a standard UI with buttons in the far corners of the screen. </p>
-	<br>
-	<img src="img/jar/jarfall-ss-2.webp" width="100%" height="auto">
-	<span class="tool-note" style="display: block; text-align: center; color: rgba(255, 255, 255, 0.5);">Settings screen (WebGL)</span><br>
-	<p >The settings screen was a little tricky to keep entirely as blocks. They are all fully simulated with physics.</p>
-
-	<br><br><br>
-	<h1 style="text-align:center">Types of Blocks</h1>
-	<img src="img/jar/ordinance.png" width="100%" height="auto">
-	<span class="tool-note" style="display: block; text-align: center; color: rgba(255, 255, 255, 0.5);">A piece of paper from tutorial</span><br>
-	<p ></p>
-
-	<br><br><br><br>
-	<a href="https://halfroomstudio.itch.io/jarfall" target="_blank" class="playOnItch">
-		
-		<span>Play on itch.io</span>
-		<span class="tooltip">16 levels available to play</span>
-	</a>
-
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------- JEX IN SPACE CONTENT -------------------------------------------->
-<div id="Jex" class="tabcontent lightboxGallery jex-font">
-
-	<div style="height: 200px; width: 100%;"></div>
-	
-	
-	</br></br></br></br>
-	<div class="content-icon-container">
-		<img src="img/jex/appicon.webp" style="width: 200px; height: auto; margin: 0 auto;" class="no-lightbox">
-		<h1>Jex in Space</h1>
-	</div>
-
-	</br></br>
-	<!--<img src="img/jex/iphone.webp" style="display:block; margin:0 auto; width: 90%; max-width: 300px;">-->
-
-
-	<video autoplay loop muted playsinline 
-		style="display:block; margin:0 auto; width:90%; max-width:300px; height:auto;" 
-		id="phone-video">
-		<source src="img/jex/phone-gameplay.webm" type="video/webm">
-		
-	</video>
-	<!-- fallback for browsers that don't support <video> or Safari and webp - runs script at bottom -->
-	<img src="img/jex/iphone.webp" 
-		style="display:block; margin:0 auto; width:90%; max-width:300px; height:auto;" 
-		id="phone-fallback">
-
-
-	</br></br>
-
-	<div class="content-summary-container">
-		<div class="content-summary-item">
-			<span class="summary-title">PLATFORM:</span>
-			<span class="summary-info">Android / iOS</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">ENGINE:</span>
-			<span class="summary-info">Unity 6</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">GENRE:</span>
-			<span class="summary-info">Casual / Runner / Physics-based</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">DEVELOPER / PUBLISHER:</span>
-			<span class="summary-info">Halfroom Studio (myself)</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">STATUS:</span>
-			<span class="summary-info">Published</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">MY ROLE:</span>
-			<span class="summary-info">Solo Developer</span>
-		</div>
-	</div>
-	</br></br></br></br>
-	
-	<div class="jex-trailer-container">
-		<a href="https://youtu.be/1Cuyqqgum1c" target="_blank">
-			<img src="img/jex/trailer-button.png" alt="Trailer Button" class="normal-state no-lightbox" />
-			<img src="img/jex/trailer-button-hover.png" alt="Trailer Button Hover" class="hover-state no-lightbox" />
-		</a>
-	</div>
-
-	<h2 style="text-align: center; margin-top: -15px;">My first solo-developer project.<br> There's even a 
-		<a href="https://halfroom.studio/jex" target="_blank" >landing page</a>.
-	</h2>
-	<div class="get-on-buttons">
-		<a href="https://play.google.com/store/apps/details?id=com.HalfroomStudio.Jex"><img class="no-lightbox" src="img/playstore.png" width="180px"  height="auto"></a>
-	</div>
-	
-	</br></br></br>
-	<h2>Project Overview</h2></br>
-	<img src="img/jex/jex-logo.png" width="100%" height="auto" class="no-lightbox">
-	</br></br></br>
-	<p>
-		Jex in Space is a physics-based mobile runner game with a one-touch recoil mechanic and time-looped death system. You shoot in order to move. Recoil pushes you back 
-		and spins you. So with one single tap: you aim, shoot and move (based on time reflex).
-	</p>
-	</br></br>
-	<img src="img/jex/jex-overview.webp" width="100%" height="auto">
-	</br></br>
-	<p>
-		This little game is especially meaningful to me. In early 2024, I set out to learn Unity and C# so I could bring my own game ideas to life. 
-		Jex in Space was my first solo project, and it taught me not only a programming base, but also how UI gets implemented at engine level.
-		<br><br>
-		Looking back, I’m still amazed I built the entire game myself. Code, design, UI, animations, etc. I got a lot more appreciation for developers and 
-		sharpened my skills as a UI designer.
-	</p>
-	<br><br>
-	<h3>Project Challenges</h3>
-	<p>
-		- Designing a one-tap control that allows you to move, aim and shoot all in one input <br>
-		- Creating an immersive UI that fits the sci-fi tone (augmented HUD and holographic console) <br>
-		- Making the UI scale well across different screen sizes <br>
-		- Balancing difficulty across multiple screens (PC vs Mobile - smaller screens, harder game) <br>
-		- Designing and editing a game trailer with no prior video experience <br>
-		- Designing an anthropomorphic cat character <br>
-	</p>
-	
-	<h2>Gameplay</h2>
-	<img src="img/jex/jex-gameplay.gif" width="100%" height="auto"></br></br>
-
-	<p>You must help Jex survive hordes of rogue asteroids and space junk while adrift in space. Lose all your 9 lives and get thrown back in time to try again.</p>
-	<p>Trapped in a time bubble adds just a tad of roguelite feel to the game. You earn credits from destroying objects and use them to unlock weapons and upgrades.</p>
-
-	<img src="img/jex/jex-overview-devices.webp" width="100%" height="auto">
-	</br></br>
-	<img src="img/jex/early-vs-final.webp" width="100%" height="auto">
-	</br></br>
-
-	<h2>Character Design</h2>
-	<p>
-		I wanted to design a cat character that was both cute and fun. Friendly appearence to appeal to a younger audience but suitable for any age. 
-		I'm not a character designer, therefore, I had a really hard time making something decent looking but i kept trying and eventually i got something that i liked.
-	</p>
-	</br></br>
-
-	<img src="img/jex/early-vs-final-character.webp" width="100%" height="auto"></br></br></br></br>
-	<img src="img/jex/character-faces.webp" width="100%" height="auto"></br></br></br></br>
-	
-	<h2>Story</h2>
-	<p>
-		Centers around a pawlet (bracelet) that has been passed around the universe sold cheap at every space market. Some saying that it's an ancient device holding huge 
-		quantities of energy. Despite some studies conducted, no such properties were ever found. Kara, a debt-ridden pilot entangled in some space piracy and bounty hunting 
-		gets her hand on the pawlet and gives it to Jex, her cat. Recently an industrial planet has exploded creating chaos all around and... lots of valuable materials 
-		left to loot. Kara, Jex and a crew decide to take part and head towards the ex-planet. But the whole zone became a death-trap. Kara and the crew get caught in a wave 
-		of rogue asteroids proven to be impossible to avoid.
-		<br><br> 
-		The ship gets hit!
-		<br><br>
-		The crew manages to run away using an escape pod. However, in all that rush Kara 
-		doesn’t realize until it’s too late: Jex is still on board. The ship explodes. The energy from that explosion activated the pawlet now used by Jex which saves his life 
-		while getting thown off the ship and adrift in space.
-	</p>
-	<img src="img/jex/jex-story.webp" width="100%" height="auto">
-	
-	<h2>User Interface</h2>
-	<p>The entire UI consists of an augmented HUD and a console, both provided by the pawlet. The Console as a holo projection and the HUD as a neural augmentation. This allows me 
-		to use the pawlet as an "excuse" for being able to pause the game - the pawlet has the power to stop the entropy around you.<br><br> Throughout the game i used small cat motifs like little 
-		ears you can notice on the HUD (middle top) or even the console top tabs look like cat ears.
-	</p>
-	<br><br>
-	<h3>HUD - Non-Diegetic UI (Helmet Augmentation)</h3>
-	<p>While a helmet augmentation is a diegetic UI, i used it as a non-diegetic UI HUD overlay. Jex doesn't necessarily sees this, is just my representation of the HUD.
-	</p>
-	<img src="img/jex/jex-hud.png" width="100%" height="auto">
-	
-	<br>
-	</br></br>
-	<h3>Bowl (as space helmet) - Diegetic UI</h3>
-	<p> You don't have to take your eyes off your character to know if your health is low because the bowl will start cracking when you have less than 3 lives left. So you can
-	focus on the character and gameplay when it's most important.</br></br>
-	First crack tells you got 2 more lives left. Second crack tells you got 1 more life left. Then the bowl shatters. Also included a meta type of UI using a pulsing green or red screen glow
-	when you gain or lose a life.
-	</p></br></br>
-	<img src="img/jex/character-bowl-ui.png" width="100%" height="auto"></br></br></br></br>
-	
-	
-	<h3>Holo Console - Diegetic UI</h3><br>
-	<img src="img/jex/jex-ui-overview.webp" width="100%" height="auto"><br><br>
-	<h3>The problem</h3>
-	<p>With the pawlet console is that this won't work on landscape on mobile. The holo is designed for a portrait screen and the paw would need to be 
-		way longer to keep the holo centered on the screen. I wanted to be able to scale the game on different screens/devices.
-	</p>
-	<img src="img/jex/console-problem.webp" width="100%" height="auto"></br></br>
-	<h3>Solution</h3>
-	<p>I created a handler script to check device type. Then i used the paw on mobile portrait and only a pawlet on bigger screens (tablets, desktops). This 
-		allows me to scale the game to different screen sizes while on mobile i only use portrait because it's the intended experience - a super easy one hand control.
-	</p>
-	<p>I aimed for something immersive but extremely simple at its core and in terms of functionality and UX yet it was challenging to design if i wanted more scalability and maintain the immersive style.
-		I'll keep this in mind for future games that maybe i want to play mobile-first games on PC (like using "Google Play Games on PC").
-		
-	</p>
-	<br>
-	<img src="img/jex/console-problem-fix.webp" width="100%" height="auto"><br><br>
-	<br><br>
-	<h2>Progression</h2>
-	<h3>Guns and Upgrades to unlock</h3>
-	<p>Multiple weapons you can unlock using earned credits. Each weapon having it's own unique projectile and upgrades such as projectile speed and cooling system.</p>
-	<br>
-	<p><span style="color: #fff">Explosive Bullets</span> - unlocked by default</p>
-	<p><span style="color: #fff">Blue Plasma</span> - a cold plasma that overheats slowly</p>
-	<p><span style="color: #fff">Lasers</span> - very fast with a normal overheat rate</p>
-	<p><span style="color: #fff">Homing Rockets</span> - easy to overheat but makes each target easy to destroy</p>
-	<p><span style="color: #fff">Triple Red Plasma</span> - hot, overheats fast but shoots 3 projectiles at once.</p>
-	<img src="img/jex/jex-guns.webp" width="100%" height="auto">
-	
-	<h3>Type of objects you encounter</h3>
-	<p>There are different types of objects constantly coming towards you. Each with different properties. They come at different sizes, different speeds, sometimes
-	can get you overwhelmed by their number. Sometimes you must choose to lose one life in order to survive a wave.</p>
-
-	<br><br>
-
-	<img src="img/jex/jex-enemies.webp" width="100%" height="auto">
-
-	<br><br>
-
-	<h2>Still some work left to do...</h2>
-	<p>Currently fleshing out details, fixing small bugs and finishing the last polishing layer.</p>
-	<p>The goal and scope is to publish a fun little game you can jump into in seconds and play in quick sessions while waiting in line or on the bus. No penalties for quitting mid-session.</p>
-	
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------- SWEEPER CONTENT -------------------------------------------------------->
-<div id="Sweeper" class="tabcontent sweeper-font">
-	<div style="height: 150px; width: 100%;"></div>
-	<img src="img/sweeper-menu.gif" width="100%" height="auto">
-	<h2>Sweeper - Destroy On Sight</h2>
-	<div style="text-align:center;">
-		<span style="display:inline-block;background:#fff;color:#000;font-size:9pt;font-weight:800;
-		padding:2px 8px;border-radius:9999px;">WORK IN PROGRESS</span>
-	</div><br>
-	<p style="text-align:center">
-		Working on a physics-based, 2D puzzle game set in space that i plan to release on Steam. 
-		<br><br>
-		You're a pilot controlling a kamikaze drone equipped with RCS thrusters to make your way to the target and destroy it to complete the mission. 
-		A newtonian game at core but heavily tweaked for gameplay's sake. You get ranked based on your time performance and amount of resources used to reach the target.
-	</p>
-	
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- REBOUNCE CONTENT -------------------------------------------------------->
-<div id="Rebounce" class="tabcontent rebounce-font">
-	<div style="height: 150px; width: 100%;"></div>
-	<img src="img/rebounce/rebounce.webp" width="90%" height="auto" style="display: block; margin-left: auto; margin-right: auto; max-width: 400px;">
-	<span style="display: block; font-size: 16pt; text-align: center;">Rebounce</span style="color: #fff">
-		
-	<div style="text-align:center;">
-		<span style="display:inline-block;background:#fff;color:#000;font-size:9pt;font-weight:800;
-		padding:2px 8px;border-radius:9999px;">WORK IN PROGRESS</span>
-	</div>
-
-	<br><br>
-
-	<p style="text-align:center">
-		I love the FLASH games era and the early (2008-2013) era of iPhones and Android.<br>
-		So i'm working on my own little basketball hoop shooting game with hand-crafted graphics and realistic physics. <br>
-		A throwback to the likes of iBasket, Slam Dunk Basketball and Tip-Off.
-	</p>
-	<p style="text-align:center">
-		For the UI, i'm taking inspiration from the early iOS dark design but with a modern flavor. 
-		Or rather a modern UI with a classic flavor dipped into some skeuomorphic sauce.</p>
-	<br>
-	<img src="img/rebounce/r3.webp" width="100%" height="auto">
-	<img src="img/rebounce/r1.webp" width="100%" height="auto">
-	<img src="img/rebounce/r2.webp" width="100%" height="auto">
-	
-	<img src="img/rebounce/r4.webp" width="100%" height="auto">
-
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-<!------------------------------------------------------- LEGACY OF PANDORA CONTENT -------------------------------------------------------->
-<div id="Pandora" class="tabcontent pandora-font">
-	<h3>Tokyo</h3>
-	<p>Tokyo is the capital of Japan.</p>
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- RIVER'S EDGE CONTENT -------------------------------------------------------->
-<div id="River" class="tabcontent river-font">
-	<h3>Tokyo</h3>
-	<p>Tokyo is the capital of Japan.</p>
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- ALCHEMY AI CONTENT -------------------------------------------------------->
-<div id="Alchemy" class="tabcontent lightboxGallery alchemy-font">
-	<br><br><br><br><br><br>
-	<div class="content-wrapper">
-		<div class="content-icon-container">
-			<img src="img/alchemy/alc-appicon.png" width="200px" height="auto" class="no-lightbox">
-			<h1>Alchemy AI: Infinite Mix</h1>
-		</div>
-		<div class="content-summary-container">
-			<div class="content-summary-item">
-				<span class="summary-title">PLATFORM:</span>
-				<span class="summary-info">Android / iOS</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">ENGINE:</span>
-				<span class="summary-info">Unity</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">GENRE:</span>
-				<span class="summary-info">AI / Alchemy / Sandbox</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">DEVELOPER / PUBLISHER:</span>
-				<span class="summary-info">HostAile Games, Inc.</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">STATUS:</span>
-				<span class="summary-info">Published</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">MY ROLE:</span>
-				<span class="summary-info">UI/UX Designer and Consultant</span>
-			</div>
-		</div>
-
-	</div>		
-	</br></br>
-	<div class="get-on-buttons">
-		<div class="center">
-		<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en"><img src="img/playstore.png" width="180px" height="auto" class="no-lightbox"></a>
-		<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288"><img src="img/appstore.png" width="180px" height="auto" class="no-lightbox"></a>
-		</div>
-	</div>
-	</br></br>
-	<p>The classic alchemy game but what makes Alchemy AI stand out is the use of AI to generate almost infinite possibilities instead of a set number or combos. Players can create completely unique new items that were never created before.</p>
-	<h2>What i did</h2>
-	<p>I was a UI/UX Designer working on the UI, illustrations and some animations. Designed a machine (we named it internally "The Fusinator 3000"), where you place your elements to be combined.
-	</p></br>
-	<p style="font-style: italic; color: rgba(255,255,255,0.6); text-align: center;">Some early sketches</p>
-	<img src="img/alchemy/sketches.png" width="100%" height="auto"></br></br></br>
-	<img src="img/alchemy/alc-screens1.png" width="100%" height="auto"></br></br>
-	<p style="font-style: italic; color: rgba(255,255,255,0.6); text-align: center;">Early placeholder bottle illustrations</p>
-	<img src="img/alchemy/alc-bottles.png" width="100%" height="auto"></br></br>
-	<img src="img/alchemy/alc-screens2.png" width="100%" height="auto"></br></br>
-	<p style="font-style: italic; color: rgba(255,255,255,0.6); text-align: center;">Notification UI</p>
-	<img src="img/alchemy/alc-notification.png" width="100%" height="auto"></br></br>
-	<img src="img/alchemy/alc-screens3.png" width="100%" height="auto"></br></br>
-	<p style="font-style: italic; color: rgba(255,255,255,0.6); text-align: center;">Early icon exploration</p>
-	<img src="img/alchemy/alc-icons.png" width="100%" height="auto">
-	</br></br>
-	<p style="font-style: italic; color: rgba(255,255,255,0.6); text-align: center;">Main Menu illustration</p>
-	<img src="img/alchemy/alc-mainmenu.png" width="100%" height="auto">
-
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------- ARMORCRAFT CONTENT -------------------------------------------------------->
-<div id="ArmorCraft" class="tabcontent lightboxGallery armorcraft-font">
-	<div style="height: 150px; width: 100%;"></div>
-	<div class="content-wrapper">
-		<div class="content-icon-container">
-			<img src="img/ac/app_icon.png" style="width: 200px; height: auto; margin: 0 auto;" class="no-lightbox">
-			<h1>ArmorCraft</h1>
-		</div>
-
-		</br></br>
-
-		<img src="img/ac/iphone.png" style="display:block; margin:0 auto; width: 90%;">
-		
-		</br></br></br></br>
-
-		<div class="content-summary-container">
-			<div class="content-summary-item">
-				<span class="summary-title">PLATFORM:</span>
-				<span class="summary-info">Android / iOS</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">ENGINE:</span>
-				<span class="summary-info">Unity</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">GENRE:</span>
-				<span class="summary-info">Strategy / Base Building / F2P / MMO</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">DEVELOPER / PUBLISHER:</span>
-				<span class="summary-info">xFuture Technology Co.</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">STATUS:</span>
-				<span class="summary-info">Canceled</span>
-			</div>
-
-			<div class="content-summary-item">
-				<span class="summary-title">MY ROLE:</span>
-				<span class="summary-info">UI/UX Designer</span>
-			</div>
-		</div>
-	</div>
-
-	</br></br>
-
-	<h2>A canceled game i worked on UI for 3 years.</h2>
-	<p>ArmorCraft was a strategy game - base building, alliance warfare, PvP and PvE. 
-	   Unfortunately, the game has been canceled after the data collected from BETA testing was not good enough.</p>
-
-	<p>A complex and challenging UI. I had to design a simple to use UI with a lot of information required to display on a tiny phone screen.</p>
-
-	<p>The following are UI screens that I designed for the game. Many elements were still left unfinished or in a WIP state.</p>
-
-	</br></br>
-
-	<img src="img/ac/Homebase.webp" style="width:100%">
-	<span class="tool-note">Homebase Latest UI</span></br></br>
-
-	<p>Exploring different UI styles early on in relation to the changes to the art direction of the game. It was a lot of work
-		having to redesign the UI from scratch several times. From military themes to a more sci fi punk style.</p>
-
-	<img src="img/ac/evolution2.webp" style="width:100%">
-	<span class="tool-note">Homebase UI evolution</span></br></br>
-
-	<img src="img/ac/bonuses.webp" style="width:100%">
-	<img src="img/ac/Buildupgrade.webp" style="width:100%">
-	<img src="img/ac/Buildupgrade2.webp" style="width:100%">
-	<img src="img/ac/Chat.webp" style="width:100%">
-	<img src="img/ac/log.webp" style="width:100%">
-	<img src="img/ac/Missions.webp" style="width:100%">
-	<img src="img/ac/parts.webp" style="width:100%">
-	<img src="img/ac/Permit.webp" style="width:100%">
-	<img src="img/ac/PVE.webp" style="width:100%">
-	<img src="img/ac/rankings.webp" style="width:100%">
-	<img src="img/ac/Settings.webp" style="width:100%">
-	<img src="img/ac/unitsresearch.webp" style="width:100%">
-	<img src="img/ac/victory.webp" style="width:100%">
-	<img src="img/ac/Warehouse.webp" style="width:100%">
-	<img src="img/ac/Workshop.webp" style="width:100%">
-	<img src="img/ac/Workshopenhance.webp" style="width:100%">
-	<img src="img/ac/Workshopparts.webp" style="width:100%">
-
-	<div style="height: 150px; width: 100%;"></div>
-	
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- BESIEGE CONTENT -------------------------------------------------------->
-<div id="Besiege" class="tabcontent lightboxGallery besiege-font">
-	<img src="img/besiege/besiege-logo.png" class="no-lightbox" style="display: block; width: 90%; max-width: 400px; height: auto; margin: 0 auto;">
-	<div class="content-summary-container">
-		<div class="content-summary-item">
-			<span class="summary-title">PLATFORM:</span>
-			<span class="summary-info">Linux / Mac / Windows / Xbox One / Series X/S / PS4 / PS5 / Switch</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">ENGINE:</span>
-			<span class="summary-info">Unity</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">GENRE:</span>
-			<span class="summary-info">Simulation, Sandbox, Destruction, Physics-based, PvE</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">DEVELOPER / PUBLISHER:</span>
-			<span class="summary-info">Spiderling Studios</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">STATUS:</span>
-			<span class="summary-info">Published</span>
-		</div>
-
-		<div class="content-summary-item">
-			<span class="summary-title">MY ROLE:</span>
-			<span class="summary-info">UI Artist</span>
-		</div>
-	</div>
-
-	<h2>About the game</h2>
-	<p>Besiege is a physics building game about constructing mechanical machines to annihilate armies, 
-		obliterate castles and overcome challenging obstacles. Conquer the campaign or skirmish with friends in Multiplayer!
-	</p>
-	</br></br>
-	<h3>My role here</h3>
-	<p>
-		As a UI Artist, i've been working closely with the team to:</br>
-		- Deliver UI mock-ups to be later implemented</br>
-		- Help in creating assets and fonts</br>
-		- Design user interfaces and solve design problems</br>
-		- Redefine existing UI and layouts</br>
-		- Aid in the creation of promotional material</br>
-		- Aid in testing of the product and offer feedback</br>
-	</p>
-	<br></br>
-	<img src="img/besiege/key-mapping2.webp" width="100%" height="auto">
-	<img src="img/besiege/key-mapping.png" width="100%" height="auto">
-	</br>
-	<span class="tool-note" style="display: block; text-align: center;">Block Key Mapping</span><br></br>
-	<img src="img/besiege/options-video.png" width="100%" height="auto"></br>
-	<span class="tool-note" style="display: block; text-align: center;">Settings Screen</span></br></br>
-	<img src="img/besiege/modloader.png" width="100%" height="auto"></br>
-	<span class="tool-note" style="display: block; text-align: center;">Main Menu Mod Loader</span><br></br>
-
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-
-
-<!-------------------------------------------------------- STORE CONTENT -------------------------------------------------------->
-<div id="Store" class="tabcontent lightboxGallery store-font">
-
-  <div class="store-spacer"></div>
-  <h1 class="store-heading">Goods for sale</h1>
-  <h4 class="store-subheading">Creative Market</h4>
-
-  <div class="store-gallery">
-
-    <!-- Product 1 -->
-    <div class="product">
-      <a href="https://creativemarket.com/graphicvalley/25411998-10-Wireframe-Sketchbook-Templates" target="_blank">
-        <img src="img/store/prod-device-wire.avif" alt="Product 1" class="product-image no-lightbox">
-      </a>
-      <div class="product-info">
-        <span class="product-title">10 Apple Devices Sketchbook Wireframes</span>
-        <span class="product-price">$10</span>
-      </div>
-    </div>
-
-    <!-- Product 2 -->
-    <div class="product">
-      <a href="https://creativemarket.com/graphicvalley/24239674-iPhone-14-Pro-Mockup-Dynamic-Islands" target="_blank">
-        <img src="img/store/prod-iphone12.avif" alt="Product 2" class="product-image no-lightbox">
-      </a>
-      <div class="product-info">
-        <span class="product-title">iPhone 14 Pro Mockup Dynamic Islands</span>
-        <span class="product-price">$10</span>
-      </div>
-    </div>
-
-    <!-- Product 3 -->
-    <div class="product">
-      <a href="https://creativemarket.com/graphicvalley/4831864-iPhone-SE-2020-Mockup" target="_blank">
-        <img src="img/store/prod-iphone-se.avif" alt="Product 3" class="product-image no-lightbox">
-      </a>
-      <div class="product-info">
-        <span class="product-title">iPhone SE 2020 Mockup</span>
-        <span class="product-price">$10</span>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="store-spacer"></div>
-
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- CREATIVE BOARD CONTENT -------------------------------------------------------->
-<div id="CreativeBoard" class="tabcontent board-font">
-	<div class="centering lightboxGallery">
-		<br><br><br>
-
-		<h1>Creative Board</h1>
-		<p style="text-align: center;">A collection of random sketches, icons and designs either unused or early stuff.</p>
-
-		<br><br><br>
-
-		<img src="img/cb/icon-evolution.webp" width="100%" height="auto" alt="Mobile Button Icon Evolution">
-		<div class="gallery">
-
-			<!-- Row 1 -->
-			<div class="gallery-row">
-				<img src="img/cb/wreckfest2-gauge.webp" 
-					alt="Realistic Speedometer concept UI for Wreckfest 2. Inspired by the original Flatout game. 
-					Just for fun. Transparent glass to maintain a sense of screen real estate.">
-				<img src="img/cb/extendanim.gif" 
-					alt="Animation for extending menu for one of the main buttons in Armorecraft">
-				<img src="img/ac/oldpunk.webp" 
-					alt="Exploring main base UI for Armorecraft. A punk console-looking style UI.">
-				<img src="img/cb/box.webp" alt="Box concept">
-				<img src="img/cb/alchemy.gif" alt="Alchemy animation">
-				<img src="img/cb/armor.webp" alt="Armor concept">
-				<img src="img/cb/ttcd-ads.webp" alt="Mobile game concept">
-				<img src="img/cb/ttcd-objs.webp" alt="Mobile game concept objects">
-				<img src="img/cb/sketches1.webp" alt="Early sketches set 1">
-				<img src="img/cb/ui.webp" alt="UI concept">
-				<img src="img/cb/Game UI Screen_2_nobg.webp" alt="UI concept">
-				<img src="img/cb/sketches4.webp" alt="Sketches set 4">
-			</div>
-
-			<!-- Row 2 -->
-			<div class="gallery-row">
-				
-				<img src="img/cb/sc.webp" alt="Scene sketch">
-				<img src="img/cb/ui-with-explorer.webp" alt="Tabs concept">
-				<img src="img/cb/tabs.webp" alt="Tabs concept">
-				<img src="img/cb/ttcd-diamonds.webp" alt="Armor concept">
-				<img src="img/besiege/block_key_map.gif">
-				<img src="img/cb/Rebounce-old.webp" alt="Rebounce - early concept onboarding">
-				<img src="img/cb/pocket-bball.webp" alt="Pocket BBall - early concept for Rebounce">
-				<img src="img/cb/sketches2.webp" alt="Early sketches set 2">
-				<img src="img/cb/wireframes.webp" alt="Wireframes">
-				<img src="img/cb/robots.webp" alt="Robot sketches">
-				<img src="img/cb/sketches3.webp" alt="Sketches set 3">
-			</div>
-
-		</div>
-	</div>
-	<div style="height: 150px; width: 100%;"></div>
-</div>
-
-
-
-
-
-
-
-<!-------------------------------------------------------- ABOUT -------------------------------------------------------->
-<div id="About" class="tabcontent about-font">
-	<div class="about-container">
-		<div style="height: 80px; width: 100%;"></div>
-		<div class="about-img"><img src="img/me-tape2.png" alt="My photo"></div>
+	<!-- NON VISIBLE - HOME TAB - FEATURED PROJECTS -->
+	<div id="Featured" class="tabcontent">
 		
 		
-		<h2>Alex Circo </h2>
-		<h4 class="tool-note" style="text-align: center; margin-top: -20px;">("cheer"-co)</h4>
-		</br>
-		
-		<span>
-			I'm 29, based in Romania. Love games, movies, illustration, shitbox cars, camping, summer nights and rain.
-			I’ve been designing game UI for 8 years and recently fell in love with game dev.
-			<br><br>
-			I started out with fine arts at core then leaned into UI design, creating web and app designs. Then in 2016 joined Spiderling Studios as a UI Artist to work on Besiege. 
-			Since then, I’ve focused fully on game UI, working with studios like Spiderling Studios, XFuture Technology, Yambo Studios, HostAile Games, and more.
-		</span>
-		</br></br></br></br></br>
-		<h3 class="collapsible"><span class="label">UI Design Skills</span><span class="arrow">+</span></h3>
-		<div class="content">
-			<p>
-			- Design clean, user-friendly and engaging game interfaces aligned with project style and goals.<br>
-			- Create detailed mockups and design specs to communicate vision clearly to the team.<br>
-			- Ensure high fidelity between design mockups and in-game UI, minimizing discrepancies.<br>
-			- Quick iteration and prototyping of UI elements and layouts.<br>
-			</p>
-		</div>
+		<div class="tab">
+			<!-- LOGO -->
+			<div class="mobile-spacer-top"></div>
+			
+			<div class="logo-container-mobile">
+				<div class="logo" style="margin: 0 auto;"></div>
+			</div>
 
-		<h3 class="collapsible"><span class="label">UX Design Skills</span><span class="arrow">+</span></h3>
-		<div class="content">
-			<p>
-			- Understand player behavior, motivations, and needs to inform UI design decisions.<br>
-			- Structure menus, HUDs, and game systems for intuitive navigation, minimal friction and cognitive load.<br>
-			- Design microinteractions and visual feedback that guide players effectively.<br>
-			- Maintain a consistent and cohesive interaction design across screens.<br>
-			- Create wireframes and iterate on layouts before implementation.<br>
-			- Understand visual hierarchy to present game information clearly.<br>
-			- Adapt UI/UX for different platforms, controls, and screen resolutions.<br>
-			- Maintain consistency in UI patterns, flows, and visual language.<br>
-			- Observe and analyze player interactions to iterate and improve UI/UX.
-			</p>
-		</div>
+			<!-- DESCRIPTION HEADER -->
+			<div class="description-container-mobile"><img src="img/runningtext.gif" width="210px" height="auto"></div>
 
-		<h3 class="collapsible"><span class="label">Technical Proficiency Skills (Unity)</span><span class="arrow">+</span></h3>
-		<div class="content">
-			<p>
-			- Import and integrate UI assets directly into Unity.<br>
-			- Build responsive and adaptive UI layouts using Unity’s Canvas system.<br>
-			- Set up and manage UI prefabs, anchors, and layouts.<br>
-			- Implement or aid in UI animations and transitions.<br>
-			- Collaborate closely with programmers to connect game data and events to UI.<br>
-			- Troubleshoot and fix visual glitches, layout issues, Canvas hierarchies.<br>
-			</p>
-		</div>
+			<a href="projects/jex.html">
+			<div class="featured-project project1">
+				<img src="img/jex/jex-featured-cover.webp" alt="Jex">
+				<span class="overlay-text-role">SOLO DEVELOPER</span>
+				<div class="overlay-text-container">
+					<p class="overlay-text-title">Jex in Space </p>
+					
+					<p class="overlay-text-platform">Out on Android!</p>
+					<p class="overlay-text-desc">An endless physics-based arcade runner.</p>
+				</div>
+			</div>
+			</a>
 
-		<h3 class="collapsible"><span class="label">Tools I Use</span><span class="arrow">+</span></h3>
-		<div class="content">
-			<p>
-			- Affinity Designer <span class="tool-note">(main tool for UI and vector art)</span><br>
-			- Figma <span class="tool-note">(sharing UI design/assets and collaborating)</span><br>
-			- Adobe Photoshop <span class="tool-note">(advanced raster art/effects)</span><br>
-			- Adobe Illustrator <span class="tool-note">(advanced vector art)</span><br>
-			- Adobe After Effects <span class="tool-note">(animations/video editing)</span><br>
-			- Discord <span class="tool-note">(project management, communication)</span><br>
-			- Unity <span class="tool-note">(2D, C#, VSCode, DOTween)</span><br>
-			- Other tools: Miro, Notion, Notino, Procreate, Google Docs
-			</p>
-		</div>
-		<div style="height: 200px; width: 100%;"></div>
+			<a href="projects/besiege.html">
+			<div class="featured-project project2">
+				<img src="img/besiege/besiege-featured-cover.webp" alt="Besiege">
+				<span class="overlay-text-role">UI ARTIST</span>
+				<div class="overlay-text-container">
+					<p class="overlay-text-title">Besiege </p>
+					
+					<p class="overlay-text-platform">Linux | Mac | Windows | PlayStation | Xbox | Switch</p>
 
+					<p class="overlay-text-desc">Physics-based vehicle-building sandbox based around medieval siege engines.</p>
+				</div>
+			</div>
+			</a>
+
+			<a href="projects/armorcraft.html">
+			<div class="featured-project project3">
+				<img src="img/ac/featured-cover-2.webp" alt="Armorcraft">
+				<span class="overlay-text-role">UI/UX DESIGNER</span>
+				<div class="overlay-text-container">
+					<p class="overlay-text-title">ArmorCraft </p>
+					
+					<p class="overlay-text-platform">Android | iOS</p>
+					<p class="overlay-text-desc">Strategy, base building, alliance warfare, PvP and PvE.</p>
+				</div>
+			</div>
+			</a>
+
+			<div class="mobile-spacer-bottom"></div>
+
+		</div>
 	</div>
-</div>
+
+
 </div> <!-- end adaptive-content-wrapper-->
 
 <script src="js/dynamic.js"></script>
@@ -1156,22 +294,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
-<!-- Phone video fallback - used for jex in space -->
-<script>
-    const video = document.getElementById('phone-video');
-    const fallback = document.getElementById('phone-fallback');
 
-    // If the video can play, hide the fallback image
-    video.oncanplay = () => {
-        fallback.style.display = 'none';
-    };
-
-    // If the video cannot play (e.g., Safari iOS), hide video and show fallback
-    video.onerror = () => {
-        video.style.display = 'none';
-        fallback.style.display = 'block';
-    };
-</script>
 
 </body>
 </html>

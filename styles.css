@@ -1,3 +1,13 @@
+/*
+ █████████     █████      ████     ███ ███████████   ██████  
+ ███         ███    ███   ██ ███   ███     ███     ███    ███
+ ███       ███        ███ ███ ███  ███     ███      ███      
+ ███████   ███        ███ ███  ███ ███     ███        ███    
+ ███       ███        ███ ███   ██ ███     ███           ███ 
+ ███         ███     ███  ███    ██ ██     ███     ███    ███
+ ███           █████      ███      ███     ███       ██████  
+*/                                                         
+
 @font-face {
   font-family: 'RobotoMono';
   src: url('fonts/RobotoMono-VariableFont.ttf') format('truetype-variations');
@@ -44,35 +54,16 @@
   font-weight: 100 900;
 }
 
-#loading-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
 
-#loading-bar-container {
-    width: 300px;
-    height: 10px;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-#loading-bar {
-    width: 0%;
-    height: 100%;
-    background-color: #fff;
-    border-radius: 10px 0 0 10px;
-    transition: width 0.2s ease;
-}
-
+/*
+    █████     ███            █████      █████           ██        ███       
+  ██    ███   ███          ███    ███   ██  ███        ██ ██      ███       
+ ██           ███        ███        ███ ██   ███      ██  ███     ███       
+ ███          ███        ███        ███ ██████       ███   ███    ███       
+ ███   ██████ ███        ███        ███ ██    ███   ███████ ███   ███       
+  ███    ██   ███          ███     ███  ██     ██  ███       ███  ███       
+   ██████     ██████████     █████      ████ ███  ███         ███ ██████████
+*/                                                                       
 
 ::selection {
 	color: black;
@@ -80,9 +71,11 @@
 	text-shadow: 0px 0px 2px gray;
 }
 :root {
+  --cursor-default: auto;
+  --cursor-pointer: pointer;
+
 	--color-logo: #FFFEEF;
 	--color-text: #FFFEEF; /*yellowish white*/
-	--color-navlink-active: #00C3FF; /*blue*/
 	--color-link: #00C3FF; /*blue*/
 	--color-link-hover: #00C3FF; /*blue*/
 	--color-link-visited: #007396; /*blue*/
@@ -107,8 +100,10 @@
 	--menu-link-color: #fffeefce;
 	--menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
 	--menu-link-active-color: rgba(17, 17, 17, 0.9);
-  	--menu-category-color: rgba(255, 255, 255, 0.4);
-	--menu-balloon-color: #7575752d;
+  --menu-category-color: rgba(255, 255, 255, 0.4);
+  
+  --menu-balloon-text-color: #fffeefce;
+	--menu-balloon-fill-color: #7575752d;
 	--menu-balloon-border-color: #7a7a7a52;
 
 	--social-text-color: #FFFEEF;
@@ -116,27 +111,54 @@
 }
 
 /* Default menu colors */
-/* Override for Jarfall (example: darker text) */
-body.menu-jarfall {
+.menu-featured {
+  --menu-link-color: #fffeefce;
+  --menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
+  --menu-link-active-color: rgba(17, 17, 17, 0.9);
+  --menu-category-color: rgba(255, 255, 255, 0.4);
+}
+/* Override for Jarfall */
+.menu-jarfall {
   --menu-link-color: rgba(80, 53, 23, 0.95);
   --menu-link-active-bg-color: rgba(80, 53, 23, 0.95);
   --menu-link-active-color: rgb(255, 245, 231);
   --menu-category-color: rgba(80, 53, 23, 0.6);
-  --menu-balloon-color: rgba(80, 53, 23, 0.4);
-  --menu-balloon-border-color: rgba(94, 64, 30, 0.6);
+
+  --menu-balloon-text-color: rgb(255, 245, 231);
+  --menu-balloon-fill-color: rgba(80, 46, 23, 0.678);
+  --menu-balloon-border-color: rgb(94, 64, 30);
 
   --social-text-color: rgba(80, 53, 23, 0.95);
   --social-icons-color: rgba(80, 53, 23, 0.95);
 }
-/* Override for Jex (example: light blue) */
-body.menu-jex {
-  --menu-link-active-bg-color: #00C3FF;
-  --menu-link-active-color: #02151b;
-}
-body.menu-jarfall .logo {
+.menu-jarfall .logo {
   --color-logo: rgba(80, 53, 23, 0.95);
 }
+/* Override for Jex (example: light blue) */
+.menu-jex {
+  --menu-link-color: #fffeefce;
+	--menu-link-active-bg-color: rgba(255, 255, 255, 0.9);
+	--menu-link-active-color: rgba(17, 17, 17, 0.9);
+  --menu-category-color: rgba(255, 255, 255, 0.4);
+
+  --menu-balloon-text-color: #fffeefce;
+	--menu-balloon-fill-color: #566a7a94;
+	--menu-balloon-border-color: #8badbd98;
+
+  --cursor-default: url("img/cur/jex-default.png") 0 5, auto;
+  --cursor-pointer: url("img/cur/jex-pointer.png") 0 5, pointer;
+  --cursor-default: auto;
+  --cursor-pointer: pointer;
+
+  --social-text-color: #FFFEEF;
+	--social-icons-color: #FFFEEF;
+}
+.menu-alchemy {
+  --menu-balloon-fill-color: #ffffff17;
+	--menu-balloon-border-color: #ffffff21;
+}
 body {
+  cursor: var(--cursor-default);
 	height: auto;
 	width: 100%;
 	background: black;
@@ -165,8 +187,8 @@ h2 {
 	font-family: var(--font-main);
 }
 h3 {
-	font-weight: 800;
-	font-size: 14pt;
+	font-weight: 300;
+	font-size: 16pt;
 	text-align: left;
 	margin: 0px;
 	font-family: var(--font-main);
@@ -192,6 +214,7 @@ a {
 	padding: 0;
 	margin: 0;
 	color: var(--color-link);
+  cursor: var(--cursor-pointer);
 }
 a:hover {
 	color: var(--color-link);
@@ -259,7 +282,7 @@ h2 a:visited {
  ████ ███  ███         ███    █████   ███     ███   ██████     ███      ███ ██████    
 */
 
-/* DEFAULT BACKGROUND */
+/* ----------------------------------- DEFAULT BACKGROUND ----------------------------------- */
 .background-image {
   background: #000 url(img/noise-bg-3.webp) repeat bottom / contain;
   background-size: 500px 500px; /* each square tile will be 100×100 */
@@ -269,29 +292,41 @@ h2 a:visited {
   z-index: 1;
 }
 
-/* BACKGROUNDS FOR EACH PROJECT */
-.background-image.bg-jarfall {
-	/*background: #342F2A url(img/jar/background-v2.png) no-repeat bottom;*/
-	background-image: none;
-	background-color: #5E493F; /* ensures fallback */
-	background: #342F2A url(img/jar/background-v4.webp) no-repeat bottom / cover;
+#Featured.tabcontent {
+	background: transparent;
 }
-.background-image.bg-jex {
+
+/* ------------------------------- BACKGROUNDS FOR EACH PROJECT ----------------------------- */
+
+/* ------------ JARFALL ------------ */
+.background-image-jar {
+	position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	background: #dabb9c url(img/jar/background-v4.webp) no-repeat bottom / cover;
+}
+#Jarfall.tabcontent {
+	background: none;
+	background-color: rgba(73, 65, 58, 0.85);
+	background-color: #976f57;
+  background-color: transparent ;
+}
+
+/* ------------ JEX ------------ */
+.background-image-jex {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 	background: url(img/jex/background-v2.webp) no-repeat center / cover;
 }
-.background-image.bg-alchemy {
-	background: url(img/alchemy/background.png) no-repeat bottom / cover;
+#Jex.tabcontent {
+	background: none;
+	background-color: rgba(20, 23, 32, 0.8);
 }
-.background-image.bg-armorcraft {
-	background: url(img/ac/background.webp) no-repeat bottom / cover;
-}
-.background-image.bg-besiege {
-	background: url(img/besiege/4k2.webp) no-repeat bottom / cover;
-}
-.background-image.bg-rebounce, .background-image.bg-sweeper {
-	background: #000;
-}
-.background-image.bg-jex::after {
+/* Scanlines */
+.background-image-jex::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -327,17 +362,40 @@ h2 a:visited {
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
 
-  
   animation: scanlines-scroll 1s linear infinite; /* new animation */
   z-index: 2;
 }
-
 @keyframes scanlines-scroll {
   from { background-position: 0 0; }
   to { background-position: 0 -54px; }
 }
 
-.background-image.bg-armorcraft::after {
+/* ------------ ALCHEMY ------------ */
+.background-image-alchemy {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	background: url(img/alchemy/background.png) no-repeat bottom / cover;
+}
+#Alchemy.tabcontent {
+	background: none;
+	background-color: #15293f;
+}
+
+/* ------------ ARMORCRAFT ------------ */
+.background-image-armorcraft {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	background: url(img/ac/background.webp) no-repeat bottom / cover;
+}
+#ArmorCraft.tabcontent {
+	background: none;
+	background-color: rgba(17, 17, 17, 0.6);
+}
+.background-image-armorcraft::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -377,9 +435,27 @@ h2 a:visited {
   z-index: 2;
 }
 
+/* ------------ BESIEGE ------------ */
+.background-image-besiege {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	background: url(img/besiege/4k2.webp) no-repeat bottom / cover;
+}
+#Besiege.tabcontent {
+	background: none;
+	background-color: rgba(17, 17, 17, 0.8);
+}
 
-
-
+/* ------------ REBOUNCE + SWEEPER ------------ */
+.background-image-rebounce, .background-image-sweeper {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+	background: #000;
+}
 
 
 
@@ -396,7 +472,7 @@ h2 a:visited {
 .menu-container{
 	position: fixed;
 	top: 0;
-	left: calc(50% - 800px/2 - 240px); /* 800 = tabcontent width, 250 = menu width */
+	left: calc(50% - 800px/2 - 280px); /* 800 = tabcontent width, 250 = menu width */
 	display: flex; 
 	justify-content: center; 
 	align-items: center;
@@ -417,7 +493,7 @@ h2 a:visited {
 	text-align: left;  
 	pointer-events: all;
 }
-.tablinks-container{
+.menu-link-container{
 	display: block; 
 	width: 200px;
 	height: auto;
@@ -425,20 +501,20 @@ h2 a:visited {
 	padding: 0;
 	
 }
-.tablinks-group{
+.menu-link-group{
 	display: block;  
 	width: 200px;
 	height: auto;
 	text-align: left;
-	margin-bottom: 25px;  
+	margin-bottom: 25px; 
+  
 }
-.tablink-category{
+.menu-link-category{
 	display: block;  
 	width: 200px;
 	height: auto;
 	text-align: left;
 	margin-bottom: 5px;
-	color: rgba(255, 255, 255, 0.4);
 	color: var(--menu-category-color);
 	font-size: 12pt;
 	font-weight: 650;
@@ -450,16 +526,13 @@ h2 a:visited {
 }
 
 /* Style the buttons that are used to open the tab content */
-.menu .tablink {
+.menu-link {
 	width: fit-content;
 	height: 16px;
-	color: rgba(255, 255, 255, 0.7);
-	color: var(--menu-link-color);
 	background-color: transparent;
 	border: none;
 	outline: none;
 	cursor: pointer;
-	padding: 0px 0px;
 	font-weight: 500; 
 	text-align: left;
 	margin: 0;
@@ -467,72 +540,78 @@ h2 a:visited {
 	display: flex;
 	flex-direction: column;
 	padding: 0px 5px;
-	margin-left: -5px;
-  text-decoration: none;
-
-	font-family: var(--font-tab-link);
-	font-size: var(--font-tab-link-size);
-	font-weight: var(--font-tab-link-weight);
+	margin: 0;
+  border-radius: 3px;
+  margin-left: -5px; 
 }
-.menu .tablink a, 
-.menu .social a {
-	color: var(--color-text);
-	text-decoration: none;
-	
 
-	font-family: var(--font-tab-link);
+.menu-link a {
+	text-decoration: none;
 	font-size: 10pt;
 	font-weight: 500; 
-
-	font-family: var(--font-tab-category);
-
-
-	background-color: transparent;
 	border: none;
 	outline: none;
 	text-align: left;
 	margin: 0;
 	padding: 0;
-}
-.menu .social a:hover{
   text-decoration: none;
+
+  font-family: var(--font-tab-link);
+	font-size: var(--font-tab-link-size);
+	font-weight: var(--font-tab-link-weight);
+  color: var(--menu-link-color);
+  cursor: var(--cursor-pointer);
+}
+.social a:hover{
+	font-size: 10pt;
+	font-weight: 500; 
+	border: none;
+	outline: none;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+  border-radius: 3px;
 }
 /* Change background color of buttons on hover */
-.menu .tablink:hover {
-  
+.menu-link a:hover {
   border: none;
   outline: none;
   opacity: 100%;
-  text-decoration: none;
-  background-color: var(--menu-link-active-bg-color);
+  background-color: transparent ;
   color: var(--menu-link-active-color);
-  padding: 0px 5px;
+  padding-left: 5px;
+  padding-right: 1px;
+  margin: 0;
+  margin-left: -5px; 
 }
-/* Create an active/current tablink class */
-.menu .tablink.active {
+/* Create an active/current menu-link class */
+.menu-link-active a {
   border: none;
   padding: 0;
   outline: none;
-  color: var(--color-navlink-active);
   opacity: 100%;
-  background-color: var(--menu-link-active-bg-color);
+  background-color: transparent ;
   color: var(--menu-link-active-color);
+  background-color: var(--menu-link-active-bg-color);
   padding: 0px 5px;
-  text-decoration: none;
+  margin-left: -5px;
+  border-radius: 3px;
 }
-.logo-container .tablink{
+.menu-link:hover{
+  background-color: var(--menu-link-active-bg-color);
+  border-radius: 3px;
+}
+.logo-container .menu-link{
   color: transparent;
   border: none;
   background-color: transparent;
 }
 .balloon {
-  display: inline-flex;               /* make the balloon shrink to text width */
+  display: none;               /* make the balloon shrink to text width */
   align-items: center;                /* vertical centering */
   justify-content: center;            /* horizontal centering */
-  background-color: var(--menu-balloon-color);
   padding: 2px 10px;                  /* space around the text */
   border-radius: 999px;               /* always fully rounded */
-  border: 1px solid var(--menu-balloon-border-color);
   width: auto;                         /* shrink to fit text */
   height: auto;                        /* let padding control height */
   text-align: center;                  /* fallback */
@@ -540,14 +619,96 @@ h2 a:visited {
   font-family: var(--font-tab-balloon);
 	font-size: var(--font-tab-balloon-size);
 	font-weight: var(--font-tab-balloon-weight);
+
+  border: 1px solid var(--menu-balloon-border-color);
+  background-color: var(--menu-balloon-fill-color);
+  color: var(--menu-balloon-text-color);
 }
-.tablink.highlight{
-	color: var(--color-text); /* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
-	color: #FFFEEF;
-	opacity: 100%;
-	text-decoration: underline;
+.menu-link.highlight a{
+	/* this is used to hightlight the menu link of the highlighted featured project - injected by js*/
+	border: none;
+  outline: none;
+  opacity: 100%;
+  background-color: var(--menu-link-active-bg-color);
+  color: var(--menu-link-active-color);
+  padding: 0px 5px;
+  margin-left: -5px;
+  border-radius: 3px;
 }
 
+.unavailable a {
+  text-decoration: line-through;
+}
+.unavailable a:hover {
+  color: var(--menu-link-active-color);
+}
+.content-icon-container{
+	width: 200px;
+	height: auto;
+	margin: 0 auto;
+	text-align: center;
+	
+}
+.socials-container{
+	display: flex;  
+	flex-direction: column;
+	width: 100%;
+	height: auto; 
+	padding-top: 20px; 
+}
+.socials-desktop{
+	display: block;
+	width: 100%;
+	height: auto;  
+}
+.socials-mobile{
+	display: none;  
+}
+.social{
+	display: flex;  
+	flex-wrap: nowrap; 
+	flex-direction: row;
+	justify-content: left;
+	width: 100%;
+	height: auto; 
+}
+.social-icon{
+	display: flex; 
+	flex-wrap: nowrap;
+	width: 28px;
+	height: 28px; 
+	float: left;
+	margin-left: -5px;
+}
+.social-text{
+	display: flex;
+	flex-wrap: nowrap;
+	font-size: 10pt;
+	font-weight: var(--font-tab-link-weight);
+  line-height: 28px;
+  vertical-align: middle;
+	margin-left: 5px;
+	font-family: var(--font-tab-link);
+	color: var(--social-text-color);
+
+}
+.social-text:hover{
+	text-decoration: none;
+}
+.social a:hover{
+	text-decoration: none;
+}
+
+.mail-icon,
+.discord-icon,
+.itch-icon{
+	width: 28px;
+	height: 28px;
+	fill: var(--social-icons-color);
+}
+.social-text-itch:hover{
+  text-decoration: underline;
+}
 /*
  ███    ███ █████████       ██        ██████     █████████ ████████    
  ███    ███ ███            ██ ██      ███   ███  ███       ███    ███  
@@ -624,44 +785,17 @@ h2 a:visited {
 }
 /* Style the tab content */
 .tabcontent {
-  display: none;
-  
+  display: block;
   background: none;
   background-image: none;
   background-color: transparent;
-  width: 750px;
+  width: 690px;
   height: auto;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 40px 0px 40px;
   border: none;
   outline: none; 
   z-index: 2;
-  margin:  0 auto; 
-}
-
-#Featured.tabcontent {
-	background: none;
-	background-color: rgb(10, 10, 10, 0.0);
-}
-#Jarfall.tabcontent {
-	background: none;
-	background-color: rgba(73, 65, 58, 0.85);
-	background-color: #976f57e5;
-}
-#Jex.tabcontent {
-	background: none;
-	background-color: rgba(20, 23, 32, 0.8);
-}
-#Alchemy.tabcontent {
-	background: none;
-	background-color: #15293f;
-}
-#ArmorCraft.tabcontent {
-	background: none;
-	background-color: rgba(17, 17, 17, 0.6);
-}
-#Besiege.tabcontent {
-	background: none;
-	background-color: rgba(17, 17, 17, 0.8);
+  margin:  0 auto;
 }
 
 .content-summary-container {
@@ -700,6 +834,7 @@ h2 a:visited {
   }
 }
 
+/* ------------ APP STORES BUTTONS ----------- */
 .get-on-buttons {
   display: block;
   margin-top: 20px;
@@ -724,7 +859,7 @@ h2 a:visited {
   display: block;
 }
 
-/* ------------ THIS IS A FEATURED PROJECT ----------- */
+/* ------------ FEATURED PROJECTS - HOME ----------- */
 .featured-title {
   font-size: 12pt;
   font-weight: 600;
@@ -776,6 +911,7 @@ h2 a:visited {
   padding-left: 50px;
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  
 }
 .featured-project:hover img {
   transform: scale(1.02);
@@ -784,10 +920,14 @@ h2 a:visited {
 .overlay-text-title {
   width: 100%;
   text-align: left;
-  font-size: 14pt;
+  font-size: 16pt;
+  font-weight: 600;
   margin: 0;
   padding: 2px 0;
+  font-family: var(--font-tab-link);
+  color: var(--color-text);
 }
+
 .overlay-text-desc,
 .overlay-text-platform {
   width: 100%;
@@ -795,18 +935,23 @@ h2 a:visited {
   font-size: 10pt;
   margin: 0;
   padding: 2px 0;
+  font-family: var(--font-tab-link);
+  color: var(--color-text);
+}
+.overlay-text-desc{
+  opacity: 0.6;
 }
 .overlay-text-role {
-  display: none;
+  display: block;
   position: absolute;
   top: 1px;
   right: 5px;
   width: auto;
   height: auto;
   text-align: right;
-  font-size: 10pt;
+  
   padding: 1px 10px;
-  padding-top: 4px;
+  padding-top: 2px;
   border-radius: 6px;
   background-color: whitesmoke;
   color: black;
@@ -816,6 +961,7 @@ h2 a:visited {
   font-family: var(--font-tab-balloon);
   font-weight: var(--font-tab-balloon-weight);
   font-size: var(--font-tab-balloon-size);
+  font-size: 11pt;
 
   border: 1px solid rgba(0, 0, 0, 1);
 }
@@ -836,136 +982,18 @@ h2 a:visited {
 
 
 
-.playOnItch {
-	display: flex;
-	align-items: center;     /* vertical align icon + text */
-	justify-content: center; /* keep everything centered inside the button */
-	gap: 10px;               /* space between icon and text */
-	width: 200px;            /* slightly wider for balance */
-	height: 40px;
-	margin: 10px auto 30px;  /* center the button itself */
-	padding: 10px 20px;
-	background: url('img/jar/button-hover.png') no-repeat center center;
-	background-size: contain;
-	color: #3a3a3a;
-	border: none;
-	font-size: 14pt;
-	font-weight: 800;
-	text-decoration: none;
-	transition: background-color 0.2s ease;
-	transition: ease-in 0.1s;
-}
-.playOnItch:hover {
-	background: url('img/jar/button-hover.png') no-repeat center center;
-	background-size: contain;
-	transform: rotate(-2deg) translateY(-8px);
-	transition: ease-in 0.1s;
-}
-.playOnItch .itch-icon {
-	width: 30px;
-	height: 30px;
-	filter: invert(80%);
-}
-
-/* Tooltip balloon */
-.playOnItch .tooltip {
-	position: absolute;
-	top: -35px; /* above the button */
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: #4242427a;
-	color: #FFFEEF;
-	font-size: 10pt;
-	font-weight: 500;
-	padding: 5px 10px;
-	border-radius: 8px;
-	border: 1px solid #5555557a;
-	white-space: nowrap;
-	opacity: 0;
-	pointer-events: none;
-	transition: opacity 0.2s ease, transform 0.2s ease;
-	transform: rotate(2deg);
-}
-
-/* Show tooltip on hover */
-.playOnItch:hover .tooltip {
-	opacity: 1;
-	transform: rotate(2deg) translateX(-50%) translateY(-5px);
-}
-
-#Jarfall a:visited { color: #3a3a3a; }
-#Jarfall a:hover { color: #3a3a3a; }
-
-.jar-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-  gap: 10px;                             /* spacing between images */
-  margin-top: 10px;
-}
-
-.jar-row img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain; /* ensures images fit nicely */
-}
-
-@media (max-width: 600px) {
-  .jar-row {
-    grid-template-columns: 1fr; /* stack on mobile */
-  }
-}
 
 
-.jex-trailer-container {
-  position: absolute;
-  position: fixed;
-  display: block;
-  top: 150px;
-  right: calc(50% - 800px/2 - 320px); /* 800 = tabcontent width, 250 = menu width */
-  width: 300px; /* adjust the width as needed */ 
-  height: 250px; /* adjust the height as needed */
-  text-align: center;
-  cursor: pointer; /* add a pointer cursor to indicate it's a link */
-  animation: float 3.5s ease-in-out infinite;
-  z-index: 2;
-  padding-top: 0px;
-  margin: 0 auto;
-}
 
-.jex-trailer-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.jex-trailer-container .normal-state, .jex-trailer-container:hover .hover-state { display: block; }
-.jex-trailer-container .hover-state, .jex-trailer-container:hover .normal-state { display: none; }
-
-.jex-trailer-container a {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-15px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.content-icon-container{
-	width: 200px;
-	height: auto;
-	margin: 0 auto;
-	text-align: center;
-	
-}
+/*
+ █████         █████            ██        ████████     ██████    
+ ██  ███     ███    ███        ██ ██      ███    ███   ███   ███ 
+ ██   ███  ███        ███     ██  ███     ███    ███   ███    ███
+ ██████    ███        ███    ███   ███    ██ ███       ███    ███
+ ██    ███ ███        ███   ███████ ███   ███  ███     ███    ███
+ ██     ██   ███     ███   ███       ███  ███    ███   ███   ███ 
+ ████ ███      █████      ███         ███ ███      ███ ██████    
+*/                                                        
 
 
 /* ------------------ GALLERY -------------- */
@@ -1002,9 +1030,16 @@ h2 a:visited {
 }
 
 
+/*
+   ██████   ███████████     █████      ████████     █████████
+ ███    ███     ███       ███    ███   ███    ███   ███      
+  ███           ███     ███        ███ ███    ███   ███      
+    ███         ███     ███        ███ ██ ███       ███████  
+       ███      ███     ███        ███ ███  ███     ███      
+ ███    ███     ███       ███     ███  ███    ███   ███      
+   ██████       ███         █████      ███      ███ █████████
+*/                                                       
 
-
-/* -------------------------------------------------------------------- Store Section ---------------------------------------------------- */
 #Store {
   text-align: center;
 }
@@ -1082,100 +1117,6 @@ h2 a:visited {
   height: 100%;
   border: 0;
 }
-
-
-/*
-
-  ░██████    ░██████   ░███    ░██ ░██████████   ░███      ░██████  ░██████████
- ░██   ░██  ░██   ░██  ░████   ░██     ░██      ░██░██    ░██   ░██     ░██    
-░██        ░██     ░██ ░██░██  ░██     ░██     ░██  ░██  ░██            ░██    
-░██        ░██     ░██ ░██ ░██ ░██     ░██    ░█████████ ░██            ░██    
-░██        ░██     ░██ ░██  ░██░██     ░██    ░██    ░██ ░██            ░██    
- ░██   ░██  ░██   ░██  ░██   ░████     ░██    ░██    ░██  ░██   ░██     ░██    
-  ░██████    ░██████   ░██    ░███     ░██    ░██    ░██   ░██████      ░██                                          
-*/
-
-.socials-container{
-	display: flex;  
-	flex-direction: column;
-	width: 100%;
-	height: auto; 
-	padding-top: 20px; 
-}
-.socials-desktop{
-	display: block;
-	width: 100%;
-	height: auto;  
-}
-.socials-mobile{
-	display: none;  
-}
-.social{
-	display: flex;  
-	flex-wrap: nowrap; 
-	flex-direction: row;
-	justify-content: left;
-	width: 100%;
-	height: auto; 
-}
-.social-icon{
-	display: flex; 
-	flex-wrap: nowrap;
-	width: 28px;
-	height: 28px; 
-	float: left;
-	margin-left: -5px;
-
-  
-
-}
-.social-text{
-	display: flex;
-	flex-wrap: nowrap;
-	font-size: 10pt;
-	font-weight: var(--font-tab-link-weight);
-  	line-height: 28px;
-  	vertical-align: middle;
-	margin-left: 5px;
-	font-family: var(--font-tab-link);
-	color: var(--social-text-color);
-
-}
-.social-text:hover{
-	text-decoration: none;
-}
-.social a:hover{
-	text-decoration: none;
-}
-
-.mail-icon,
-.discord-icon,
-.itch-icon{
-	width: 28px;
-	height: 28px;
-	fill: var(--social-icons-color);
-}
-.version{
-	position: absolute;
-	bottom: 10px;
-	display: block;
-	width: auto;
-	height: 20px; 
-	text-align: left;
-	padding-right: 20px;
-}
-.version-text{
-	/*display: block;*/
-	float: right;
-	font-size: 8pt;
-	font-weight: 200;
-	text-align: right;
-	color: rgba(100, 100, 100, 0.5);
-  	line-height: 22px;
-  	vertical-align: middle;
-	margin-left: 5px;
-}
-
 
 
 
@@ -1342,17 +1283,271 @@ body.no-scroll {
 }
 
 
+/*
+      ███  █████████ ███      ███
+      ███  ███        ███   ███  
+      ███  ███         ███ ███   
+      ███  ███████       ███     
+      ███  ███         ███ ███   
+ ██   ███  ███        ███   ███  
+  █████    █████████ ███      ███
+*/                                 
+
+.jex-story-gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
+}
+.jex-story-panel {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  box-sizing: border-box;
+}
+.jex-story-inner {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  z-index: 1;
+}
+.jex-story-inner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: grayscale(100%);
+  filter: grayscale(100%) brightness(0.6) contrast(0.9) sepia(45%) hue-rotate(166deg);
+  filter: none;
+}
+.jex-story-inner:hover {
+  filter: none;
+  transform: scale(1.3);
+  z-index: 999;
+}
+.jex-story-panel-extra-1 {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 25%;   /* relative to parent width */
+  max-width: 80px; /* cap so it doesn’t get huge */
+  height: auto;
+  pointer-events: none; /* don't block hover */
+}
+.jex-story-panel-extra-2 {
+  position: absolute;
+  bottom: 20px;
+  right: 10px;
+  width: 25%;   /* relative to parent width */
+  max-width: 80px; /* cap so it doesn’t get huge */
+  height: auto;
+  pointer-events: none; /* don't block hover */
+}
+/* dim all panels when gallery is hovered */
+.jex-story-gallery-container:hover .jex-story-inner {
+  opacity: 0.5;
+  transition: opacity 0.1s ease-in-out;
+}
+/* restore full opacity on the hovered one */
+.jex-story-gallery-container .jex-story-inner:hover {
+  opacity: 1;
+  transform: scale(1.3);
+  z-index: 999;
+}
+/* ------------------ cat early and final concepts -------------- */
+.cat-row {
+  display: flex;
+  justify-content: space-around; /* equal gaps between items */
+  align-items: flex-start;       /* align top edges */
+  padding: 0;
+  gap: 2rem;
+}
+/* Each image + description container */
+.cat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center description under image */
+  gap: 0.5rem;         /* space between image and description */
+  width: 35%;
+}
+/* Images */
+.cat-item img {
+  width: 100%; /* responsive size, adjust as needed */
+  height: auto;
+  transform: rotateY(10deg);
+}
+
+@keyframes swing {
+  0%   { transform: rotate(-60deg); }
+  50%  { transform: rotate(20deg); }
+  100% { transform: rotate(-60deg); }
+}
+
+.rotating.floating {
+  animation: swing 20s ease-in-out infinite;
+  transform-origin: center center; /* pivot in the middle */
+}
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .jex-story-panel {
+    flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+@media (max-width: 600px) {
+  .jex-story-panel {
+    flex: 2 2 100%;
+    max-width: 50%;
+  }
+  .jex-story-inner img {
+    filter: none;
+  }
+}
+.jex-trailer-container {
+  position: absolute;
+  position: fixed;
+  display: block;
+  top: 150px;
+  right: calc(50% - 800px/2 - 360px); /* 800 = tabcontent width, 250 = menu width */
+  width: 300px; /* adjust the width as needed */ 
+  height: 250px; /* adjust the height as needed */
+  text-align: center;
+  cursor: pointer; /* add a pointer cursor to indicate it's a link */
+  animation: float 3.5s ease-in-out infinite;
+  z-index: 2;
+  padding-top: 0px;
+  margin: 0 auto;
+}
+.jex-trailer-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease-in-out;
+}
+.jex-trailer-container .normal-state, .jex-trailer-container:hover .hover-state { display: block; }
+.jex-trailer-container .hover-state, .jex-trailer-container:hover .normal-state { display: none; }
+.jex-trailer-container a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@media screen and (max-width: 1500px) {
+  .jex-trailer-container {
+		position: relative;
+		display: block;
+		top: 0;
+		right: 0;
+		width: 300px; /* adjust the width as needed */ 
+		height: 250px; /* adjust the height as needed */
+		text-align: center;
+		cursor: pointer; /* add a pointer cursor to indicate it's a link */
+		animation: float 3.5s ease-in-out infinite;
+		z-index: 2;
+		padding-top: 0px;
+		margin: 0 auto;
+	}
+}
 
 /*
- ███       ███     █████      █████     ███ ███        █████████
- ██ ███   ████   ███    ███   ██  ███   ███ ███        ███      
- ███ ███ █ ███ ███        ███ ██   ███  ███ ███        ███      
- ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
- ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
- ███       ███   ███     ███  ██     ██ ███ ███        ███      
- ███       ███     █████      ████ ███  ███ ██████████ █████████                                                                                                                                                                                 
+      ███        ██        ████████     █████████       ██        ███        ███       
+      ███       ██ ██      ███    ███   ███            ██ ██      ███        ███       
+      ███      ██  ███     ███    ███   ███           ██  ███     ███        ███       
+      ███     ███   ███    ██ ███       ███████      ███   ███    ███        ███       
+      ███    ███████ ███   ███  ███     ███         ███████ ███   ███        ███       
+ ██   ███   ███       ███  ███    ███   ███        ███       ███  ███        ███       
+  █████    ███         ███ ███      ███ ███       ███         ███ ██████████ ██████████
+*/      
+.tabcontent-jarfall{
+  padding: 0;
+}                                                                            
+.tabcontent-child{
+  width: 100%;
+  height: auto;
+  background-color: #976f57;
+  padding: 0px 40px 0px 40px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.jar-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  gap: 10px;                             /* spacing between images */
+  margin-top: 10px;
+}
+.jar-row img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* ensures images fit nicely */
+}
+@media (max-width: 600px) {
+  .jar-row {
+    grid-template-columns: 1fr; /* stack on mobile */
+  }
+}
+.play-wrapper {
+  width: 200px;          /* main button width */
+  margin: 0 auto;        /* center container */
+  text-align: center;    /* center contents */
+}
+
+.playOnItch {
+  display: block;
+  transition: transform 0.15s ease-in-out;
+  position: relative; /* needed for z-index to work */
+  z-index: 2;         /* on top */
+}
+
+.playOnItch:hover {
+  transform: translateY(-8px);
+}
+
+.button-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.shadow-wrapper {
+  margin-top: 0px;      /* tweak to move closer or farther */
+}
+
+.shadow {
+  width: 220px;
+  display: block;
+  position: relative; /* needed for z-index */
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: -3px;  /* spacing from button */
+  z-index: 1;         /* below button */
+  pointer-events: none;
+}
+
+#Jarfall a:visited { color: #3a3a3a; }
+#Jarfall a:hover { color: #3a3a3a; }
+
+/*
+ ███    ███       ██        ███       ███ █████     ███     ███ ████████        █████     █████████ ████████    
+ ███    ███      ██ ██      ██ ███   ████ ██  ███   ███     ███ ███    ███    ██    ███   ███       ███    ███  
+ ███    ███     ██  ███     ███ ███ █ ███ ██   ███  ███     ███ ███    ███   ██           ███       ███    ███  
+ ██████████    ███   ███    ███  ███  ███ ██████    ███     ███ ██ ███       ███          ███████   ██ ███      
+ ███    ███   ███████ ███   ███   ██  ███ ██    ███ ███     ███ ███  ███     ███   ██████ ███       ███  ███    
+ ███    ███  ███       ███  ███       ███ ██     ██ ███     ███ ███    ███    ███    ██   ███       ███    ███  
+ ███    ███ ███         ███ ███       ███ ████ ███    ██████    ███      ███   ██████     █████████ ███      ███                                                                                                                                                                    
 */
-/* Hamburger icon base */
+
+/* Hamburger icon background */
 .hamburger-button {
   position: absolute;
   position: fixed;
@@ -1366,7 +1561,7 @@ body.no-scroll {
   display: none; /* only shown on small screens */
   z-index: 10;
 }
-
+/* Hamburger icon */
 .hamburger-icon {
   width: 50%;
   height: 50%;
@@ -1376,118 +1571,109 @@ body.no-scroll {
   background-position: center;
   margin: 0 auto;
 }
-
 /* Change icon when active */
 .hamburger-button.active .hamburger-icon {
   background-image: url('img/menu-icon-close.svg');
 }
 
-/* ------------------------------------------------------ FOR TABLETS ------------------------------------------------------*/
-@media screen and (max-width: 1400px) and (min-width: 600px) {
-  
-  .adaptive-content-wrapper {
-    display: flex;
-    justify-content: right; /* centers tabcontent in viewport */
-    align-items: center;
-    position: relative;
-    width: 100%;
-    flex-direction: row; /* stack menu + content */
-    align-items: center;
-  }
-  /* Style the tab content */
+
+
+/*
+ ███████████       ██        █████     ███        █████████ ███████████
+     ███          ██ ██      ██  ███   ███        ███           ███    
+     ███         ██  ███     ██   ███  ███        ███           ███    
+     ███        ███   ███    ██████    ███        ███████       ███    
+     ███       ███████ ███   ██    ███ ███        ███           ███    
+     ███      ███       ███  ██     ██ ███        ███           ███    
+     ███     ███         ███ ████ ███  ██████████ █████████     ███    
+*/                                                                   
+
+@media screen and (max-width: 1400px) and (min-width: 1000px) {
   .tabcontent {
-    width: auto;
-    max-width: calc(100% - 300px);
-    height: auto;
-    margin: 0; 
+    box-sizing: border-box; /* padding fits inside width */
+    padding: 0 100px;        /* or whatever you want */
+    width: 690px;           /* stays 690 total including padding */
+    max-width: calc(100% - 280px); /* safeguard in case window shrinks */
   }
   .jex-trailer-container {
-    position: relative;
-    display: block;
+		position: relative;
+		display: block;
+		top: 0;
+		right: 0;
+		width: 300px; /* adjust the width as needed */ 
+		height: 250px; /* adjust the height as needed */
+		text-align: center;
+		cursor: pointer; /* add a pointer cursor to indicate it's a link */
+		animation: float 3.5s ease-in-out infinite;
+		z-index: 2;
+		padding-top: 0px;
+		margin: 0 auto;
+	}
+}
+@media screen and (max-width: 1400px) and (min-width: 701px) {
+  .adaptive-content-wrapper {
+    justify-content: flex-start; /* align everything to left */
+  }
+  .menu-container {
+    position: fixed;   /* stays pinned left */
     top: 0;
-    right: 0;
-    padding-top: 0px;
-    margin: 0 auto;
+    left: 0;
+    width: 250px;      /* fixed sidebar width */
+    height: 100vh;
+    pointer-events: auto; /* allow interactions again */
   }
-  #Featured.tabcontent {
-	margin-top: 0px;
-	margin-bottom: 0px;
-  }
-  .featured-project {
-    flex-direction: column; /* stack content vertically */
-	margin-bottom: 0px;
+  .tabcontent {
+    margin: 0; /* remove auto-center */
+    margin-left: 280px; /* account for sidebar */
+    width: calc(100% - 280px); /* take remaining space */
+    max-width: none; /* allow full expansion */
+    box-sizing: border-box;
   }
 
   .featured-project img {
-  display: block;
-  width: 100%;
-  height: auto; /* fallback */
-  max-height: 30vh;          /* each project takes up at most ~30% of viewport */
-  min-height: 50px;         /* never shrink too small */
-  object-fit: cover;
-  border-radius: inherit;
-  transition: all 0.1s ease-in-out;
+    display: block;
+    width: 100%;
+    height: auto; /* fallback */
+    max-height: 30vh;          /* each project takes up at most ~30% of viewport */
+    min-height: 50px;         /* never shrink too small */
+    object-fit: cover;
+    border-radius: inherit;
+    transition: all 0.1s ease-in-out;
   }
-  .menu-container {
-    position: fixed;
-    top: 0;
-    left: 0px;
+  .menu{
     padding-left: 25px;
   }
-  .menu .tablink {
-	font-size: 11pt;
-	margin: 4px 0px 4px -5px;
-	line-height: 15px;
-	vertical-align: middle;
-	
+  .menu .menu-link {
+    font-size: 11pt;
+    margin: 4px 0px 4px -5px;
+    line-height: 15px;
+    vertical-align: middle;
   }
   .menu .social-text, 
-  .menu .tablink a, 
+  .menu .menu-link a, 
 	.menu .social a {
-	font-size: 11pt;
-	
+	  font-size: 11pt;
   }
   .overlay-text-role {
-	display: block;
-  }
-  .tabcontent {
-    width: 650px;
-    height: auto;
-    padding: 0px 10vw 0px 10vw;
-    padding: 0px 50px 0px 50px;
-
-    margin: 0px;
-    margin-right: 100px;
-  }
-}
-@media screen and (max-width: 1100px) and (min-width: 400px) {
-  .tabcontent {
-    width: 500px;
-    height: auto;
-    padding: 0px 10vw 0px 10vw;
-    padding: 0px 20px 0px 20px;
-
-    margin: 0px;
-    margin-right: 0px;
-  }
-}
-@media screen and (max-width: 1150px) and (min-width: 900px) {
-  .tabcontent {
-    width: 500px;
-    height: auto;
-    padding: 0px 10vw 0px 10vw;
-    padding: 0px 20px 0px 20px;
-
-    margin: 0px;
-    margin-right: 100px;
+	  display: block;
   }
 }
 
-/* ------------------------------------------------------ FOR MOBILE ------------------------------------------------------*/
-@media (max-width: 400px) {
+
+/*
+ ███       ███     █████      █████     ███ ███        █████████
+ ██ ███   ████   ███    ███   ██  ███   ███ ███        ███      
+ ███ ███ █ ███ ███        ███ ██   ███  ███ ███        ███      
+ ███  ███  ███ ███        ███ ██████    ███ ███        ███████  
+ ███   ██  ███ ███        ███ ██    ███ ███ ███        ███      
+ ███       ███   ███     ███  ██     ██ ███ ███        ███      
+ ███       ███     █████      ████ ███  ███ ██████████ █████████
+*/                                                            
+
+@media (max-width: 701px) {
 	.overlay-text-role {
 		display: block;
-  	}
+  }
 	.mobile-spacer-top {
 		display: block;
 		height: 20px; /* adjust as needed */
@@ -1532,11 +1718,10 @@ body.no-scroll {
 		text-align: left; 
 		padding: 0px;
 		margin: 0px;
-		
 		border: 1px solid rgba(255, 63, 63, 0);
 		overflow: hidden;
 	}
-	.tablinks-group{
+	.menu-link-group{
 		display: flex;
 		position: relative;
 		flex-direction: column;
@@ -1550,7 +1735,7 @@ body.no-scroll {
 		border: 1px solid rgba(27, 80, 34, 0);
 	}
 	.extras{ margin-bottom: 4vh;}
-	.tablink-category{
+	.menu-link-category{
 		position: absolute;
 		left: -30px; /* push it outside group */
 		top: 0px;
@@ -1560,11 +1745,9 @@ body.no-scroll {
 		text-align: left;
 		margin-bottom: 0px;
 		color: gray;
-		
 		font-size: 13pt;
 		font-weight: 650;
 		opacity: 100%;
-
 		border: 1px solid rgba(255, 255, 255, 0);
 	}
 	.socials-desktop{
@@ -1584,7 +1767,7 @@ body.no-scroll {
 		padding: 0px;
 		display: block;
 	}
-	.menu .tablink{
+	.menu .menu-link{
 		font-size: 14pt;
 		font-weight: 400;
 		height: auto;
@@ -1594,7 +1777,7 @@ body.no-scroll {
 		color: #fff;
 		border: 1px solid rgba(63, 63, 63, 0);
 	}
-	.menu .tablink.active{
+	.menu .menu-link.active{
 		background-color: white;
 		color: black;
 	}
@@ -1617,14 +1800,22 @@ body.no-scroll {
 		background: none;
 		text-align: center;
 	}
-	
 	.description-container 	{ display: none;}
-  	.menu-container.visible { display: block;}
-  	.tabcontent {
+  .menu-container.visible { display: block;}
+
+  .tabcontent-child{
+    width: 100%;
+    height: auto;
+    background-color: #976f57;
+    padding: 0px 20px 0px 20px;
+    box-sizing: border-box;
+    margin: 0 auto;
+  }
+  .tabcontent {
 		width: 100%;
 		padding: 0px 25px;
-  	}
-	
+    box-sizing: border-box;
+  }
 	.about{
 		width: 100%;
 		overflow-x: hidden;
@@ -1649,39 +1840,15 @@ body.no-scroll {
 		max-width: 600px;
 		width: 90%;
 	}
-	.jex-trailer-container {
-		position: relative;
-		display: block;
-		top: 0;
-		right: 0;
-		width: 300px; /* adjust the width as needed */ 
-		height: 250px; /* adjust the height as needed */
-		text-align: center;
-		cursor: pointer; /* add a pointer cursor to indicate it's a link */
-		animation: float 3.5s ease-in-out infinite;
-		z-index: 2;
-		padding-top: 0px;
-		margin: 0 auto;
-	}
-}
-
-
-
-
-
-/* Mobile: always show overlay details under image */
-@media (max-width: 700px) {
   .featured-project {
     flex-direction: column; /* stack content vertically */
-	margin-bottom: 0px;
+	  margin-bottom: 0px;
   }
-
   .featured-project img {
     max-height: none;       /* remove desktop max-height */
     min-height: auto;
     border-radius: 8px 8px 0px 0px; /* top corners only */
   }
-
   .overlay-text-container {
     position: relative;      /* no absolute positioning */
     bottom: auto;
@@ -1694,7 +1861,6 @@ body.no-scroll {
     backdrop-filter: none;    /* optional: remove blur on mobile */
     padding-left: 15px;       /* remove extra offset */
   }
-
   .overlay-text-title {
     font-size: 14pt;    /* slightly bigger than desc */
     font-weight: 600;
@@ -1713,11 +1879,10 @@ body.no-scroll {
     font-weight: 400;
     margin: 2px 0;
     text-align: left;
-	padding: 0px;
-	opacity: 0.6;
-	
-	display: block;
-	width: 90%;
+	  padding: 0px;
+	  opacity: 0.6;
+	  display: block;
+	  width: 90%;
   }
   .overlay-text-platform {
     text-align: left;
@@ -1725,11 +1890,10 @@ body.no-scroll {
     padding: 2px 0px;
     margin-top: 2px;
     margin-bottom: 5px;
-	opacity: 0.6;
-	padding: 0px;
-
-	display: block;
-	width: 90%;
+	  opacity: 0.6;
+	  padding: 0px;
+	  display: block;
+	  width: 90%;
   }
 
   /* remove hover effect */
@@ -1770,9 +1934,4 @@ body.no-scroll {
     background: #000;
   }
 }
-
-
-
-
-
 
