@@ -1,6 +1,17 @@
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
+
+# Don’t rewrite real files or directories
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteRule ^([^\.]+)$ $1.html [NC, L]
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite extensionless URLs to .html
+RewriteRule ^([^/]+)/?$ $1.html [NC,L]
+
+# Also handle extensionless inside /projects
+RewriteRule ^projects/([^/]+)/?$ projects/$1.html [NC,L]
+
+# Default index
 DirectoryIndex index.html
+
+# Custom 404
 ErrorDocument 404 /nothing.html
