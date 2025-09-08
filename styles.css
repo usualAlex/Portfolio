@@ -1747,8 +1747,8 @@ body.no-scroll {
     color: rgba(255, 255, 255, 0.233);
     margin-top: 4vh;
     padding: 0px 0px;
-    padding-right: 20px;
     text-align: right;
+    width: 90%;
   }
   /* Menu links */
   .mobile-menu-link a {
@@ -1760,12 +1760,13 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: right;
     width: 90%;
     padding: 0.5vh 0px;
-    padding-right: 20px;
+    padding-right: 10px;
     margin: 2px;
     border-radius: 5px;
-    background-color: #20202073;
+    background-color: #20202000;
     text-align: right;
   }
   .mobile-menu-link.disabled{
