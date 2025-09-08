@@ -180,8 +180,7 @@ body {
 	padding: 0;
 	margin: 0;
 	z-index: 0;
-	display: flex;
-	justify-content: center;
+	
 	font-family: var(--project-font);
   color: var(--color-text);
 }
@@ -356,8 +355,46 @@ img{
  ███       ███ ███       ███    ██ ██ ███     ███
  ███       ███ █████████ ███      ███   ██████   
 */
+.hamburger-button{
+  display: none;
+}
 .mobile-menu-container{
   display: none;
+}
+.scroll-to-top-button {
+  position: fixed !important;
+  bottom: 15px;   /* above the menu button */
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  background-color: #00000080;
+  z-index: 1000;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity 200ms ease, transform 200ms ease;
+
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px)
+}
+
+.scroll-to-top-button.shown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.scroll-to-top-button:hover {
+  transform: scale(1.05);
+  transition: all 0.1s ease-in-out;
+}
+.scroll-to-top-button img {
+  width: 24px;
+  height: 24px;
 }
 .menu-container{
 	position: fixed;
@@ -1380,45 +1417,6 @@ body.no-scroll {
 #Jarfall a:visited { color: #3a3a3a; }
 #Jarfall a:hover { color: #3a3a3a; }
 
-/*
- ███    ███       ██        ███       ███ █████     ███     ███ ████████        █████     █████████ ████████    
- ███    ███      ██ ██      ██ ███   ████ ██  ███   ███     ███ ███    ███    ██    ███   ███       ███    ███  
- ███    ███     ██  ███     ███ ███ █ ███ ██   ███  ███     ███ ███    ███   ██           ███       ███    ███  
- ██████████    ███   ███    ███  ███  ███ ██████    ███     ███ ██ ███       ███          ███████   ██ ███      
- ███    ███   ███████ ███   ███   ██  ███ ██    ███ ███     ███ ███  ███     ███   ██████ ███       ███  ███    
- ███    ███  ███       ███  ███       ███ ██     ██ ███     ███ ███    ███    ███    ██   ███       ███    ███  
- ███    ███ ███         ███ ███       ███ ████ ███    ██████    ███      ███   ██████     █████████ ███      ███                                                                                                                                                                    
-*/
-
-/* Hamburger icon background */
-.hamburger-button {
-  position: absolute;
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  width: 66px;
-  height: 66px;
-  border: none;
-  background: black;
-  cursor: pointer;
-  display: none; /* only shown on small screens */
-  z-index: 10;
-}
-/* Hamburger icon */
-.hamburger-icon {
-  width: 50%;
-  height: 50%;
-  background-image: url('img/menu-icon-open.svg');
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin: 0 auto;
-}
-/* Change icon when active */
-.hamburger-button.active .hamburger-icon {
-  background-image: url('img/menu-icon-close.svg');
-}
-
 
 
 /*
@@ -1476,8 +1474,9 @@ body.no-scroll {
     transition: all 0.1s ease-in-out;
   }
   /* remove padding here for tablet - on main page the featured images are too small due to padding */
+  /* CANT DO THAT SIRE, WE NEED PADDING FOR THE PROJECT'S CONTENT */
   .content-block.with-padding {
-    padding: 0px 0px 0px 0px;
+    padding: 0px 35px 0px 35px;
   }
   
 } 
@@ -1492,7 +1491,7 @@ body.no-scroll {
 */
 
 @media screen and (max-width: 750px) {
-  .hamburger-button {display: block;}
+  
 	.menu-container {
     display: none;
   }
@@ -1518,7 +1517,7 @@ body.no-scroll {
   /* Added spacers on top and bottom for the home page featured projects */
   .mobile-spacer-home-top {
 		display: block;
-		height: 5vh; /* adjust as needed */
+		height: 3vh; /* adjust as needed */
 	}
 	.mobile-spacer-home-bottom {
 		display: block;
@@ -1573,7 +1572,6 @@ body.no-scroll {
   .featured-project:hover .overlay-text-container {
     opacity: 0;               /* hode hover overlay on mobile */
   }
-
   /*
   .overlay-text-container {
     position: relative;      /* no absolute positioning 
@@ -1623,45 +1621,92 @@ body.no-scroll {
 	  width: 90%;
   }
   */
-  /* -------------------------------- ----------------------------- MOBILE MENU */
-  /* HAMBURGER BUTTON */
+  /* -------------------------- HAMBURGER BUTTON -------------------------- */
   .hamburger-button {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    width: 45px;
-    height: 45px;
-    background-color: #000;         /* black background */
+    position: fixed !important;
+    bottom: 15px;   /* menu at bottom */
+    right: 15px;
+    width: 48px;
+    height: 48px;
+    background-color: #00000080;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1000;                  /* stays above menu */
+    z-index: 1001; /* above scroll-to-top */
     cursor: pointer;
-    transition: background 0.2s ease;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transform: translateY(0);
   }
-
   .hamburger-button:hover {
-    background-color: #111;         /* subtle hover */
+    background-color: #111;
   }
-
+  /* Hamburger icon */
+  .hamburger-icon {
+    width: 50%;
+    height: 50%;
+    background-image: url('img/menu-icon-open.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+  }
+  /* Change icon when active */
+  .hamburger-button.active .hamburger-icon {
+    background-image: url('img/menu-icon-close.svg');
+  }
   .hamburger-button img {
     width: 24px;
     height: 24px;
-    display: none;                  /* hide by default */
+    display: none;
   }
 
-  /* show open icon by default */
   .hamburger-button .icon-open {
     display: block;
   }
 
-  /* when active, switch to close icon */
   .hamburger-button.active .icon-open {
     display: none;
   }
+
   .hamburger-button.active .icon-close {
     display: block;
+  }
+
+  /* ------------------------ SCROLL TO TOP BUTTON ------------------------ */
+  .scroll-to-top-button {
+    position: fixed !important;
+    bottom: 75px;   /* above the menu button */
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 6px;
+    background-color: #00000080;
+    z-index: 1000;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 200ms ease, transform 200ms ease;
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px)
+  }
+
+  .scroll-to-top-button.shown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .scroll-to-top-button img {
+    width: 24px;
+    height: 24px;
   }
   /* MOBILE MENU BASE */
   .mobile-menu-container {
@@ -1669,11 +1714,14 @@ body.no-scroll {
     position: fixed;
     width: 100vw;
     height: 100vh;             /* full screen height */
-    background-color: #000000;
-    z-index: 999;
+    background-color: #000000e7;
+    z-index: 9;
     overflow-y: auto;          /* scroll if needed */
     padding: 0;
     margin: 0;
+
+    backdrop-filter: blur(45px);    /* optional: add blur effect */
+    -webkit-backdrop-filter: blur(45px)
   }
 
   /* INNER MENU */

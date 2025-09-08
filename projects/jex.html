@@ -31,10 +31,15 @@
 <!-- XMAS THEME SNOW -->
 <!--<div id="snow"></div>-->
 
-<!-- HAMBURGER BUTTON -->
+<!---------------------------- HAMBURGER BUTTON ---------------------------->
 <div class="hamburger-button">
-  <img src="../img/menu-icon-open.svg" alt="Menu" class="icon-open">
-  <img src="../img/menu-icon-close.svg" alt="Close" class="icon-close">
+	<img src="../img/menu-icon-open.svg" alt="Menu" class="icon-open">
+	<img src="../img/menu-icon-close.svg" alt="Close" class="icon-close">
+</div>
+
+<!-------------------------- SCROLL TO TOP BUTTON -------------------------->
+<div class="scroll-to-top-button">
+	<img src="../img/menu-icon-scroll-top.svg" alt="scroll to top" class="">
 </div>
 
 <div class="background-image-jex"></div>
@@ -124,7 +129,15 @@
         <img src="../img/icon-itch-default.svg">
       </div>
       <a href="https://alexcirco.itch.io/" target="_blank">
-        <div class="social-text">itch.io</div>
+        <div class="social-text link">itch.io</div>
+      </a>
+    </div>
+	<div class="social">
+      <div class="social-icon">
+        <img src="../img/icon-gplay-default.svg">
+      </div>
+      <a href="https://play.google.com/store/apps/developer?id=Halfroom+Studio" target="_blank" style="user-select: none;">
+        <div class="social-text link" style="user-select: none;">Play Store</div>
       </a>
     </div>
   </div>
@@ -284,10 +297,10 @@
 
 			</br></br>
 			
-			<img src="../img/jex/character-evolution.webp" style="display: block; margin: 0 auto; max-width: 600px; height: auto;">
+			<img src="../img/jex/character-evolution.webp" style="display: block; margin: 0 auto; width: 100%; max-width: 600px; height: auto;">
 			<span class="tool-note" style="display: block; text-align: center;">Character evolution</span>
 			</br></br>
-			<img src="../img/jex/character-faces-exploration.webp" style="display: block; margin: 0 auto; max-width: 600px; height: auto;">
+			<img src="../img/jex/character-faces-exploration.webp" style="display: block; margin: 0 auto; width: 100%; max-width: 600px; height: auto;">
 			<span class="tool-note" style="display: block; text-align: center;">Exploring character face expressions</span>
 
 			</br></br>
@@ -502,34 +515,48 @@
 <script src="js/dynamic.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const hamburgerBtn = document.querySelector('.hamburger-button');
-  const menuContainer = document.querySelector('.mobile-menu-container');
-  const wrapper = document.querySelector('.content-block-wrapper');
+const hamburgerBtn = document.querySelector('.hamburger-button');
+const menuContainer = document.querySelector('.mobile-menu-container');
+const wrapper = document.querySelector('.content-block-wrapper');
+const toTopBtn = document.querySelector('.scroll-to-top-button');
 
-  let scrollY = 0;
+let scrollY = 0;
 
-  hamburgerBtn.addEventListener('click', () => {
-    const isOpen = menuContainer.style.display === 'block';
+// --- MENU TOGGLE ---
+hamburgerBtn.addEventListener('click', () => {
+	const isOpen = menuContainer.style.display === 'block';
 
-    if (isOpen) {
-      // Closing
-      menuContainer.style.display = 'none';
-      hamburgerBtn.classList.remove('active');
+	if (isOpen) {
+	// Closing
+	menuContainer.style.display = 'none';
+	hamburgerBtn.classList.remove('active');
 
-      wrapper.classList.remove('disable-scroll');
-      wrapper.style.top = '';
-      window.scrollTo(0, scrollY); // restore scroll position
-    } else {
-      // Opening
-      menuContainer.style.display = 'block';
-      hamburgerBtn.classList.add('active');
+	wrapper.classList.remove('disable-scroll');
+	wrapper.style.top = '';
+	window.scrollTo(0, scrollY);
+	} else {
+	// Opening
+	menuContainer.style.display = 'block';
+	hamburgerBtn.classList.add('active');
 
-      // Save scroll position
-      scrollY = window.scrollY;
-      wrapper.classList.add('disable-scroll');
-      wrapper.style.top = `-${scrollY}px`;
-    }
-  });
+	scrollY = window.scrollY;
+	wrapper.classList.add('disable-scroll');
+	wrapper.style.top = `-${scrollY}px`;
+	}
+});
+
+// --- SCROLL TO TOP BTN ---
+window.addEventListener('scroll', () => {
+	if (window.scrollY > 100) {
+	toTopBtn.classList.add('shown');
+	} else {
+	toTopBtn.classList.remove('shown');
+	}
+});
+
+toTopBtn.addEventListener('click', () => {
+	window.scrollTo({ top: 0, behavior: 'smooth' });
+});
 });
 </script>
 
