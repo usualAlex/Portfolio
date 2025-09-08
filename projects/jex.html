@@ -504,11 +504,31 @@
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerBtn = document.querySelector('.hamburger-button');
   const menuContainer = document.querySelector('.mobile-menu-container');
+  const wrapper = document.querySelector('.content-block-wrapper');
+
+  let scrollY = 0;
 
   hamburgerBtn.addEventListener('click', () => {
-    // Toggle .mobile-menu-container display between none and block
-    menuContainer.style.display = menuContainer.style.display === 'block' ? 'none' : 'block';
-    hamburgerBtn.classList.toggle('active');
+    const isOpen = menuContainer.style.display === 'block';
+
+    if (isOpen) {
+      // Closing
+      menuContainer.style.display = 'none';
+      hamburgerBtn.classList.remove('active');
+
+      wrapper.classList.remove('disable-scroll');
+      wrapper.style.top = '';
+      window.scrollTo(0, scrollY); // restore scroll position
+    } else {
+      // Opening
+      menuContainer.style.display = 'block';
+      hamburgerBtn.classList.add('active');
+
+      // Save scroll position
+      scrollY = window.scrollY;
+      wrapper.classList.add('disable-scroll');
+      wrapper.style.top = `-${scrollY}px`;
+    }
   });
 });
 </script>
