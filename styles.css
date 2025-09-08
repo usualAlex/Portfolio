@@ -678,6 +678,9 @@ img{
   padding: 0px;             /* breathing room on small screens */
   box-sizing: border-box;
 }
+.mobile-extra-projects{
+  display: none;
+}
 .featured-project {
   position: relative;
   cursor: pointer;
@@ -1515,11 +1518,11 @@ body.no-scroll {
   /* Added spacers on top and bottom for the home page featured projects */
   .mobile-spacer-home-top {
 		display: block;
-		height: 3vh; /* adjust as needed */
+		height: 5vh; /* adjust as needed */
 	}
 	.mobile-spacer-home-bottom {
 		display: block;
-		height: 5vh; /* gives extra padding after last project */
+		height: 7vh; /* gives extra padding after last project */
 	}
 
   /* The logo and gif used only on mobile */
@@ -1550,6 +1553,9 @@ body.no-scroll {
     
     padding: 0px;             /* breathing room on small screens */
     box-sizing: border-box;
+  }
+  .mobile-extra-projects{
+    display: block;
   }
   .featured-project {
     flex-direction: column; /* stack content vertically */
