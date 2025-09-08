@@ -1513,17 +1513,18 @@ body.no-scroll {
 
   /* -------------------------------- ----------------------------- HOME AND FEATURED PROJECTS */
   /* Added spacers on top and bottom for the home page featured projects */
-  .mobile-spacer-top {
+  .mobile-spacer-home-top {
 		display: block;
-		height: 30px; /* adjust as needed */
+		height: 3vh; /* adjust as needed */
 	}
-	.mobile-spacer-bottom {
+	.mobile-spacer-home-bottom {
 		display: block;
-		height: 90px; /* gives extra padding after last project */
+		height: 5vh; /* gives extra padding after last project */
 	}
 
   /* The logo and gif used only on mobile */
   .logo-container-mobile{
+    margin: 0; padding: 0;
 		display: block;
 		background-color: transparent;
 		background: none;
@@ -1531,6 +1532,7 @@ body.no-scroll {
 		margin: 0px;
 	}
 	.description-container-mobile{
+    margin: 0; padding: 0;
 		display: block;
 		margin: 0px;
 		background-color: transparent;
@@ -1539,12 +1541,13 @@ body.no-scroll {
     margin-bottom: 4vh;
 	}
   .featured-projects-wrapper {
+    margin: 0; padding: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;   /* center vertically in viewport */
     align-items: center;
     gap: 2vh;
-    min-height: 100vh;         /* take full screen height */
+    
     padding: 0px;             /* breathing room on small screens */
     box-sizing: border-box;
   }
