@@ -315,52 +315,7 @@
 
 
 <script src="js/dynamic.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-const hamburgerBtn = document.querySelector('.hamburger-button');
-const menuContainer = document.querySelector('.mobile-menu-container');
-const wrapper = document.querySelector('.content-block-wrapper');
-const toTopBtn = document.querySelector('.scroll-to-top-button');
 
-let scrollY = 0;
-
-// --- MENU TOGGLE ---
-hamburgerBtn.addEventListener('click', () => {
-	const isOpen = menuContainer.style.display === 'block';
-
-	if (isOpen) {
-	// Closing
-	menuContainer.style.display = 'none';
-	hamburgerBtn.classList.remove('active');
-
-	wrapper.classList.remove('disable-scroll');
-	wrapper.style.top = '';
-	window.scrollTo(0, scrollY);
-	} else {
-	// Opening
-	menuContainer.style.display = 'block';
-	hamburgerBtn.classList.add('active');
-
-	scrollY = window.scrollY;
-	wrapper.classList.add('disable-scroll');
-	wrapper.style.top = `-${scrollY}px`;
-	}
-});
-
-// --- SCROLL TO TOP BTN ---
-window.addEventListener('scroll', () => {
-	if (window.scrollY > 100) {
-	toTopBtn.classList.add('shown');
-	} else {
-	toTopBtn.classList.remove('shown');
-	}
-});
-
-toTopBtn.addEventListener('click', () => {
-	window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-});
-</script>
 
 
 </body>

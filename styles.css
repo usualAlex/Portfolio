@@ -1640,9 +1640,6 @@ body.no-scroll {
     -webkit-backdrop-filter: blur(5px);
     transform: translateY(0);
   }
-  .hamburger-button:hover {
-    background-color: #111;
-  }
   /* Hamburger icon */
   .hamburger-icon {
     width: 50%;
@@ -1719,21 +1716,27 @@ body.no-scroll {
     overflow-y: auto;          /* scroll if needed */
     padding: 0;
     margin: 0;
-
+    align-items: right;
+    justify-content: right;
     backdrop-filter: blur(45px);    /* optional: add blur effect */
-    -webkit-backdrop-filter: blur(45px)
+    -webkit-backdrop-filter: blur(45px);
   }
 
   /* INNER MENU */
   .mobile-menu {
     display: flex;
     flex-direction: column;
-    gap: 15vh;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 100px;
-    padding-bottom: 0px;
-    margin: 0;
+    align-items: right;
+    justify-content: flex-end;
+    width: 60%;
+    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0, auto;
+    margin-bottom: 70px;
+    margin-right: 5px;
+    padding: 0px 10px;
   }
 
   /* Group headers */
@@ -1742,9 +1745,11 @@ body.no-scroll {
     font-size: 14pt;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.233);
-    margin-top: 40px;
+    margin-top: 4vh;
+    padding: 0px 0px;
+    padding-right: 20px;
+    text-align: right;
   }
-
   /* Menu links */
   .mobile-menu-link a {
     font-family: var(--font-menu-link);
@@ -1752,29 +1757,27 @@ body.no-scroll {
     font-weight: 400;
     color: #fff;
     text-decoration: none;
-    display: block;
-    width: 100%;
-    padding: 7px 0;
-    margin: 3px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+    padding: 0.5vh 0px;
+    padding-right: 20px;
+    margin: 2px;
+    border-radius: 5px;
+    background-color: #20202073;
+    text-align: right;
   }
   .mobile-menu-link.disabled{
     text-decoration: line-through;
     opacity: 0.5;
   }
-  .mobile-menu-link.active{
-    font-weight: 600;
-    background-color: #fff;
-    color: #000;
-    border-radius: 3px;
-  }
+
   .mobile-menu-link.active a{
     font-weight: 600;
     background-color: #fff;
     color: #000;
-    border-radius: 3px;
-    margin-left: -8px;
-    padding-left: 8px;
+    border-radius: 5px;
   }
 }
 

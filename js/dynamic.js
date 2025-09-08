@@ -1,6 +1,62 @@
 // <!-- SCRIPTS -->
 
 
+// <!------------------ MOBILE MENU + SCROLL TO TOP -------------------------->
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerBtn = document.querySelector('.hamburger-button');
+  const menuContainer = document.querySelector('.mobile-menu-container');
+  const wrapper = document.querySelector('.content-block-wrapper');
+  const toTopBtn = document.querySelector('.scroll-to-top-button');
+
+  let scrollY = 0;
+
+  function closeMenu() {
+    menuContainer.style.display = 'none';
+    hamburgerBtn.classList.remove('active');
+    wrapper.classList.remove('disable-scroll');
+    wrapper.style.top = '';
+  }
+
+  // --- MENU TOGGLE ---
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = menuContainer.style.display === 'flex';
+
+    if (isOpen) {
+      closeMenu();
+      window.scrollTo(0, scrollY);
+    } else {
+      menuContainer.style.display = 'flex';
+      hamburgerBtn.classList.add('active');
+
+      scrollY = window.scrollY;
+      wrapper.classList.add('disable-scroll');
+      wrapper.style.top = `-${scrollY}px`;
+    }
+  });
+
+  // --- SCROLL TO TOP BTN ---
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      toTopBtn.classList.add('shown');
+    } else {
+      toTopBtn.classList.remove('shown');
+    }
+  });
+
+  toTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // --- AUTOCLOSE MENU ON RESIZE > 749px ---
+  function checkWidth() {
+    if (window.innerWidth > 749) {
+      closeMenu();
+    }
+  }
+
+  window.addEventListener('resize', checkWidth);
+  checkWidth(); // run once on load
+});
 
 
 
@@ -118,101 +174,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
-// DIM CONTENT WHEN SHOWING LINK PREVIEW
-// document.addEventListener("DOMContentLoaded", function () {
-//   const menuLinks = document.querySelectorAll(".menu-link");
-//   const content = document.querySelector(".content-block-wrapper");
-
-//   menuLinks.forEach(link => {
-//     const hasPreview = link.dataset.previewP || link.dataset.previewV;
-//     if (!hasPreview) return; // skip links without previews
-
-//     link.addEventListener("mouseenter", () => {
-//       content.style.opacity = "0.5";
-//     });
-
-//     link.addEventListener("mouseleave", () => {
-//       content.style.opacity = "1";
-//     });
-//   });
-// });
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-
-
-//   const previewBox = document.createElement("div");
-//   previewBox.classList.add("link-preview");
-//   document.body.appendChild(previewBox);
-
-//   const offsetX = 150; // distance from cursor (X axis)
-//   let offsetY = -50;  // tweak this for vertical offset
-
-//   let targetX = 0;
-//   let targetY = 0;
-//   let currentX = 0;
-//   let currentY = 0;
-//   let animating = false;
-
-//   document.querySelectorAll(".menu-link").forEach(link => {
-//     link.addEventListener("mouseenter", (e) => {
-//       const imgSrc = link.getAttribute("data-preview-p");
-//       const videoSrc = link.getAttribute("data-preview-v");
-
-//       if (videoSrc) {
-//         previewBox.innerHTML = `
-//           <video autoplay loop muted playsinline>
-//             <source src="${videoSrc}" type="video/webm">
-//             Your browser does not support the video tag.
-//           </video>
-//         `;
-//       } else if (imgSrc) {
-//         previewBox.innerHTML = `<img src="${imgSrc}" alt="preview">`;
-//       } else {
-//         previewBox.innerHTML = ""; // fallback
-//       }
-
-//       // Pre-warm preview to cursor position
-//       targetX = e.clientX + offsetX;
-//       targetY = e.clientY + offsetY;
-//       currentX = targetX;
-//       currentY = targetY;
-//       previewBox.style.left = `${currentX}px`;
-//       previewBox.style.top = `${currentY}px`;
-
-//       previewBox.style.display = "block";
-
-//       if (!animating) {
-//         animating = true;
-//         requestAnimationFrame(animate);
-//       }
-//     });
-
-//     link.addEventListener("mousemove", (e) => {
-//       targetX = e.clientX + offsetX;
-//       targetY = e.clientY + offsetY;
-//     });
-
-//     link.addEventListener("mouseleave", () => {
-//       previewBox.style.display = "none";
-//       previewBox.innerHTML = ""; // clear out video/img when hidden
-//     });
-//   });
-
-//   function animate() {
-//     currentX += (targetX - currentX) * 0.2; // smooth follow
-//     currentY += (targetY - currentY) * 0.2;
-//     previewBox.style.left = `${currentX}px`;
-//     previewBox.style.top = `${currentY}px`;
-
-//     if (previewBox.style.display === "block") {
-//       requestAnimationFrame(animate);
-//     } else {
-//       animating = false;
-//     }
-//   }
-// });
 
 
 
