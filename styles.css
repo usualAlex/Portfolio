@@ -102,7 +102,7 @@
 
   --font-menu-link: 'Kode Mono';
 	--font-menu-link-weight: 800;
-	--font-menu-link-size: 9.5pt;
+	--font-menu-link-size: 10pt;
 
 	--font-menu-category: 'Kode Mono';
 	--font-menu-category-weight: 600;
@@ -437,7 +437,7 @@ img{
 }
 .menu-link, .menu-link a {
 	width: fit-content;
-	height: 16px;
+	height: 17px;
 	border: none;
 	outline: none;
 	margin: 0;
@@ -560,6 +560,7 @@ img{
   align-items: center;
 	width: 100%;
 	height: auto; 
+  margin-top: 5px;
 }
 .social-icon{
 	display: flex; 
@@ -571,7 +572,7 @@ img{
 .social-text{
 	display: flex;
 	flex-wrap: nowrap;
-	font-size: 10pt;
+	font-size: 9.6pt;
   line-height: 24px;
   vertical-align: middle;
 	margin-left: 10px;
