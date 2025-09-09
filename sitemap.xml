@@ -14,8 +14,13 @@
   </url>
   <url>
     <loc>https://alexcirco.com/store</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://alexcirco.com/projects/creativeboard</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
 
   <!-- Projects -->
   <url>
@@ -42,11 +47,7 @@
     <loc>https://alexcirco.com/projects/armorcraft</loc>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://alexcirco.com/projects/creativeboard</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
+  
     <loc>https://alexcirco.com/projects/alchemy</loc>
     <priority>0.7</priority>
   </url>
