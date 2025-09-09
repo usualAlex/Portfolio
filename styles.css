@@ -372,7 +372,7 @@ img{
   height: 48px;
   border-radius: 6px;
   background-color: #11111180;
-  z-index: 1000;
+  z-index: 13;
   border-radius: 8px;     /* slightly more modern rounded corners */
     
   background-color: rgba(0, 0, 0, 0.55); /* dark translucent background */
@@ -1436,7 +1436,7 @@ body.no-scroll {
   .menu-container {
     left: 0;                /* stick to left edge */
     width: 250px;           /* fixed menu width */
-    padding-left: 40px;     /* optional */
+    padding-left: 20px;     /* optional */
   }
   .menu-link:hover, .menu-link a:hover {
     color: var(--color-menu-link);

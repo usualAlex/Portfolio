@@ -63,19 +63,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+// <!------------------ FEATURED PROJECTS - backup version for initial 3 project only -------------------------->
+// document.addEventListener("DOMContentLoaded", function () {
+//   const featuredTab = document.querySelector('#Featured');
+//   const project1 = featuredTab.querySelector('.project1');
+//   const project2 = featuredTab.querySelector('.project2');
+//   const project3 = featuredTab.querySelector('.project3');
+//   const project4 = featuredTab.querySelector('.project4');
+
+//   const project1Highlight = document.querySelector('.project1-highlight');
+//   const project2Highlight = document.querySelector('.project2-highlight');
+//   const project3Highlight = document.querySelector('.project3-highlight');
+//   const project4Highlight = document.querySelector('.project4-highlight');
+
+//   // Hover highlight + balloon trigger
+//   function setupHover(projectEl, highlightEl) {
+//     projectEl.addEventListener('mouseover', () => {
+//       highlightEl.classList.add('highlight');
+//       highlightEl.dispatchEvent(new Event('mouseover', { bubbles: true }));
+//     });
+
+//     projectEl.addEventListener('mouseout', () => {
+//       highlightEl.classList.remove('highlight');
+//       highlightEl.dispatchEvent(new Event('mouseout', { bubbles: true }));
+//     });
+//   }
+
+//   setupHover(project1, project1Highlight);
+//   setupHover(project2, project2Highlight);
+//   setupHover(project3, project3Highlight);
+//   setupHover(project4, project4Highlight);
+// });
+
 // <!------------------ FEATURED PROJECTS -------------------------->
 document.addEventListener("DOMContentLoaded", function () {
   const featuredTab = document.querySelector('#Featured');
-  const project1 = featuredTab.querySelector('.project1');
-  const project2 = featuredTab.querySelector('.project2');
-  const project3 = featuredTab.querySelector('.project3');
 
-  const project1Highlight = document.querySelector('.project1-highlight');
-  const project2Highlight = document.querySelector('.project2-highlight');
-  const project3Highlight = document.querySelector('.project3-highlight');
+  if (!featuredTab) return; // no featured section, stop
 
-  // Hover highlight + balloon trigger
+  const projects = [
+    { el: featuredTab.querySelector('.project1'), highlight: document.querySelector('.project1-highlight') },
+    { el: featuredTab.querySelector('.project2'), highlight: document.querySelector('.project2-highlight') },
+    { el: featuredTab.querySelector('.project3'), highlight: document.querySelector('.project3-highlight') },
+    { el: featuredTab.querySelector('.project4'), highlight: document.querySelector('.project4-highlight') }
+  ];
+
   function setupHover(projectEl, highlightEl) {
+    if (!projectEl || !highlightEl) return; // skip if missing
+
     projectEl.addEventListener('mouseover', () => {
       highlightEl.classList.add('highlight');
       highlightEl.dispatchEvent(new Event('mouseover', { bubbles: true }));
@@ -87,10 +122,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  setupHover(project1, project1Highlight);
-  setupHover(project2, project2Highlight);
-  setupHover(project3, project3Highlight);
+  projects.forEach(p => setupHover(p.el, p.highlight));
 });
+
+
+
 
 
 // <!------------------ HOVER BALLOON -------------------------->
