@@ -371,7 +371,7 @@ img{
   width: 48px;
   height: 48px;
   border-radius: 6px;
-  background-color: #00000080;
+  background-color: #11111180;
   z-index: 1000;
   cursor: pointer;
   opacity: 0;
@@ -1006,7 +1006,7 @@ img{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.9);
   display: none;
-  z-index: 12;
+  z-index: 99;
 }
 .lightbox.open {
   display: block;
@@ -1019,7 +1019,7 @@ img{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 13;
+  z-index: 100;
   opacity: 1;
 }
 .lightbox-background {
@@ -1030,7 +1030,7 @@ img{
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 11;
+  z-index: 98;
   opacity: 0.5;
 }
 .lightbox-background.open {
@@ -1047,7 +1047,7 @@ img{
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 4px;
-  z-index: 11;
+  z-index: 101;
 }
 
 .lightbox-close:hover {
@@ -1630,12 +1630,12 @@ body.no-scroll {
     right: 15px;
     width: 48px;
     height: 48px;
-    background-color: #00000080;
+    background-color: #11111180;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1001; /* above scroll-to-top */
+    z-index: 11; /* above scroll-to-top */
     cursor: pointer;
     transition: all 0.2s ease;
     backdrop-filter: blur(5px);
@@ -1685,8 +1685,8 @@ body.no-scroll {
     width: 48px;
     height: 48px;
     border-radius: 6px;
-    background-color: #00000080;
-    z-index: 1000;
+    background-color: #11111180;
+    z-index: 9;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
@@ -1714,7 +1714,7 @@ body.no-scroll {
     width: 100vw;
     height: 100vh;             /* full screen height */
     background-color: #000000e7;
-    z-index: 9;
+    z-index: 10;
     overflow-y: auto;          /* scroll if needed */
     padding: 0;
     margin: 0;
