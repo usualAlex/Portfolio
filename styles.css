@@ -1436,7 +1436,7 @@ body.no-scroll {
   .menu-container {
     left: 0;                /* stick to left edge */
     width: 250px;           /* fixed menu width */
-    padding-left: 20px;     /* optional */
+    padding-left: 40px;     /* optional */
   }
   .menu-link:hover, .menu-link a:hover {
     color: var(--color-menu-link);
