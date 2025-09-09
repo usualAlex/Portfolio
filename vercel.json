@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/store", "destination": "/store.html" },
+
+    { "source": "/projects/creativeboard", "destination": "/projects/creativeboard.html" },
+    { "source": "/projects/jex", "destination": "/projects/jex.html" },
+    { "source": "/projects/jarfall", "destination": "/projects/jarfall.html" },
+    { "source": "/projects/sweeper", "destination": "/projects/sweeper.html" },
+    { "source": "/projects/rebounce", "destination": "/projects/rebounce.html" },
+    { "source": "/projects/besiege", "destination": "/projects/besiege.html" },
+    { "source": "/projects/armorcraft", "destination": "/projects/armorcraft.html" },
+    { "source": "/projects/alchemy", "destination": "/projects/alchemy.html" },
+
+    { "source": "/:path", "destination": "/:path.html" }
+  ]
+}
