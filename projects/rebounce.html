@@ -218,11 +218,34 @@
 			<div style="height: 100px; width: 100%;"></div>
 
 
-			<div class="footer" style="background-color: transparent;">
-				<img src="../img/rebounce/about-logo.png" style="display: block; margin: 0 auto; width: 70%; max-width: 150px; opacity: 0.3;" class="no-lightbox">
-				<br><br>
-				<span style="color: white; opacity: 0.25; display: block; text-align: center; padding-bottom: 8px; font-size: 10pt;">© Alex Circo. Rebounce 2025. All rights reserved.</span>
-			</div>
+			<div 
+				style="
+					width: 100%; 
+					height: 180px; 
+					background-image: url('../img/rebounce/ball-texture-bottom.png'); 
+					background-position: bottom; 
+					background-size: contain; 
+					background-repeat: no-repeat;
+
+					display: flex;
+					flex-direction: column;        /* stack vertically */
+					justify-content: flex-end;     /* push content to bottom */
+					align-items: center;           /* center horizontally */
+					padding-bottom: 8px;           /* spacing from bottom */
+					box-sizing: border-box;
+				"
+				>
+				<img 
+					src="../img/rebounce/about-logo.png" 
+					style="width: 70%; max-width: 150px; opacity: 0.3; margin-bottom: 25px;" 
+					class="no-lightbox"
+				>
+				<span 
+					style="color: rgb(66, 66, 66); opacity: 1; font-size: 10pt; text-align: center;"
+				>
+					© Alex Circo. Rebounce 2025. All rights reserved.
+				</span>
+				</div>
 
 		</div>
 	</div>
