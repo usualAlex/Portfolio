@@ -221,195 +221,196 @@ document.addEventListener("DOMContentLoaded", function () {
 // - attempts to play() the video and handles the promise (autoplay can be blocked on some browsers),
 // - cleans up / pauses the video when the preview is hidden,
 // - uses a delegated-per-.menu-link listener approach (attaches to each .menu-link) but more tolerant of events.
-document.addEventListener("DOMContentLoaded", () => {
-  const previewBox = document.createElement("div");
-  previewBox.className = "link-preview";
-  previewBox.style.display = "none";
-  document.body.appendChild(previewBox);
 
-  const toggleHint = document.querySelector(".preview-toggle-hint");
-  if (toggleHint) toggleHint.style.display = "none"; // hidden by default
+// document.addEventListener("DOMContentLoaded", () => {
+//   const previewBox = document.createElement("div");
+//   previewBox.className = "link-preview";
+//   previewBox.style.display = "none";
+//   document.body.appendChild(previewBox);
 
-  const offsetX = 150;
-  let offsetY = -50;
+//   const toggleHint = document.querySelector(".preview-toggle-hint");
+//   if (toggleHint) toggleHint.style.display = "none"; // hidden by default
 
-  let isVisible = false;
-  let currentMedia = null;
-  let previewsEnabled = true;
+//   const offsetX = 150;
+//   let offsetY = -50;
 
-  let lastMouseX = 0;
-  let lastMouseY = 0;
-  let previewX = 0;
-  let previewY = 0;
+//   let isVisible = false;
+//   let currentMedia = null;
+//   let previewsEnabled = true;
 
-  // For lerping
-  let renderX = 0;
-  let renderY = 0;
-  let animating = false;
+//   let lastMouseX = 0;
+//   let lastMouseY = 0;
+//   let previewX = 0;
+//   let previewY = 0;
 
-  const links = document.querySelectorAll(".menu-link");
-  if (!links.length) return;
+//   // For lerping
+//   let renderX = 0;
+//   let renderY = 0;
+//   let animating = false;
 
-  function makeImage(src) {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "preview";
-    img.style.width = "100%";
-    img.style.height = "100%";
-    img.style.objectFit = "contain";
-    img.style.objectPosition = "top left";
-    return img;
-  }
+//   const links = document.querySelectorAll(".menu-link");
+//   if (!links.length) return;
 
-  function makeVideo(src) {
-    const video = document.createElement("video");
-    video.src = src;
-    video.loop = true;
-    video.muted = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.setAttribute("playsinline", "");
-    video.style.width = "100%";
-    video.style.height = "100%";
-    video.style.objectFit = "contain";
-    video.style.objectPosition = "top left";
-    return video;
-  }
+//   function makeImage(src) {
+//     const img = document.createElement("img");
+//     img.src = src;
+//     img.alt = "preview";
+//     img.style.width = "100%";
+//     img.style.height = "100%";
+//     img.style.objectFit = "contain";
+//     img.style.objectPosition = "top left";
+//     return img;
+//   }
 
-  function showPreview(e, el) {
-    if (!previewsEnabled) return;
+//   function makeVideo(src) {
+//     const video = document.createElement("video");
+//     video.src = src;
+//     video.loop = true;
+//     video.muted = true;
+//     video.autoplay = true;
+//     video.playsInline = true;
+//     video.setAttribute("playsinline", "");
+//     video.style.width = "100%";
+//     video.style.height = "100%";
+//     video.style.objectFit = "contain";
+//     video.style.objectPosition = "top left";
+//     return video;
+//   }
 
-    const imgSrc = el.dataset.previewP;
-    const videoSrc = el.dataset.previewV;
+//   function showPreview(e, el) {
+//     if (!previewsEnabled) return;
 
-    if (!imgSrc && !videoSrc) {
-      previewBox.style.display = "none";
-      if (toggleHint) toggleHint.style.display = "none";
-      return;
-    }
+//     const imgSrc = el.dataset.previewP;
+//     const videoSrc = el.dataset.previewV;
 
-    // clear previous
-    previewBox.innerHTML = "";
-    currentMedia = null;
+//     if (!imgSrc && !videoSrc) {
+//       previewBox.style.display = "none";
+//       if (toggleHint) toggleHint.style.display = "none";
+//       return;
+//     }
 
-    if (videoSrc) {
-      const v = makeVideo(videoSrc);
-      previewBox.appendChild(v);
-      currentMedia = v;
-      v.play().catch(() => {});
-    } else if (imgSrc) {
-      const i = makeImage(imgSrc);
-      previewBox.appendChild(i);
-      currentMedia = i;
-    }
+//     // clear previous
+//     previewBox.innerHTML = "";
+//     currentMedia = null;
 
-    previewX = e.clientX + offsetX;
-    previewY = e.clientY + offsetY;
+//     if (videoSrc) {
+//       const v = makeVideo(videoSrc);
+//       previewBox.appendChild(v);
+//       currentMedia = v;
+//       v.play().catch(() => {});
+//     } else if (imgSrc) {
+//       const i = makeImage(imgSrc);
+//       previewBox.appendChild(i);
+//       currentMedia = i;
+//     }
 
-    renderX = previewX;
-    renderY = previewY;
+//     previewX = e.clientX + offsetX;
+//     previewY = e.clientY + offsetY;
 
-    previewBox.style.left = `${renderX}px`;
-    previewBox.style.top = `${renderY}px`;
-    previewBox.style.display = "block";
-    isVisible = true;
+//     renderX = previewX;
+//     renderY = previewY;
 
-    if (toggleHint && previewsEnabled) toggleHint.style.display = "inline-flex";
+//     previewBox.style.left = `${renderX}px`;
+//     previewBox.style.top = `${renderY}px`;
+//     previewBox.style.display = "block";
+//     isVisible = true;
 
-    lastMouseX = e.clientX;
-    lastMouseY = e.clientY;
+//     if (toggleHint && previewsEnabled) toggleHint.style.display = "inline-flex";
 
-    if (!animating) {
-      animating = true;
-      requestAnimationFrame(animate);
-    }
-  }
+//     lastMouseX = e.clientX;
+//     lastMouseY = e.clientY;
 
-  function movePreview(e) {
-    if (!previewsEnabled || !isVisible) return;
+//     if (!animating) {
+//       animating = true;
+//       requestAnimationFrame(animate);
+//     }
+//   }
 
-    // delta movement of the mouse
-    const dx = e.clientX - lastMouseX;
-    const dy = e.clientY - lastMouseY;
+//   function movePreview(e) {
+//     if (!previewsEnabled || !isVisible) return;
 
-    // move preview by half the distance
-    previewX += dx * 0.5;
-    previewY += dy * 0.8;
+//     // delta movement of the mouse
+//     const dx = e.clientX - lastMouseX;
+//     const dy = e.clientY - lastMouseY;
 
-    // clamp vertically
-    const boxHeight = previewBox.offsetHeight;
-    if (previewY + boxHeight > window.innerHeight) previewY = window.innerHeight - boxHeight - 10;
-    if (previewY < 0) previewY = 0;
+//     // move preview by half the distance
+//     previewX += dx * 0.5;
+//     previewY += dy * 0.8;
 
-    lastMouseX = e.clientX;
-    lastMouseY = e.clientY;
-  }
+//     // clamp vertically
+//     const boxHeight = previewBox.offsetHeight;
+//     if (previewY + boxHeight > window.innerHeight) previewY = window.innerHeight - boxHeight - 10;
+//     if (previewY < 0) previewY = 0;
 
-  function hidePreview() {
-    previewBox.style.display = "none";
-    isVisible = false;
-    if (toggleHint) toggleHint.style.display = "none";
+//     lastMouseX = e.clientX;
+//     lastMouseY = e.clientY;
+//   }
 
-    if (currentMedia && currentMedia.tagName === "VIDEO") {
-      try {
-        currentMedia.pause();
-        currentMedia.removeAttribute("src");
-        currentMedia.load();
-      } catch {}
-    }
-    previewBox.innerHTML = "";
-    currentMedia = null;
-  }
+//   function hidePreview() {
+//     previewBox.style.display = "none";
+//     isVisible = false;
+//     if (toggleHint) toggleHint.style.display = "none";
 
-  // Animation loop for lerping
-  function animate() {
-    if (!isVisible) {
-      animating = false;
-      return;
-    }
+//     if (currentMedia && currentMedia.tagName === "VIDEO") {
+//       try {
+//         currentMedia.pause();
+//         currentMedia.removeAttribute("src");
+//         currentMedia.load();
+//       } catch {}
+//     }
+//     previewBox.innerHTML = "";
+//     currentMedia = null;
+//   }
 
-    // ---- LERPING (comment out if you don’t want smooth motion) ----
-    const ease = 0.12; // lower = smoother/slower
-    renderX += (previewX - renderX) * ease;
-    renderY += (previewY - renderY) * ease;
-    // -------------------------------------------------------------
+//   // Animation loop for lerping
+//   function animate() {
+//     if (!isVisible) {
+//       animating = false;
+//       return;
+//     }
 
-    previewBox.style.left = `${renderX}px`;
-    previewBox.style.top = `${renderY}px`;
+//     // ---- LERPING (comment out if you don’t want smooth motion) ----
+//     const ease = 0.12; // lower = smoother/slower
+//     renderX += (previewX - renderX) * ease;
+//     renderY += (previewY - renderY) * ease;
+//     // -------------------------------------------------------------
 
-    requestAnimationFrame(animate);
-  }
+//     previewBox.style.left = `${renderX}px`;
+//     previewBox.style.top = `${renderY}px`;
 
-  // Key toggle for previews
-  document.addEventListener("keydown", (e) => {
-    if (e.key.toLowerCase() === "h") {
-      previewsEnabled = !previewsEnabled;
-      if (!previewsEnabled) {
-        previewBox.style.display = "none";
-        if (toggleHint) toggleHint.style.display = "none";
-      }
-    }
-  });
+//     requestAnimationFrame(animate);
+//   }
 
-  // attach listeners
-  links.forEach(link => {
-    if (window.PointerEvent) {
-      link.addEventListener("pointerenter", (e) => {
-        if (e.pointerType === "touch") return;
-        showPreview(e, link);
-      });
-      link.addEventListener("pointermove", (e) => {
-        if (e.pointerType === "touch") return;
-        movePreview(e);
-      });
-      link.addEventListener("pointerleave", hidePreview);
-    } else {
-      link.addEventListener("mouseenter", (e) => showPreview(e, link));
-      link.addEventListener("mousemove", movePreview);
-      link.addEventListener("mouseleave", hidePreview);
-    }
-  });
-});
+//   // Key toggle for previews
+//   document.addEventListener("keydown", (e) => {
+//     if (e.key.toLowerCase() === "h") {
+//       previewsEnabled = !previewsEnabled;
+//       if (!previewsEnabled) {
+//         previewBox.style.display = "none";
+//         if (toggleHint) toggleHint.style.display = "none";
+//       }
+//     }
+//   });
+
+//   // attach listeners
+//   links.forEach(link => {
+//     if (window.PointerEvent) {
+//       link.addEventListener("pointerenter", (e) => {
+//         if (e.pointerType === "touch") return;
+//         showPreview(e, link);
+//       });
+//       link.addEventListener("pointermove", (e) => {
+//         if (e.pointerType === "touch") return;
+//         movePreview(e);
+//       });
+//       link.addEventListener("pointerleave", hidePreview);
+//     } else {
+//       link.addEventListener("mouseenter", (e) => showPreview(e, link));
+//       link.addEventListener("mousemove", movePreview);
+//       link.addEventListener("mouseleave", hidePreview);
+//     }
+//   });
+// });
 
 
 

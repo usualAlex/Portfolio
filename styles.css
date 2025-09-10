@@ -700,7 +700,10 @@ img{
 /* ------------ FEATURED PROJECTS - HOME ----------- */
 /* Default: hide spacers on desktop */
 .mobile-spacer-top,
-.mobile-spacer-bottom {
+.mobile-spacer-bottom,
+.mobile-spacer-home-bottom,
+.mobile-spacer-home-top,
+.logo-container-mobile {
     display: none;
 }
 .featured-title {
@@ -846,6 +849,8 @@ img{
   display: inline-flex;      /* make it a flex container */
   align-items: center;       /* vertically center children */
   gap: 4px;                  /* optional space between icon and text */
+
+  display: none; /* disabled */
 }
 
 .preview-toggle-hint span {
