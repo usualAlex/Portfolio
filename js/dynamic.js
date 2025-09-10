@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- SCROLL TO TOP BTN ---
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 100) {
+    if (window.scrollY > 500) {
       toTopBtn.classList.add('shown');
     } else {
       toTopBtn.classList.remove('shown');
