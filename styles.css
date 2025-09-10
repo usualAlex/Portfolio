@@ -160,6 +160,7 @@
 	--color-menu-balloon-border: #ffffff49;
 
   --color-content-block-bg: #15293f;
+  --color-content-block-bg: #1d3d57f5;
 }
 .theme-store{
   /* SHOULD BE THE SAME AS MAIN PAGE */
@@ -705,7 +706,9 @@ img{
   height: auto;
   display: block;
 }
-
+.get-on-buttons img:hover {
+  transform: scale(1.033);
+}
 /* ------------ FEATURED PROJECTS - HOME ----------- */
 /* Default: hide spacers on desktop */
 .mobile-spacer-top,
@@ -867,7 +870,48 @@ img{
   line-height: 1;            /* keep it tight */
 }
 
+/* -----------------  Screenshot gallery - used to align screenshot images horizontally in the content block --------------------- */
+.screenshot-gallery {
+  display: flex;
+  justify-content: center; /* centers items if fewer than 3 */
+  gap: 20px; /* equal spacing between all items */
+  width: 100%;
+}
 
+.screenshot-item {
+  flex: 1;
+  max-width: calc((100% - 32px) / 3); 
+  /* (3 items case: 100% - 2 gaps) / 3 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.screenshot-gallery > .screenshot-item:nth-last-child(2):first-child,
+.screenshot-gallery > .screenshot-item:nth-last-child(2):first-child ~ .screenshot-item {
+  max-width: calc((100% - 20px) / 2); 
+  /* (2 items case: 100% - 1 gap) / 2 */
+}
+
+.screenshot-gallery > .screenshot-item:only-child {
+  max-width: 100%; /* single item fills all */
+}
+
+.screenshot-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px; /* optional */
+}
+
+.screenshot-item p {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-top: 8px;
+  max-width: 100%;
+  word-wrap: break-word;
+}
 
 /*
  █████         █████            ██        ████████     ██████    
