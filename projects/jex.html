@@ -400,17 +400,17 @@
 			<h3>Holo Console - Diegetic UI</h3><br>
 			<img src="../img/jex/jex-ui-overview.webp" width="100%" height="auto"><br><br>
 			<h3>The problem</h3>
-			<p>With the pawlet console is that this won't work on landscape on mobile. The holo is designed for a portrait screen and the paw would need to be 
-				way longer to keep the holo centered on the screen and it would look way too small. I wanted to be able to scale the game on different screens/devices.
+			<p>I designed the holo projection UI specifically for mobile portrait since that was my intended experience. But this makes it locked to portrait since on
+				landscape mobile the holo is way too small. On bigger screens the paw coming from right hand side needs to be longer to keep the holo centered on the screen. 
+				Which is weird.
 			</p>
 			<img src="../img/jex/console-problem.webp" width="100%" height="auto"></br></br>
 			<h3>Solution</h3>
-			<p>I created a handler script to check device type. Then i used the paw on mobile portrait and only a pawlet on bigger screens (tablets, desktops). This 
-				allows me to scale the game to different screen sizes while on mobile i only use portrait because it's the intended experience - a super easy one hand control.
+			<p>To be able to use the halo on bigger screens i made a handler script that checks the screen orientation and switches the paw with just the pawlet. This makes it so the 
+				halo is always centered on any screen size. Sure i could dismiss the paw entirely and only use the pawlet but i insisted on keeping the paw as i like the immersion it provides.
 			</p>
-			<p>I aimed for something immersive but extremely simple at its core and in terms of functionality and UX yet it was challenging to design if i wanted more scalability and maintain the immersive style.
-				I'll keep this in mind for future games that maybe i want to play mobile-first games on PC (like using "Google Play Games on PC").
-				
+			<p>The holo is tall and made for portrait screens but i'm fine with not supporting landscape on mobile  
+				since it's not my indended experience. Although it would be nice to have a more flexible UI design so i'll keep that in mind for future projects that i might change my mind about screen and orientation support.
 			</p>
 			<br>
 			<img src="../img/jex/console-problem-fix.webp" width="100%" height="auto"><br><br>
