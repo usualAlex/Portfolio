@@ -505,6 +505,9 @@ img{
 }
 
 /* ------------ ICONS - LOGO AND SOCIALS ------------ */
+.socials-mobile{
+  display: none;
+}
 .logo-container,
 .logo-container img{
   display: block;
@@ -557,7 +560,7 @@ img{
 	width: 100%;
 	height: auto;  
 }
-.socials-mobile{
+.socials-mobile-container{
 	display: none;  
 }
 
@@ -1211,12 +1214,18 @@ body.no-scroll {
 .collapsible .label:hover {
   text-decoration: underline;
 }
-
+.collapsible .arrow-container {
+  padding: 5px 10px;
+  background-color: #1c1c1c7e;
+  margin: 0;
+  border-radius: 4px;
+}
 .collapsible .arrow {
-  margin-left: 8px;
+  margin: 0;
   display: inline-block;
   transition: transform 0.2s ease;
   transform-origin: center center;
+  
 }
 
 .content {
@@ -1226,6 +1235,52 @@ body.no-scroll {
 }
 .content.show {
   display: block;
+}
+
+.download-resume-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.download-resume-btn{
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding: 3px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10pt;
+  font-family: var(--font-menu-link);
+  font-weight: 600;
+  margin: 10px 0 0 0; /* added margin to separate from icon */
+  cursor: pointer;
+  border-radius: 4px;
+}
+.download-resume-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.download-resume-link img {
+  display: block;
+  width: 50px;
+  height: auto;
+  margin: 0 auto;
+  opacity: 0.44;
+}
+
+.download-resume-link:hover img {
+  opacity: 0.9; /* increase opacity on hover */
+}
+
+.download-resume-link:hover .download-resume-btn {
+  text-decoration: none;
+  background-color: white;
+  color: #000;
 }
 
 /* DISABLE HOVER EFFECT FOR TOUCH */
@@ -1721,6 +1776,52 @@ body.no-scroll {
 	  width: 90%;
   }
   */
+  .socials-mobile-container {
+    display: block;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 50px;
+  }
+  .mobile-social{
+    display: flex;  
+    flex-wrap: nowrap; 
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    height: auto; 
+    margin-top: 5px;
+  }
+  .mobile-social-icon{
+    display: flex; 
+    flex-wrap: nowrap;
+    width: 35px;
+    height: 35px; 
+    float: left;
+  }
+  .mobile-social-text{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 12pt;
+    line-height: 35px;
+    vertical-align: middle;
+    margin-left: 10px;
+
+    font-weight: var(--font-menu-link-weight);
+    font-family: var(--font-menu-link);
+    color: white;
+  }
+  .mobile-social-text.link{
+    user-select: none;
+    text-decoration: underline;
+  }
+  .mobile-social-text.link:hover{
+    text-decoration: underline;
+}
   /* -------------------------- HAMBURGER BUTTON -------------------------- */
   .hamburger-button {
     position: fixed !important;
