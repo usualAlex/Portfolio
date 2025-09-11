@@ -870,7 +870,7 @@ img{
   line-height: 1;            /* keep it tight */
 }
 
-/* -----------------  Screenshot gallery - used to align screenshot images horizontally in the content block --------------------- */
+/* -----------------  Screenshot gallery - used to align screenshot images horizontally in the content blocks --------------------- */
 .screenshot-gallery {
   display: flex;
   justify-content: center; /* centers items if fewer than 3 */
@@ -901,7 +901,7 @@ img{
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 6px; /* optional */
+  border-radius: 10px; /* optional */
 }
 
 .screenshot-item p {
