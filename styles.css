@@ -105,7 +105,7 @@
 	--project-font: 'NunitoSans';
 
   --font-menu-link: 'Kode Mono';
-	--font-menu-link-weight: 800;
+	--font-menu-link-weight: 600;
 	--font-menu-link-size: 10pt;
 
 	--font-menu-category: 'Kode Mono';
@@ -119,6 +119,9 @@
   --content-padding: 0px 40px 0px 40px;
 }
 
+.theme-default{
+  --color-content-block-bg: transparent;
+}
 .theme-jex{
   --color-content-block-bg: rgba(20, 23, 32, 0.8);
 
@@ -189,7 +192,7 @@
 body {
 	width: 100%; 
   height: auto;
-	background: black;
+	background: rgb(14, 14, 14);
 	overflow-x: hidden; 
   overflow-y: auto;
 	padding: 0;
@@ -262,9 +265,8 @@ img{
 */
 
 /* ----------------------------------- DEFAULT BACKGROUND ----------------------------------- */
-.background-image-featured,
-.background-image-about {
-  background: #000 url(img/noise-bg-3.webp) repeat bottom / contain;
+.background-image-default {
+  background: #000 url(img/noise-bg-3.png) repeat bottom / contain;
   background-size: 500px 500px; /* each square tile will be 100×100 */
   position: fixed;
   width: 100%;
@@ -334,10 +336,10 @@ img{
 	background: repeating-linear-gradient(to bottom,rgba(255, 255, 255, 0.08) 0px,rgba(255, 255, 255, 0.08) 2px,transparent 2px,transparent 6px);
   background-size: 100% 5px; /* explicitly match the repeat interval */
   /* fade sides (vignette-like) */
-  -webkit-mask-image: linear-gradient( to right, transparent 0%, black 20%, black 80%, transparent 100% );
+  -webkit-mask-image: linear-gradient( to right, transparent 0%, black 50%, black 80%, transparent 100% );
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
-  mask-image: linear-gradient( to right, transparent 0%, black 20%, black 80%, transparent 100% );
+  mask-image: linear-gradient( to right, transparent 0%, black 50%, black 80%, transparent 100% );
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   animation: scanlines-scroll-slow 1s linear infinite; /* new animation */
@@ -528,8 +530,9 @@ img{
   transition: transform 0.2s ease;
 }
 .logo-container img:hover {
-  transform: scale(1.066);
+  /*transform: scale(1.066);*/
   transition: transform 0.2s ease;
+  opacity: 0.8;
 }
 .logo-container-mobile, .description-container-mobile{
 	display: none;
@@ -916,7 +919,9 @@ img{
   display: block;
   border-radius: 10px; /* optional */
 }
-
+.screenshot-item.no-rounding img {
+  border-radius: 0;
+}
 .screenshot-item p {
   font-style: italic;
   color: rgba(255, 255, 255, 0.6);
@@ -1850,7 +1855,7 @@ body.no-scroll {
     backdrop-filter: blur(10px);          /* glass effect */
     -webkit-backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(255, 255, 255, 0.25); /* subtle light border */
+    border: 1px solid rgba(255, 255, 255, 0.116); /* subtle light border */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35); /* soft shadow for depth */
   }
   /* Hamburger icon */
@@ -1901,7 +1906,7 @@ body.no-scroll {
     backdrop-filter: blur(10px);          /* glass effect */
     -webkit-backdrop-filter: blur(10px);
 
-    border: 1px solid rgba(255, 255, 255, 0.25); /* subtle light border */
+    border: 1px solid rgba(255, 255, 255, 0.116); /* subtle light border */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35); /* soft shadow for depth */
 
     cursor: pointer;
@@ -1926,72 +1931,79 @@ body.no-scroll {
     display: none;
     position: fixed;
     width: 100%;
-    height: 100%;             /* full screen height */
-    background-color: #000000e7;
+    height: 100%;
+    background-color: #0e0e0ee7;
     z-index: 10;
-    overflow-y: auto;          /* scroll if needed */
+    overflow-y: auto;
     padding: 0;
     margin: 0;
-    backdrop-filter: blur(45px);    /* optional: add blur effect */
+    backdrop-filter: blur(45px);
     -webkit-backdrop-filter: blur(45px);
   }
 
   /* INNER MENU */
   .mobile-menu {
-    display: block;
-    position: absolute;
-    width: 60%;
-    padding: 0;
-    bottom: 0;
-    right: 25px;
-    margin: 0;
-    padding: 0 0 80px 0;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    padding: 0 40px;   /* ✅ add left/right whitespace */
+    margin: 30px 0 50px 0;
+    box-sizing: border-box;
+
   }
 
-  /* Group headers */
-  .mobile-menu-link.category a {
-    display: inline-block;     /* shrink to text width */
-    padding: 2px 10px;         /* some spacing inside */
-    margin: 2px 0;
-    margin-top: 12%;
-    font-family: var(--font-menu-link);
-    font-size: 14pt;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.233);
-    text-align: right;
-  }
-  .mobile-menu-link.category.empty a { margin: 0;}
   /* Menu links */
+  .mobile-menu-link {
+    width: 100%; /* ✅ ensures full width */
+  }
+
   .mobile-menu-link a {
-    display: inline-block;     /* shrink to text width */
-    text-align: right;
-    padding: 0px 10px;         /* some spacing inside */
-    margin: 2px 0;
+    display: block;
+    width: 100%;
+    padding: 5px 0px;
+    margin: 0px 0;
     font-family: var(--font-menu-link);
     font-size: 13pt;
     font-weight: 400;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
-    background-color: transparent;
-    line-height: 3.5vh; vertical-align: middle;
-    height: 3.5vh;
-  }
-  .mobile-menu-link {
-    text-align: right; /* aligns the inline-block <a> to the right */
-  }
-  .mobile-menu-link.disabled{
-    text-decoration: line-through;
-    opacity: 0.5;
+    background-color: rgba(44, 44, 44, 0.5);
+    border-radius: 0; /* flat edges, like full-width buttons */
+    text-align: left;
+    line-height: 1.4em;
+    box-sizing: border-box;
+    border-radius: 0px;
+    background: transparent;
+    border-top: 1px solid rgba(255, 255, 255, 0.048);
   }
 
-  .mobile-menu-link.active a{
-    font-weight: 600;
-    background-color: #fff;
-    color: #000;
-    border-radius: 5px;
+  /* Disabled state */
+  .mobile-menu-link.disabled a {
+    color: #ffffff63;
+    pointer-events: none;
   }
+
+  /* Active link */
+  .mobile-menu-link.active a {
+    font-weight: 600;
+  }
+
+  /* Category subtitles */
+  .mobile-menu-link.category a {
+    display: block;
+    padding: 0 0px;
+    margin: 20px 0 5px 0;
+    margin-top: 40px;
+    background: transparent;
+    font-size: 11pt;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    text-transform: uppercase;
+    pointer-events: none; /* not clickable */
+    border: none;
+  }
+
 }
 
 
