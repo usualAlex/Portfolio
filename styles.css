@@ -964,17 +964,30 @@ img{
 	margin-bottom: 5px;
   }
 }
-
+.lightboxGallery img.is-lightbox {
+  transition: all 0.2s ease-in-out;
+}
 .lightboxGallery img.is-lightbox:hover {
   cursor: url(img/zicon.png), pointer;
-  opacity: 1;
+  filter: brightness(1.1)  saturate(1.1) contrast(1.0);
+  transition: all 0.2s ease-in-out;
 }
 #CreativeBoard img.is-lightbox:hover {
   cursor: url(img/zicon.png), pointer;
-  opacity: 1;
   filter: grayscale(1);
 }
 
+
+/* default: hide system cursor, show custom one when lightbox is open */
+.lightbox.open,
+.lightbox-background.open {
+  cursor: url("img/close-cursor.png") 10 10, pointer; /* your custom cursor here */
+}
+
+/* over the actual image: revert to normal (or your zicon one if you want) */
+.lightbox.open .lightbox-image img {
+  cursor: default; /* or url("img/zicon.png"), pointer; */
+}
 
 /*
    ██████   ███████████     █████      ████████     █████████
@@ -1149,7 +1162,7 @@ img{
 }
 
 .lightbox-close:hover {
-  background: rgba(0,0,0,0.0);
+  background: rgba(0,0,0,0.7);
   opacity: 0.8;
 }
 .lightbox-desc {
@@ -1164,6 +1177,7 @@ img{
   box-sizing: border-box;
   text-align: center;
   z-index: 3;
+  display: none;
 }
 /* Class injected when lightbox is open */
 body.no-scroll {
