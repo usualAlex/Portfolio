@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const buttonRect = button.getBoundingClientRect();
         const menuRect = menu.getBoundingClientRect();
 
-        balloon.style.top = `${buttonRect.top - menuRect.top - 3}px`;
+        balloon.style.top = `${buttonRect.top - menuRect.top - 2}px`;
         balloon.style.left = `${buttonRect.left - menuRect.left - balloon.offsetWidth - 10}px`;
       }
       else {
@@ -183,31 +183,57 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".collapsible").forEach(section => {
     section.addEventListener("click", () => {
       section.classList.toggle("active");
-      let content = section.nextElementSibling;
+
+      const content = section.nextElementSibling;
       content.classList.toggle("show");
 
       const arrow = section.querySelector(".arrow");
+      const hint = section.querySelector(".hint-label");
 
-      // Animate rotation first
-      arrow.style.transition = "transform 0.2s ease";
-      arrow.style.transform = "rotate(90deg)";
+      if (section.classList.contains("active")) {
+        arrow.textContent = "-";
+        arrow.style.marginRight = "2px";
 
-      // After rotation completes, change text
-      setTimeout(() => {
-        if (section.classList.contains("active")) {
-          arrow.textContent = "-";
-          arrow.style.marginRight = "2px"; // add margin for "-"
-        } else {
-          arrow.textContent = "+";
-          arrow.style.marginRight = "0"; // reset for "+"
-        }
+        if (hint) hint.textContent = "CLICK TO COLLAPSE";
+      } else {
+        arrow.textContent = "+";
+        arrow.style.marginRight = "0";
 
-        // Reset rotation
-        arrow.style.transition = "none";
-        arrow.style.transform = "rotate(0deg)";
-      }, 100);
+        if (hint) hint.textContent = "CLICK TO EXPAND";
+      }
     });
   });
+});
+
+
+// <!------------------ highglight active section for content table -------------------------->
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(".toc-container a");
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+
+          links.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.dataset.target === id
+            );
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.50,
+      rootMargin: "0px 0px -5% 0px"
+
+    }
+  );
+
+  sections.forEach(section => observer.observe(section));
 });
 
 
