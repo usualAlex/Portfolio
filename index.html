@@ -52,30 +52,32 @@
   <!-- LOGO -->
   <div class="logo-container">
     <a href="/">
-      <img src="img/alex-logo-default.svg" alt="Logo">
+      <img src="img/alex-logo-default.svg" alt="Logo" >
     </a>
   </div>
 
   <!-- DESCRIPTION HEADER -->
-  <div class="description-container">
-    <img src="img/runningtext.gif" width="210px" height="auto">
+  <div class="description-container" style="margin-bottom: 30px; margin-top: -20px; opacity: 0.9;">
+    <!-- <img src="img/runningtext.gif" width="210px" height="auto"> -->
+	 <h4>Game UI Designer and Unity Developer.</h4>
   </div>
 
   <!-- NAVIGATION LINKS -->
   <div class="menu-links-group">
     <div class="menu-link-category">GAME DEV</div>
-    <div class="menu-link balloon-button" data-preview-p="img/jar/link-preview.webp" balloon="PC / Web">
+    <div class="menu-link balloon-button" data-preview-p="../img/jar/link-preview.webp" balloon="PC / Web">
       <a href="projects/jarfall">Jarfall</a>
     </div>
-    <div class="menu-link balloon-button project1-highlight" data-preview-v="img/jex/phone-gameplay.webm" balloon="Android / iOS">
+	<div class="menu-link balloon-button rebounce" data-preview-v="../img/geddahoops/phone-gameplay.webm" balloon="Android / iOS - WIP">
+      <a href="projects/geddahoops">Gedda Hoops</a>
+    </div>
+    <div class="menu-link balloon-button project1-highlight" data-preview-v="../img/jex/phone-gameplay.webm" balloon="Android / iOS">
       <a href="projects/jex">Jex in Space</a>
     </div>
-    <div class="menu-link balloon-button sweeper" balloon="PC - WIP">
-      <a href="projects/sweeper">Sweeper</a>
+	<div class="menu-link balloon-button rebounce" data-preview-v="../img/geddahoops/phone-gameplay.webm" balloon="Steam/PC - WIP">
+      <a href="projects/scrapnbolts">Scrap And Bolts</a>
     </div>
-    <div class="menu-link balloon-button project4-highlight rebounce" data-preview-v="img/rebounce/phone-gameplay.webm" balloon="Android / iOS - WIP">
-      <a href="projects/rebounce">Rebounce</a>
-    </div>
+    
   </div>
 
   <div class="menu-links-group">
@@ -89,8 +91,8 @@
     <div class="menu-link balloon-button" data-preview-p="img/alchemy/link-preview.webp" balloon="Android / iOS">
       <a href="projects/alchemy">Alchemy AI</a>
     </div>
-    <div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
-      <a href="#">Legacy of Pandora</a>
+    <div class="menu-link balloon-button" balloon="PC - Upcoming">
+      <a href="projects/pandora">Legacy of Pandora</a>
     </div>
     <div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
       <a href="#">River's Edge</a>
@@ -99,9 +101,9 @@
 
   <div class="menu-links-group extras">
     <div class="menu-link-category"></div>
-    <div class="menu-link balloon-button" balloon="Creative Market">
+    <!-- <div class="menu-link balloon-button" balloon="Creative Market">
       <a href="projects/store">Goods for sale</a>
-    </div>
+    </div> -->
     <div class="menu-link balloon-button" balloon="Unused stuff">
       <a href="projects/creativeboard">Creative Board</a>
     </div>
@@ -124,6 +126,12 @@
       </div>
       <div class="social-text">usualAlex</div>
     </div>
+	<!-- <div class="social">
+      <div class="social-icon">
+        <img src="img/icon-telegram-default.svg">
+      </div>
+      <div class="social-text">usualAlex</div>
+    </div> -->
     <div class="social">
       <div class="social-icon">
         <img src="img/icon-itch-default.svg">
@@ -166,22 +174,29 @@
 
 			<div class="mobile-spacer-home-top"></div>
 
-			<!-- DESCRIPTION HEADER 
-			<div class="description-container-mobile">
-				<img src="img/runningtext.gif" width="210px" height="auto">
+			<!-- DESCRIPTION HEADER -->
+			<div class="description-container-mobile" style="margin-bottom: 30px; margin-top: -50px; opacity: 0.9;">
+				<!-- <img src="img/runningtext.gif" width="210px" height="auto"> -->
+				<h4>Game UI Designer and Unity Developer.</h4>
 			</div>
-			-->
 
 			<!-- FEATURED PROJECT 1 -->
 			<a href="projects/jex">
 				<div class="featured-project project1">
 				<img src="img/jex/jex-featured-cover-v2.webp" alt="Jex">
-				<span class="overlay-text-role">SOLO DEVELOPER</span>
-				<div class="overlay-text-container">
+				<div class="vignette"></div>
+				
+				<!-- <div class="overlay-text-container">
+
 					<p class="overlay-text-title">Jex in Space</p>
-					<p class="overlay-text-platform">Out on Android!</p>
-					<p class="overlay-text-desc">An endless physics-based arcade runner.</p>
-				</div>
+					<p class="overlay-text-desc">An endless physics-based arcade runner.</p><br>
+					<div class="platform-pills">
+						<span class="platform-pill">Android</span>
+						<span class="platform-pill unavailable">iOS</span>
+					</div>
+					
+				</div> -->
+				<span class="overlay-text-role">SOLO DEVELOPER</span>
 				</div>
 			</a>
 
@@ -189,12 +204,22 @@
 			<a href="projects/besiege">
 				<div class="featured-project project2">
 				<img src="img/besiege/besiege-featured-cover.webp" alt="Besiege">
-				<span class="overlay-text-role">UI ARTIST</span>
-				<div class="overlay-text-container">
+				<div class="vignette"></div>
+				
+				<!-- <div class="overlay-text-container">
 					<p class="overlay-text-title">Besiege</p>
-					<p class="overlay-text-platform">Linux | Mac | Windows | PlayStation | Xbox | Switch</p>
-					<p class="overlay-text-desc">Physics-based vehicle-building sandbox based around medieval siege engines.</p>
-				</div>
+					<p class="overlay-text-desc">Physics-based vehicle-building sandbox based around medieval siege engines.</p><br>
+					<div class="platform-pills">
+						<span class="platform-pill">Linux</span>
+						<span class="platform-pill">Mac</span>
+						<span class="platform-pill">Windows</span>
+						<span class="platform-pill">PlayStation</span>
+						<span class="platform-pill">Xbox</span>
+						<span class="platform-pill">Switch</span>
+					</div>
+					
+				</div> -->
+				<span class="overlay-text-role">UI ARTIST</span>
 				</div>
 			</a>
 
@@ -202,19 +227,25 @@
 			<a href="projects/armorcraft">
 				<div class="featured-project project3">
 				<img src="img/ac/featured-project-cover.webp" alt="Armorcraft">
-				<span class="overlay-text-role">UI/UX DESIGNER</span>
-				<div class="overlay-text-container">
+				<div class="vignette"></div>
+				
+				<!-- <div class="overlay-text-container">
 					<p class="overlay-text-title">Armorcraft</p>
-					<p class="overlay-text-platform">Android | iOS</p>
-					<p class="overlay-text-desc">Strategy, base building, alliance warfare, PvP and PvE.</p>
-				</div>
+					<p class="overlay-text-desc">Strategy, base building, alliance warfare, PvP and PvE.</p><br>
+					<div class="platform-pills">
+						<span class="platform-pill">Android</span>
+						<span class="platform-pill">iOS</span>
+					</div>
+					
+				</div> -->
+				<span class="overlay-text-role">UI/UX DESIGNER</span>
 				</div>
 			</a>
 
 			<!-- FEATURED PROJECT TEST 
-			<a href="projects/rebounce.html">
+			<a href="projects/geddahoops.html">
 				<div class="featured-project project4">
-				<img src="img/rebounce/featured-project-cover-rebounce-v2.webp" alt="Rebounce">
+				<img src="img/geddahoops/featured-project-cover-rebounce-v2.webp" alt="Rebounce">
 				<span class="overlay-text-role">SOLO DEVELOPER</span>
 				<div class="overlay-text-container">
 					<p class="overlay-text-title">Rebounce</p>
@@ -229,9 +260,9 @@
 			<!------------------------------------------------------------      LETS ADD MORE FEATURED PROJECTS ON MOBILE ONLY       ----------------------------------------------------------------->
 			<!-- FEATURED PROJECT 4 -->
 			<div class="mobile-extra-projects">
-				<a href="projects/rebounce">
+				<a href="projects/geddahoops">
 					<div class="featured-project">
-					<img src="img/rebounce/featured-project-cover-rebounce-v2.webp" alt="Rebounce">
+					<img src="img/geddahoops/featured-project-cover-rebounce.png" alt="Rebounce">
 					<span class="overlay-text-role">SOLO DEVELOPER</span>
 					<div class="overlay-text-container">
 						<p class="overlay-text-title">Rebounce</p>
@@ -320,7 +351,7 @@
 			<div class="mobile-menu-link"><a href="projects/jarfall">Jarfall</a></div>
 			<div class="mobile-menu-link"><a href="projects/jex">Jex in Space</a></div>
 			<div class="mobile-menu-link"><a href="projects/sweeper">Sweeper</a></div>
-			<div class="mobile-menu-link"><a href="projects/rebounce">Rebounce</a></div>
+			<div class="mobile-menu-link"><a href="projects/geddahoops">Gedda Hoops</a></div>
 
 			<div class="mobile-menu-link category"><a href="#">GAME UI</a></div>
 			<div class="mobile-menu-link"><a href="projects/besiege">Besiege</a></div>

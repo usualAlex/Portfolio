@@ -57,25 +57,27 @@
   </div>
 
   <!-- DESCRIPTION HEADER -->
-  <div class="description-container">
-    <img src="../img/runningtext.gif" width="210px" height="auto">
+  <div class="description-container" style="margin-bottom: 30px; margin-top: -20px; opacity: 0.9;">
+    <!-- <img src="img/runningtext.gif" width="210px" height="auto"> -->
+	 <h4>Game UI Designer and Unity Developer.</h4>
   </div>
 
   <!-- NAVIGATION LINKS -->
   <div class="menu-links-group">
     <div class="menu-link-category">GAME DEV</div>
     <div class="menu-link balloon-button" data-preview-p="../img/jar/link-preview.webp" balloon="PC / Web">
-      <a href="/jarfall">Jarfall</a>
+      <a href="jarfall">Jarfall</a>
+    </div>
+	<div class="menu-link balloon-button rebounce" data-preview-v="../img/geddahoops/phone-gameplay.webm" balloon="Android / iOS - WIP">
+      <a href="geddahoops">Gedda Hoops</a>
     </div>
     <div class="menu-link balloon-button project1-highlight" data-preview-v="../img/jex/phone-gameplay.webm" balloon="Android / iOS">
-      <a href="/jex">Jex in Space</a>
+      <a href="jex">Jex in Space</a>
     </div>
-    <div class="menu-link balloon-button sweeper" balloon="PC - WIP" onclick="openProject(event, 'Sweeper')">
-      <a href="/sweeper">Sweeper</a>
+	<div class="menu-link balloon-button rebounce" data-preview-v="../img/geddahoops/phone-gameplay.webm" balloon="Steam/PC - WIP">
+      <a href="scrapnbolts">Scrap And Bolts</a>
     </div>
-    <div class="menu-link balloon-button rebounce" data-preview-v="../img/rebounce/phone-gameplay.webm" balloon="Android / iOS - WIP">
-      <a href="/rebounce">Rebounce</a>
-    </div>
+    
   </div>
 
   <div class="menu-links-group">
@@ -89,8 +91,8 @@
     <div class="menu-link balloon-button menu-link-active" balloon="Android / iOS" onclick="openProject(event, 'Alchemy')">
       <a href="/alchemy">Alchemy AI</a>
     </div>
-    <div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
-      <a href="#">Legacy of Pandora</a>
+    <div class="menu-link balloon-button" balloon="PC - Upcoming">
+      <a href="pandora">Legacy of Pandora</a>
     </div>
     <div class="menu-link balloon-button unavailable" balloon="PC - Upcoming">
       <a href="#">River's Edge</a>
@@ -99,9 +101,9 @@
 
   <div class="menu-links-group extras">
     <div class="menu-link-category"></div>
-    <div class="menu-link balloon-button" balloon="Creative Market">
+    <!--<div class="menu-link balloon-button" balloon="Creative Market">
       <a href="/store">Goods for sale</a>
-    </div>
+    </div>-->
     <div class="menu-link balloon-button" balloon="Unused stuff">
       <a href="/creativeboard">Creative Board</a>
     </div>
@@ -178,12 +180,38 @@
 
 			<div style="height: 150px; width: 100%;"></div>
 			<div class="content-wrapper">
-				<div class="content-icon-container">
-					<img src="../img/alchemy/alc-appicon.png" style="display: block; margin: 0 auto; max-width: 200px; height: auto;" class="no-lightbox">
-					
+				
+				<!-- HEADER FOR MOBILE GAME -->
+				<div class="header-container-mobile"> <!-- add "landscape" class for landscape -->
+
+					<!-- this is the app icon img -->
+					<div class="block1">
+						<img src="../img/alchemy/alc-appicon.png" style="display: block; margin: 0 auto; max-width: 200px; height: auto; margin-bottom: 5px;" class="no-lightbox">
+						<h1>Alchemy AI: Infinite Mix</h1>
+					</div> 
+
+					<!-- this is the download buttons -->
+					<div class="block2"> 
+						<div class="btn1">
+							<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en">
+								<img class="no-lightbox" src="../img/playstore.png" width="180px"  height="auto">
+							</a>
+						</div> <!-- this is the download button 1 -->
+						<div class="btn2">
+							<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288">
+								<img class="no-lightbox" src="../img/appstore.png" width="180px"  height="auto"">
+							</a>
+						</div> <!-- this is the download button 2 -->
+					</div>
+
+					<!-- this is the screenshot -->
+					<div class="block3">
+						<img src="../img/alchemy/gameplay-phone.png" class="no-lightbox"
+							style="display:block; margin:0 auto; width:90%; max-width:300px; height:auto;" 
+							id="phone-fallback">
+					</div> 
+
 				</div>
-				<h1>Alchemy AI: Infinite Mix</h1>
-				<br><br>
 
 				<div class="content-summary-container">
 					<div class="content-summary-item">
@@ -219,16 +247,29 @@
 
 			</div>		
 			</br></br>
-			<div class="get-on-buttons">
+
+
+
+
+			<!-- <div class="get-on-buttons">
 				<div class="center">
 				<a href="https://play.google.com/store/apps/details?id=com.hostelguys.alchemicai&hl=en"><img src="../img/playstore.png" width="180px" height="auto" class="no-lightbox"></a>
 				<a href="https://apps.apple.com/us/app/alchemy-ai-infinite-mix/id6466730288"><img src="../img/appstore.png" width="180px" height="auto" class="no-lightbox"></a>
 				</div>
-			</div>
+			</div> -->
+
+
+
+			
+
+
+
+
 			</br></br>
+			<h2 style="margin-top: 0px;">About the game</h2>
 			<p>The classic alchemy game but what makes Alchemy AI stand out is the use of AI to generate almost infinite possibilities instead of a set number or combos. Players can create completely unique new items that were never created before.</p>
 			
-			<img src="../img/alchemy/test2.webp" width="100%" height="auto">
+			<img src="../img/alchemy/test2.webp" width="100%" height="auto" style="display: block; margin-top: -80px;">
 
 			<h2 style="margin-top: -70px;">What i did</h2>
 			<p>I was a UI/UX Designer working on the UI, illustrations and some animations. Designed a machine (we named it internally "The Fusinator 3000"), where you place your elements to be combined.
@@ -238,11 +279,11 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/fusinator-sketches1.webp" alt="Main Menu" style="max-width: 350px;"/><p>Early sketches</p>
+					<img src="../img/alchemy/fusinator-sketches1.webp" alt="Main Menu" style="max-width: 350px;"/><p class="note-text center">Early sketches</p>
 				</div>
 				
 				<div class="screenshot-item">
-					<img src="../img/alchemy/fusinator-sketches2.webp" alt="Gameplay" style="max-width: 350px;"/><p>Early sketches</p>
+					<img src="../img/alchemy/fusinator-sketches2.webp" alt="Gameplay" style="max-width: 350px;"/><p class="note-text center">Early sketches</p>
 				</div>
 			</div>
 
@@ -251,7 +292,8 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/alchemy.gif" alt="Main Menu" style="max-width: 350px;"/><p>Fusinator Early Concept Animation <br>(placeholder elements)</p>
+					<img src="../img/alchemy/alchemy.gif" alt="Main Menu" style="max-width: 350px;"/>
+					<p class="note-text center">Fusinator Early Concept Animation <br>(placeholder elements)</p>
 				</div>
 			</div>
 
@@ -260,11 +302,11 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/menu.webp" alt="Main Menu" /><p>Main menu (early logotype)</p>
+					<img src="../img/alchemy/menu.webp" alt="Main Menu" /><p class="note-text center">Main menu (early logotype)</p>
 				</div>
 				
 				<div class="screenshot-item">
-					<img src="../img/alchemy/gameplay.webp" alt="Gameplay" /><p>Gameplay - core screen</p>
+					<img src="../img/alchemy/gameplay.webp" alt="Gameplay" /><p class="note-text center">Gameplay - core screen</p>
 				</div>
 			</div>
 
@@ -273,11 +315,11 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/progress.webp" alt="Main Menu" /><p>Player XP and Progress</p>
+					<img src="../img/alchemy/progress.webp" alt="Main Menu" /><p class="note-text center">Player XP and Progress</p>
 				</div>
 				
 				<div class="screenshot-item">
-					<img src="../img/alchemy/achieve.webp" alt="Gameplay" /><p>Achievements</p>
+					<img src="../img/alchemy/achieve.webp" alt="Gameplay" /><p class="note-text center">Achievements</p>
 				</div>
 				<div class="screenshot-item">
 					<img src="../img/alchemy/shop.webp" alt="Gameplay" /><p>Shop</p>
@@ -289,7 +331,7 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/search.webp" alt="Main Menu" style="max-width: 350px;"/><p>Search and Notifications</p>
+					<img src="../img/alchemy/search.webp" alt="Main Menu" style="max-width: 350px;"/><p class="note-text center">Search and Notifications</p>
 				</div>
 			</div>
 
@@ -298,11 +340,11 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/profile1.webp" alt="Main Menu" /><p>Profile illustration iteration</p>
+					<img src="../img/alchemy/profile1.webp" alt="Main Menu" /><p class="note-text center">Profile illustration iteration</p>
 				</div>
 				
 				<div class="screenshot-item">
-					<img src="../img/alchemy/profile2.webp" alt="Gameplay" /><p>Profile illustration iteration</p>
+					<img src="../img/alchemy/profile2.webp" alt="Gameplay" /><p class="note-text center">Profile illustration iteration</p>
 				</div>
 			</div>
 
@@ -311,14 +353,14 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/window1.webp" alt="Main Menu" /><p>Message Box</p>
+					<img src="../img/alchemy/window1.webp" alt="Main Menu" /><p class="note-text center">Message Box</p>
 				</div>
 				
 				<div class="screenshot-item">
-					<img src="../img/alchemy/window2.webp" alt="Gameplay" /><p>Contest Entry</p>
+					<img src="../img/alchemy/window2.webp" alt="Gameplay" /><p class="note-text center">Contest Entry</p>
 				</div>
 				<div class="screenshot-item">
-					<img src="../img/alchemy/windows3.webp" alt="Gameplay" /><p>Collection</p>
+					<img src="../img/alchemy/windows3.webp" alt="Gameplay" /><p class="note-text center"></p>Collection</p>
 				</div>
 			</div>
 
@@ -327,10 +369,10 @@
 			<!-- ONE ROW OF IMAGES -->
 			<div class="screenshot-gallery">
 				<div class="screenshot-item">
-					<img src="../img/alchemy/components1.webp" alt="Gameplay" /><p>UI Components</p>
+					<img src="../img/alchemy/components1.webp" alt="Gameplay" /><p class="note-text center">UI Components</p>
 				</div>
 				<div class="screenshot-item">
-					<img src="../img/alchemy/components2.webp" alt="Gameplay" /><p>UI Components</p>
+					<img src="../img/alchemy/components2.webp" alt="Gameplay" /><p class="note-text center">UI Components</p>
 				</div>
 			</div>
 
@@ -377,7 +419,7 @@
 			<div class="mobile-menu-link"><a href="/projects/jarfall">Jarfall</a></div>
 			<div class="mobile-menu-link"><a href="/projects/jex">Jex in Space</a></div>
 			<div class="mobile-menu-link"><a href="/projects/sweeper">Sweeper</a></div>
-			<div class="mobile-menu-link"><a href="/projects/rebounce">Rebounce</a></div>
+			<div class="mobile-menu-link"><a href="projects/geddahoops">Gedda Hoops</a></div>
 
 			<div class="mobile-menu-link category"><a href="#">GAME UI</a></div>
 			<div class="mobile-menu-link"><a href="/projects/besiege">Besiege</a></div>
